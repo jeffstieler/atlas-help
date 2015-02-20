@@ -3,7 +3,7 @@ title: "Create a New Box Version"
 ---
 # Create a New Box Version
 
-To release a new version a box to the public or to your team:
+To release a new version of a box to the public or to your team:
 
   1. Click on the name of the box you want to release a new version for.
 
