@@ -12,6 +12,15 @@
         </ul>
     </li>
 
+    <li class="<%= "active" if help_active?("video-walkthroughs") %>">
+        <h3 class="h4"><%= help_link "Video Walkthroughs", "video-walkthroughs/build-images" %></h3>
+        <ul>
+            <li><%= help_link "How to build images", "video-walkthroughs/build-images" %></li>
+            <li><%= help_link "How to configure infrastructure", "video-walkthroughs/configure-infrastructure" %></li>
+            <li><%= help_link "How to deploy an application", "video-walkthroughs/deploy-application" %></li>
+        </ul>
+    </li>
+
     <li class="<%= "active" if help_active?("use-cases") %>">
         <h3 class="h4"><%= help_link "Use Cases", "use-cases/adopt-devops" %></h3>
         <ul>
