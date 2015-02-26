@@ -3,7 +3,7 @@ title: "Command-line Login"
 ---
 ## Command-line Login
 
-To access and download private resources from Atlas, such as Vagrant boxes, you must login. You can login with either your Atlas username and password, or with an Atlas token. You can generate a token for use by multiple users in your [organization's account page](/settings/tokens).
+To access and download private resources from Atlas, such as Vagrant boxes, you must authorize with Atlas. You can authoize by either loging in with your Atlas username and password, or by setting your Atlas token as an enviornment variable. You can generate a token for use by multiple users in your [organization's account page](/settings/tokens).
 
 Username and password login:
 
@@ -12,9 +12,8 @@ Username and password login:
 	Atlas username:
 	Atlas password:
 
-Token login:
+Vagrant will use the ATLAS_TOKEN environment variable whenever authorization is needed. Export your Atlas token as an environment variable:
 
-	$ vagrant login --token ABCD1234
-	The token was successfully saved.
+	$ export ATLAS_TOKEN=YOUR_TOKEN_HERE
 
 You can read more about `vagrant login` and its options in the [Vagrant documentation](https://docs.vagrantup.com/v2/cli/login.html). 
