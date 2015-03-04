@@ -91,7 +91,7 @@ The complete Terraform configuration should now look as below.
 	  ingress {
 	      from_port = 0
 	      to_port = 65535
-	      protocol = "tcp"
+	      protocol = "-1"
 	      cidr_blocks = ["0.0.0.0/0"]
 	  }
 	}
