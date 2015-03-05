@@ -7,7 +7,7 @@ title: "How to Create a Share"
 You've learned [what](/help/shares/what) shares are and want to try
 it out.
 
-*Heads up! You'll need [Vagrant 1.5](/help/cloud/vagrant-1-5) installed
+*Heads up! You'll need [the latest version of vagrant](/help/cloud/vagrant-1-7) installed
 to use this feature.*
 
 ## HTTP
