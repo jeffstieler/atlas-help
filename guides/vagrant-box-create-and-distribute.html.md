@@ -18,7 +18,7 @@ for use with Vagrant is simple.
 
 1. Follow the instructions for creating a box that are shown. You'll need
    to create a box, create a version for that box, add a
-   provider to that box, and finally relase the box for use.
+   provider to that box, and finally release the box for use.
    Follow the forms and they'll guide you through it. Every
    box on Atlas must have the box file itself, a version, and at least one provider.
 
