@@ -3,7 +3,7 @@ title: "Command-line Login"
 ---
 ## Command-line Login
 
-To access and download private resources from Atlas, such as Vagrant boxes, you must authorize with Atlas. You can authoize by either loging in with your Atlas username and password, or by setting your Atlas token as an enviornment variable. You can generate a token for use by multiple users in your [organization's account page](/settings/tokens).
+To access and download private resources from Atlas, such as Vagrant boxes, you must authorize with Atlas. You can authoize by either logging in with your Atlas username and password, or by setting your Atlas token as an enviornment variable. You can generate a token for use by multiple users in your [organization's account page](/settings/tokens).
 
 Username and password login:
 
