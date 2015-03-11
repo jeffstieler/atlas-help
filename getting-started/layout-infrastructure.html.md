@@ -49,7 +49,7 @@ Open the file `example-infrastructure.tf` from the [example repo](https://github
 	  	count = 2
 	}
 
-If you haven't already, [create an Atlas account](http://atlas.hashicorp.com/account/new) and generate an Atlas token in your [account settings](https://atlas.hashicorp.com/account/tokens). By creating an account, you can view the history of your infrastructure states, manage artifacts, and monitor your build and deploy process.
+If you haven't already, [create an Atlas account](http://atlas.hashicorp.com/account/new) and generate an Atlas token in your [account settings](https://atlas.hashicorp.com/settings/tokens). By creating an account, you can view the history of your infrastructure states, manage artifacts, and monitor your build and deploy process.
 
 Replace the `ACCESS_KEY_HERE` and `SECRET_KEY_HERE` with your
 AWS access key and secret key, available from
