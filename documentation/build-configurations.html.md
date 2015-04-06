@@ -11,9 +11,9 @@ configuration scripts (bash, Puppet, Chef et al) and dependencies.
 
 Common use cases for these build configurations include:
 
-- A packer template and associated scripts to provision your organizations
+- A Packer template and associated scripts to provision your organizations
 Vagrant box for development
-- A packer template and associated Puppet module you use to bake AMIs for
+- A Packer template and associated Puppet module you use to bake AMIs for
 your production deployments
 - Packer builders for both Virtualbox and DigitalOcean images, for
 maintaining a golden image used for both development and production
