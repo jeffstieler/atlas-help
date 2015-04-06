@@ -17,7 +17,7 @@ in your infrastructure.
 Infrastructure changes are powered by [Terraform](https://terraform.io),
 a HashiCorp tool for launching, combining, and versioning infrastructure.
 [Terraform remote state](https://terraform.io/docs/commands/remote.html)
-enables Terraform to be run remotely from Atlas. All infrastructure changes
+enables Terraform to be run remotely by Atlas. All infrastructure changes
 are stored and versioned to display an auditable history of your
 infrastructure.
 
