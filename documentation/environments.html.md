@@ -1,20 +1,25 @@
 ---
 title: "What are Environments?"
 ---
-# What are Environments?
+## What are Environments?
 
-Environments are a view of your infrastructure, containing:
+Environments show the real-time status of your infrastructure,
+any pending changes, and its change history.
 
-- The [Terraform remote state](https://terraform.io/docs/commands/remote.html),
-used to track what Terraform knows about your configured infrastructure (like
-unique IDs and dependencies)
-- The Terraform configuration files (`.tf`), used to manage and declare
-the infrastructure
-- The connection to the Consul cluster(s) representing the real time
-status of the infrastructure
+Real-time infrastructure status is powered by
+[Consul](https://consul.io), a HashiCorp tool for service
+discovery, service registry, health checks, and monitoring.
+Setting the [`-atlas` flag](https://consul.io/docs/guides/atlas.html)
+in your Consul configuration connects your Consul cluster with Atlas. This
+enables Atlas to display the health of all the nodes and services
+in your infrastructure.
 
-Environments can be configured to use any or all of these 3 components.
+Infrastructure changes are powered by [Terraform](https://terraform.io),
+a HashiCorp tool for launching, combining, and versioning infrastructure.
+[Terraform remote state](https://terraform.io/docs/commands/remote.html)
+enables Terraform to be run remotely from Atlas. All infrastructure changes
+are stored and versioned to display an auditable history of your
+infrastructure.
 
-When configured, environments generate a view of changes made against
-your infrastructure, as well as a real-time picture of the health
-and status of various nodes in your infrastructure.
+Environments can be configured to use any or all of the three components —
+real-time status, remote changes, and change history.
