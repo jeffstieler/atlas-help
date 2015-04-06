@@ -23,3 +23,7 @@ infrastructure.
 
 Environments can be configured to use any or all of the three components —
 real-time status, remote changes, and change history.
+
+To learn about the internals of Consul and Terraform in greater detail,
+visit the [Consul Documentation](https://consul.io/docs) and
+[Terraform Documentation](https://terraform.io/docs).
