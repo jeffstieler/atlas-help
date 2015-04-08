@@ -17,12 +17,10 @@ Vagrant is capable of pushing application code in the same directory as your Vag
 
 The `app` configuration option is the name of the application in Atlas. If the application does not exist, it will be created with user confirmation. Make sure the push configuration in your Vagrantfile matches the example above, with your username properly filled in. 
 
-In the same directory as the Vagrantfile, update the index.html file with body "Hello World". Now run `vagrant push` in that directory, and the application code will be packaged and sent to Atlas. If you get the error `No VCS found for path`, make sure the directory has git initiated with `git init` and make one commit. You will see your application in the [Development tab](https://atlas.hashicorp.com/development) of your Atlas dashboard:
-
-![Development Dashboard](/help-images/application.png)
+In the same directory as the Vagrantfile, update the index.html file with body "Hello World". Now run `vagrant push` in that directory, and the application code will be packaged and sent to Atlas. If you get the error `No VCS found for path`, make sure the directory has git initiated with `git init` and make one commit.
 
 ## Link the application to images in Atlas
-To link your application code to the Packer-made images created in the previous step, [go to the operations tab in Atlas](http://atlas.hashicorp.com/operations). Click on the example-build-configuration, then "linked applications" in the left navigation. Complete the fields with your username, example-application as the application name, and /app as the path. This path tells Packer where to place your application's code, which can referenced later for provisioning or other uses. 
+To link your application code to the Packer-made images created in the previous step, [go to the builds tab in Atlas](http://atlas.hashicorp.com/builds). Click on the example-build-configuration, then "linked applications" in the left navigation. Complete the fields with your username, example-application as the application name, and /app as the path. This path tells Packer where to place your application's code, which can referenced later for provisioning or other uses. 
 
 ## Update the build configuration to package the application code
 
@@ -88,7 +86,7 @@ Wait for the new builds to finish, then just run `terraform apply` in the direct
 	$ terraform apply
 	...
 
-If the apply fails, be sure to first apply the artifact first, then the full infrastructure after. To view the details of the deploy, use `terraform show`. 
+To view the details of the deploy, use `terraform show`.
 
 	$ terraform show
 	...

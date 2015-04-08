@@ -24,23 +24,7 @@ Now that we have an artifact stored in Atlas, we can reference it in the Terrafo
 	    type = "aws.ami"
 	}
 
-Make sure your Terraform configuration only has the above information, and run `terraform apply` to create the artifact reference in Terraform. 
-
-	$ terraform apply
-	...
-	atlas_artifact.web: Creating...
-	  file_url:     "" => "<computed>"
-	  name:         "" => "hashicorp/example-artifact"
-	  slug:         "" => "<computed>"
-	  type:         "" => "aws.ami"
-	  version_real: "" => "<computed>"
-	atlas_artifact.web: Creation complete
-
-	Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
-
-Now, let's combine the artifact with the [Terraform configuration written in the first step](/help/getting-started/layout-infrastructure). 
-
-The complete Terraform configuration should now look as below. 
+Now, let's combine the artifact with the [Terraform configuration written in the first step](/help/getting-started/layout-infrastructure). The complete Terraform configuration should now look as below.
 
 	provider "atlas" {
 	    token = "ATLAS_TOKEN_HERE"

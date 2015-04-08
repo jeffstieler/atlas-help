@@ -37,8 +37,7 @@ Upload box:
 Release box:
 ![Update version and release box](/help-images/update-version-and-release-box.png)
 
-
-You can find all your boxes in the [development tab](/development)
+You can find all your boxes in the [Vagrant tab](/vagrant)
 of Atlas under the "Boxes" header in the left navigation bar.
 
 Once you've created and released a box, you can release new versions of

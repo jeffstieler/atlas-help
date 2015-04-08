@@ -203,7 +203,7 @@ since Terraform waits for the EC2 instance to become available.
 Done! You can go to the AWS console to prove to yourself that the
 EC2 instances have been created.
 
-You can also view Terraform state information in your [Atlas dashboard](http://atlas.hashicorp.com/runtime). Below is an example screenshot:
+You can also view Terraform state information in the environments tab of your [Atlas dashboard](http://atlas.hashicorp.com/environments). Click the environment name, and then "Changes" in the left navigation. Below is an example screenshot:
 
 ![Terraform State Screenshot](/help-images/example-terraform-state.png)
 
