@@ -175,11 +175,9 @@ that your PATH variable contains the directory which has Packer installed.
 
 Otherwise, Packer is installed and you're ready to go!
 
-
 ## Push to Atlas
 
 It is time to build your first image. This is done by calling `packer push` with the template file.
-
 
 	$ packer push -create example-template.json
 
@@ -187,8 +185,6 @@ This pushes the build configuration to Atlas and automatically starts the build.
 
 ![Packer Build](/help-images/packer-build.png)
 
-If the build fails, read the output logs in the Atlas dashboard to debug the issue. The most common issue for a build erroring is incorrect AWS keys in your Packer template. Once the build is finished, the output is an artifact which you can manage in the [Runtime tab](https://atlas.hashicorp.com/runtime) of the Atlas dashboard.
-
-![Artifact](/help-images/artifact.png)
+If the build fails, read the output logs in the Atlas dashboard to debug the issue. The most common issue for a build erroring is incorrect AWS keys in your Packer template.
 
 Congratulations! You've just built your first image with Packer and stored it in Atlas. Now let's deploy the artifact!
