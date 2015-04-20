@@ -139,7 +139,7 @@ In order to communicate with Atlas, you must set an environment variable. You ca
 
 To save the infrastructure state in Atlas, setup a remote.
 
-	$ terraform remote -name=<your_username>/example
+	$ terraform remote -backend-config="name=<your_username>/example"
 
 Now when you run Terraform, the infrastructure state will be saved in Atlas. This keeps a versioned history of your infrastructure. If you get an error message, make sure the username you specify on the command line matches the username you created in Atlas. Usernames are case sensitive so be sure to match your username exactly.
 
