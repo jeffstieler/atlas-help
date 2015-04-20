@@ -81,15 +81,8 @@ Now that your application is linked to the images, anytime you run `vagrant push
 	$ vagrant push
 	Uploaded hashicorp/example-application v2
 
-Wait for the new builds to finish, then just run `terraform apply` in the directory with example-infrastructure.tf to deploy fully configured infrastructure running your application! Terraform will always deploy the latest version of the artifact unless you hardcode the version in the artifact resource block of the Terraform configuration. 
+Wait for the new builds to finish, then just run `terraform push` in the directory with example-infrastructure.tf to deploy fully configured infrastructure running your application! Terraform will always deploy the latest version of the artifact unless you hardcode the version in the artifact resource block of the Terraform configuration. 
 
-	$ terraform apply
-	...
-
-To view the details of the deploy, use `terraform show`.
-
-	$ terraform show
-	...
 	aws_elb.web:
 	  id = terraform-example-elb
 	  availability_zones.# = 2
