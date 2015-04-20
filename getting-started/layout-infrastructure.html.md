@@ -139,7 +139,7 @@ In order to communicate with Atlas, you must set an environment variable. You ca
 
 To save the infrastructure state in Atlas, setup a remote.
 
-	$ terraform remote -backend-config="name=<your_username>/example"
+	$ terraform remote config -backend-config="name=ATLAS_USERNAME/example"
 
 Now when you run Terraform, the infrastructure state will be saved in Atlas. This keeps a versioned history of your infrastructure. If you get an error message, make sure the username you specify on the command line matches the username you created in Atlas. Usernames are case sensitive so be sure to match your username exactly.
 
@@ -147,11 +147,11 @@ Now when you run Terraform, the infrastructure state will be saved in Atlas. Thi
 
 Next, let's see what Terraform would do when asked to
 apply this configuration. In the same directory as the
-`example-infrastructure.tf` file, run `terraform plan`. If you cloned the [example repo](https://github.com/hashicorp/atlas-examples/tree/master/getting-started), you should run `terraform plan` in the ops directory. The output will be similar to what is copied below. We've
+`example-infrastructure.tf` file, run `terraform push -name="ATLAS_USERNAME/example"`. If you cloned the [example repo](https://github.com/hashicorp/atlas-examples/tree/master/getting-started), you should run `terraform push` in the ops directory. This will automatically trigger a [`terraform plan`](https://www.terraform.io/docs/commands/plan.html), which you can
+review in the [Environments tab in Atlas](https://atlas.hashicorp.com/environments).
+The log output will be similar to what is copied below. We've
 truncated some of the output to save space.
 
-
-	$ terraform plan
 	...
 
 	+ aws_elb.web
@@ -171,9 +171,12 @@ truncated some of the output to save space.
 
 `terraform plan` shows what changes Terraform will apply to
 your infrastructure given the current state of your infrastructure
-as well as the current contents of your configuration.
+as well as the current contents of your configuration. You can run
+`terraform plan` locally to view changes, or `terraform push` to
+generate the plan in Atlas, which makes it easier to review the plan
+as a team.
 
-If `terraform plan` failed with an error, read the error message
+If the Terraform plan failed with an error, read the error message
 and fix the error that occurred. At this stage, it is probably a
 syntax error in the configuration, or running `terraform plan` in the wrong directory.
 
@@ -186,12 +189,11 @@ until the resource is created.
 
 ## Apply
 
-The plan looks good, the configuration appears valid, so it's time to
-create real resources. Run `terraform apply` in the same directory
-as your `example-infrastructure.tf`, and watch it go! It will take a few minutes
+If the plan looks good and the configuration appears valid, it's time to
+create real resources. You can execute changes by clicking "Confirm & Apply"
+in the Atlas UI. The apply process will take a few minutes
 since Terraform waits for the EC2 instance to become available.
 
-	$ terraform apply
 	aws_instance.example: Creating...
 	  ami:           "" => "ami-408c7f28"
 	  instance_type: "" => "t1.micro"
@@ -203,7 +205,7 @@ since Terraform waits for the EC2 instance to become available.
 Done! You can go to the AWS console to prove to yourself that the
 EC2 instances have been created.
 
-You can also view Terraform state information in the environments tab of your [Atlas dashboard](http://atlas.hashicorp.com/environments). Click the environment name, and then "Changes" in the left navigation. Below is an example screenshot:
+You can view the history of infrastructure changes in the environments tab of your [Atlas dashboard](http://atlas.hashicorp.com/environments). Click the environment name, and then "Changes" in the left navigation. Below is an example screenshot:
 
 ![Terraform State Screenshot](/help-images/example-terraform-state.png)
 
