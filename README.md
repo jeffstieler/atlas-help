@@ -15,8 +15,5 @@ may track slightly behind this repository.
 
 Suggestions or clarifications
 -----------------------------
-If you think an article or guide can be improved and don't wish to
-make the changes yourself, please open an issue with a description
-of your suggestion so we can improve it. **For Atlas-specific support, such as
-anything dealing with your account, please email
+**For Atlas-specific support, such as anything dealing with your account, please email
 [support@hashicorp.com](mailto:support@hashicorp.com).**
