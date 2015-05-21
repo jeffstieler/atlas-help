@@ -14,6 +14,6 @@ Username and password login:
 
 Vagrant will use the ATLAS_TOKEN environment variable whenever authorization is needed. Export your Atlas token as an environment variable:
 
-	$ export ATLAS_TOKEN=YOUR_TOKEN_HERE
+	$ export ATLAS_TOKEN=ATLAS_TOKEN_HERE
 
-You can read more about `vagrant login` and its options in the [Vagrant documentation](https://docs.vagrantup.com/v2/cli/login.html). 
+You can read more about `vagrant login` and its options in the [Vagrant documentation](https://docs.vagrantup.com/v2/cli/login.html).

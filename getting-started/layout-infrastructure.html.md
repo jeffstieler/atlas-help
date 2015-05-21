@@ -11,7 +11,7 @@ A Terraform configuration is a holistic view of your infrastructure — the desi
 The format of Terraform configuration files is
 [documented here](https://terraform.io/docs/configuration/index.html).
 
-Open the file `example-infrastructure.tf` from the [example repo](https://github.com/hashicorp/atlas-examples/tree/master/getting-started). The entire configuration is shown below. Verify that there are no other `*.tf` files in your directory, since Terraform loads all of them.
+Open the file `example-infrastructure.tf` from the [example repo](https://github.com/hashicorp/atlas-examples/blob/master/getting-started/ops/example-infrastructure.tf). The entire configuration is shown below. Verify that there are no other `*.tf` files in your directory, since Terraform loads all of them.
 
 	provider "atlas" {
 		token = "ATLAS_TOKEN_HERE"
@@ -44,6 +44,10 @@ Open the file `example-infrastructure.tf` from the [example repo](https://github
 	resource "aws_instance" "web" {
 	  	instance_type = "t1.micro"
 	  	ami = "ami-408c7f28"
+
+		tags {
+			Name = "web_${count.index+1}"
+		}
 
 	  	# This will create 2 instances
 	  	count = 2
@@ -114,13 +118,19 @@ terminal session and checking that `terraform` is available. By executing
 	usage: terraform [--version] [--help] <command> [<args>]
 
 	Available commands are:
-	    apply      Builds or changes infrastructure
-	    graph      Create a visual graph of Terraform resources
-	    output     Read an output from a state file
-	    plan       Generate and show an execution plan
-	    refresh    Update local state file against real resources
-	    show       Inspect Terraform state or plan
-	    version    Prints the Terraform version
+		apply      Builds or changes infrastructure
+		destroy    Destroy Terraform-managed infrastructure
+		get        Download and install modules for the configuration
+		graph      Create a visual graph of Terraform resources
+		init       Initializes Terraform configuration from a module
+		output     Read an output from a state file
+		plan       Generate and show an execution plan
+		push       Upload this Terraform module to Atlas to run
+		refresh    Update local state file against real resources
+		remote     Configure remote state storage
+		show       Inspect Terraform state or plan
+		taint      Manually mark a resource for recreation
+		version    Prints the Terraform version
 
 
 If you get an error that `terraform` could not be found, then your PATH
@@ -133,7 +143,7 @@ Otherwise, Terraform is installed and ready to go!
 
 In order to communicate with Atlas, you must set an environment variable. You can find your Atlas token in the [account page](/settings/tokens). Then save your Atlas token as an environment variable in your `.bashrc` file. Once it's saved, open a new terminal session.
 
-	export ATLAS_TOKEN=<your_token>
+	export ATLAS_TOKEN=ATLAS_TOKEN_HERE
 
 ## Link Terraform to Atlas
 
@@ -156,6 +166,8 @@ truncated some of the output to save space.
 
 	+ aws_elb.web
 	    availability_zones.#:          "" => "<computed>"
+		connection_draining:                    "" => "0"
+		connection_draining_timeout:            "" => "300"
 	    dns_name:                      "" => "<computed>"
 	    ...
 

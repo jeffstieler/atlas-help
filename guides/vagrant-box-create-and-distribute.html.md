@@ -3,7 +3,7 @@ title: "Using Atlas to Store and Distribute Vagrant Boxes"
 ---
 # Using Atlas to store and distribute Vagrant boxes
 
-Atlas by HashiCorp makes it simple to upload and share Vagrant boxes. 
+Atlas by HashiCorp makes it simple to upload and share Vagrant boxes.
 This page will cover creating a new box on Atlas and how to distribute it to users.
 It does not cover creating the actual physical "box" file. For that, please read the
 [Vagrant documentation on creating base boxes](http://docs.vagrantup.com/v2/boxes/base.html).
@@ -49,7 +49,7 @@ To distribute the box to your team, update your Vagrantfile to reference the
 box on Atlas.
 
 	Vagrant.configure(2) do |config|
-	  config.vm.box = "<username>/<boxname>"
+	  config.vm.box = "ATLAS_USERNAME_HERE/example-box"
 	end
 
 Now when a team member runs `vagrant up`, the box will be downloaded from Atlas.

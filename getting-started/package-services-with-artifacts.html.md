@@ -26,7 +26,7 @@ The file `ops/example-template.json` from the [example repo](https://github.com/
 	        "ami_name": "atlas-example {{timestamp}}"
 	    }],
 	    "push": {
-	      "name": "<username>/example-build-configuration"
+	      "name": "ATLAS_USERNAME_HERE/example-build-configuration"
 	    },
 	    "provisioners": [
 	    {
@@ -40,7 +40,7 @@ The file `ops/example-template.json` from the [example repo](https://github.com/
 	    "post-processors": [
 	      {
 	        "type": "atlas",
-	        "artifact": "<username>/example-artifact",
+	        "artifact": "ATLAS_USERNAME_HERE/example-artifact",
 	        "artifact_type": "aws.ami",
 	        "metadata": {
 	          "created_at": "{{timestamp}}"
@@ -55,7 +55,7 @@ Packer can build images for many platforms other than AWS, but AWS requires no a
 
 The access keys and Atlas token are hardcoded in this example, but you can pass them in as
 [user variables](https://packer.io/docs/templates/user-variables.html) if preferred
-to keep your secret keys out of the template. If you haven't already, [create an Atlas account](https://atlas.hashicorp.com/create) to get a token.
+to keep your secret keys out of the template. If you haven't already, [create an Atlas account](https://atlas.hashicorp.com/account/new) to get a token.
 
 ## Builders
 
@@ -87,7 +87,7 @@ specific to each builder and can be found within the [documentation](https://pac
 ## Push
 
     "push": {
-      "name": "<username>/example-build-configuration"
+      "name": "ATLAS_USERNAME_HERE/example-build-configuration"
     }
 
 The `push` section is a dictionary with your build configuration name and Atlas access token. For the name, be sure to replace username with your case-sensitive username. If the build configuration doesn't exist in Atlas, it will be created.
@@ -126,7 +126,7 @@ case, we specify inline commands to run in order to install Apache.
 	"post-processors": [
 	  {
 	    "type": "atlas",
-	    "artifact": "<username>/example-artifact",
+	    "artifact": "ATLAS_USERNAME_HERE/example-artifact",
 	    "artifact_type": "aws.ami",
 	    "metadata": {
 	      "created_at": "{{timestamp}}"
@@ -164,10 +164,12 @@ a new command prompt or console, and checking that `packer` is available:
 	usage: packer [--version] [--help] <command> [<args>]
 
 	Available commands are:
-	    build        build image(s) from template
-	    fix          fixes templates from old versions of packer
-	    inspect      see components of a template
-	    validate     check that a template is valid
+		build       build image(s) from template
+		fix         fixes templates from old versions of packer
+		inspect     see components of a template
+		push        push a template and supporting files to a Packer build service
+		validate    check that a template is valid
+		version     Prints the Packer version
 
 If you get an error that `packer` could not be found, then your PATH
 environmental variable was not setup properly. Please go back and ensure
@@ -183,7 +185,7 @@ It is time to build your first image. This is done by calling `packer push` with
 
 This pushes the build configuration to Atlas and automatically starts the build. If `packer push` fails, be sure you properly set your Atlas token as an environment variable in [previous step](/help/getting-started/layout-infrastructure). You can view the real-time status of the build in the Atlas dashboard by clicking the build.
 
-![Packer Build](/help-images/packer-build.png)
+![Packer Build](/help-images/example-packer-build.png)
 
 If the build fails, read the output logs in the Atlas dashboard to debug the issue. The most common issue for a build erroring is incorrect AWS keys in your Packer template.
 
