@@ -24,7 +24,7 @@ Now that we have an artifact stored in Atlas, we can reference it in the Terrafo
 	    type = "aws.ami"
 	}
 
-Now, let's combine the artifact with the [Terraform configuration written in the first step](/help/getting-started/layout-infrastructure). The complete Terraform configuration should now look as below.
+Now, let's combine the artifact with the [Terraform configuration written in the first step](/help/getting-started/layout-infrastructure) by referencing the Atlas artifact as the ami for our "aws_instance.web" resource. The complete Terraform configuration should now look as below.
 
 	provider "atlas" {
 	    token = "ATLAS_TOKEN_HERE"
@@ -57,6 +57,19 @@ Now, let's combine the artifact with the [Terraform configuration written in the
 		}
 	}
 
+	resource "aws_instance" "web" {
+	    instance_type = "t1.micro"
+	    ami = "${atlas_artifact.web.metadata_full.region-us-east-1}"
+	    security_groups = ["${aws_security_group.allow_all.name}"]
+
+		tags {
+			Name = "web_${count.index+1}"
+		}
+
+	    # This will create 2 instances
+	    count = 2
+	}
+
 	resource "aws_elb" "web" {
 	    name = "terraform-example-elb"
 
@@ -84,23 +97,7 @@ Now, let's combine the artifact with the [Terraform configuration written in the
 	    instances = ["${aws_instance.web.*.id}"]
 	}
 
-	resource "aws_instance" "web" {
-	    instance_type = "t1.micro"
-	    ami = "${atlas_artifact.web.metadata_full.region-us-east-1}"
-	    security_groups = ["${aws_security_group.allow_all.name}"]
-
-		tags {
-			Name = "web_${count.index+1}"
-		}
-
-	    # This will create 2 instances
-	    count = 2
-	}
-
-
-Notice in the `aws_instance` resource now references the artifact stored in Atlas. The web resource and load balancer have an additional field `security_groups`, which references the `aws_security_group` resource that allows traffic to access the servers.
-
-Now, when you run `terraform push`, it will reference the proper AMI stored in Atlas that is configured with Apache.
+Now, when you run `terraform push -name="ATLAS_USERNAME_HERE/example-environment`, it will reference the proper AMI stored in Atlas that is configured with Apache.
 
 ![Terraform Apply](/help-images/example-terraform-apply.png)
 

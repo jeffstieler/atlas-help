@@ -14,42 +14,69 @@ The format of Terraform configuration files is
 Open the file `example-infrastructure.tf` from the [example repo](https://github.com/hashicorp/atlas-examples/blob/master/getting-started/ops/example-infrastructure.tf). The entire configuration is shown below. Verify that there are no other `*.tf` files in your directory, since Terraform loads all of them.
 
 	provider "atlas" {
-		token = "ATLAS_TOKEN_HERE"
+	    token = "ATLAS_TOKEN_HERE"
 	}
 
 	provider "aws" {
-		access_key = "ACCESS_KEY_HERE"
-		secret_key = "SECRET_KEY_HERE"
-		region = "us-east-1"
+	    access_key = "ACCESS_KEY_HERE"
+	    secret_key = "SECRET_KEY_HERE"
+	    region = "us-east-1"
 	}
 
-	resource "aws_elb" "web" {
-	  	name = "terraform-example-elb"
+	resource "aws_security_group" "allow_all" {
+		name = "allow_all"
+		description = "Allow all inbound traffic"
 
-	  	# The same availability zone as our instances
-	  	availability_zones = ["${aws_instance.web.*.availability_zone}"]
+		tags {
+			Name = "allow_all"
+		}
 
-	 	listener {
-	    	instance_port = 80
-	    	instance_protocol = "http"
-	    	lb_port = 80
-	    	lb_protocol = "http"
-	  	}
-
-	  	# The instances are registered automatically
-	  	instances = ["${aws_instance.web.*.id}"]
+		ingress {
+			from_port = 0
+			to_port = 0
+			protocol = "-1"
+			cidr_blocks = ["0.0.0.0/0"]
+		}
 	}
 
 	resource "aws_instance" "web" {
-	  	instance_type = "t1.micro"
-	  	ami = "ami-408c7f28"
+	    instance_type = "t1.micro"
+		ami = "ami-408c7f28"
+	    security_groups = ["${aws_security_group.allow_all.name}"]
 
 		tags {
 			Name = "web_${count.index+1}"
 		}
 
-	  	# This will create 2 instances
-	  	count = 2
+	    # This will create 2 instances
+	    count = 2
+	}
+
+	resource "aws_elb" "web" {
+	    name = "terraform-example-elb"
+
+	    # The same availability zone as our instances
+	    availability_zones = ["${aws_instance.web.*.availability_zone}"]
+
+	    listener {
+	        instance_port = 80
+	        instance_protocol = "http"
+	        lb_port = 80
+	        lb_protocol = "http"
+	    }
+
+	    health_check {
+			healthy_threshold = 2
+			unhealthy_threshold = 2
+			timeout = 5
+			target = "TCP:80"
+			interval = 10
+	    }
+
+	    security_groups = ["${aws_security_group.allow_all.id}"]
+
+	    # The instances are registered automatically
+	    instances = ["${aws_instance.web.*.id}"]
 	}
 
 If you haven't already, [create an Atlas account](http://atlas.hashicorp.com/account/new) and generate an Atlas token in your [account settings](https://atlas.hashicorp.com/settings/tokens). By creating an account, you can view the history of your infrastructure states, manage artifacts, and monitor your build and deploy process.
@@ -148,7 +175,7 @@ In order to communicate with Atlas, you must set an environment variable. You ca
 
 To save the infrastructure state in Atlas, setup a remote.
 
-	$ terraform remote config -backend-config="name=ATLAS_USERNAME_HERE/example"
+	$ terraform remote config -backend-config="name=ATLAS_USERNAME_HERE/example-environment"
 
 Now when you run Terraform, the infrastructure state will be saved in Atlas. This keeps a versioned history of your infrastructure. If you get an error message, make sure the username you specify on the command line matches the username you created in Atlas. Usernames are case sensitive so be sure to match your username exactly.
 
@@ -156,12 +183,17 @@ Now when you run Terraform, the infrastructure state will be saved in Atlas. Thi
 
 Next, let's see what Terraform would do when asked to
 apply this configuration. In the same directory as the
-`example-infrastructure.tf` file, run `terraform push -name="ATLAS_USERNAME_HERE/example"`. If you cloned the [example repo](https://github.com/hashicorp/atlas-examples/tree/master/getting-started), you should run `terraform push` in the ops directory. This will automatically trigger a [`terraform plan`](https://www.terraform.io/docs/commands/plan.html), which you can
-review in the [Environments tab in Atlas](https://atlas.hashicorp.com/environments).
+`example-infrastructure.tf` file, run `terraform push -name="ATLAS_USERNAME_HERE/example-environment"`. If you cloned the [example repo](https://github.com/hashicorp/atlas-examples/tree/master/getting-started), you should run `terraform push` in the ops directory. This will automatically trigger a [`terraform plan`](https://www.terraform.io/docs/commands/plan.html), which you can
+review by clicking on your environment name in the [Atlas Environments tab](https://atlas.hashicorp.com/environments), then "Changes" in the left navigation.
 The log output will be similar to what is copied below. We've
 truncated some of the output to save space.
 
 	...
+
+	+ aws_security_group.allow_all
+		description:                         "" => "Allow all inbound traffic"
+		egress.#:                            "" => "<computed>"
+		ingress.#:                           "" => "1"
 
 	+ aws_elb.web
 		availability_zones.#:                   "" => "<computed>"
@@ -205,26 +237,34 @@ create real resources. You can execute changes by clicking "Confirm & Apply"
 in the Atlas UI. The apply process will take a few minutes
 since Terraform waits for the EC2 instance to become available.
 
+	aws_security_group.allow_all: Creating...
+	  description: "" => "Allow all inbound traffic"
+	  egress.#     "" => "<computed>"
+	  ingress.#:   "" => "1"
+	  ...
+
+	aws_security_group.allow_all: Creation complete
+
 	aws_instance.web.0: Creating...
-      ami:                      "" => "ami-408c7f28"
+      ami:               "" => "ami-408c7f28"
+	  availability_zone: "" => "<computed>"
 	  ...
 
 	aws_instance.web.0: Creating...
-      ami:                      "" => "ami-408c7f28"
+      ami:               "" => "ami-408c7f28"
+	  availability_zone: "" => "<computed>"
 	  ...
 
 	aws_instance.web.1: Creation complete
 	aws_instance.web.0: Creation complete
 
-	...
-
 	aws_elb.web: Creating...
-	  availability_zones.#:                   "" => "1"
+	  availability_zones.#: "" => "1"
 	  ...
 
 	aws_elb.web: Creation complete
 
-	Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
+	Apply complete! Resources: 4 added, 0 changed, 0 destroyed.
 
 	...
 

@@ -62,16 +62,18 @@ to keep your secret keys out of the template. If you haven't already, [create an
 
 ## Builders
 
-	"builders": [{
-		"type": "amazon-ebs",
-		"access_key": "ACCESS_KEY_HERE",
-		"secret_key": "SECRET_KEY_HERE",
-		"region": "us-east-1",
-		"source_ami": "ami-de0d9eb7",
-		"instance_type": "t1.micro",
-		"ssh_username": "ubuntu",
-		"ami_name": "atlas-example {{timestamp}}"
-	}]
+	"builders": [
+		{
+			"type": "amazon-ebs",
+			"access_key": "ACCESS_KEY_HERE",
+			"secret_key": "SECRET_KEY_HERE",
+			"region": "us-east-1",
+			"source_ami": "ami-de0d9eb7",
+			"instance_type": "t1.micro",
+			"ssh_username": "ubuntu",
+			"ami_name": "atlas-example {{timestamp}}"
+		}
+	]
 
 The `builders` section contains an array of JSON objects configuring a specific _builder_. A
 builder is a component of Packer that is responsible for creating a machine
