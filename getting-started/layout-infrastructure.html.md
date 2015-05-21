@@ -40,7 +40,6 @@ Open the file `example-infrastructure.tf` from the [example repo](https://github
 	  	instances = ["${aws_instance.web.*.id}"]
 	}
 
-
 	resource "aws_instance" "web" {
 	  	instance_type = "t1.micro"
 	  	ami = "ami-408c7f28"
@@ -149,7 +148,7 @@ In order to communicate with Atlas, you must set an environment variable. You ca
 
 To save the infrastructure state in Atlas, setup a remote.
 
-	$ terraform remote config -backend-config="name=ATLAS_USERNAME/example"
+	$ terraform remote config -backend-config="name=ATLAS_USERNAME_HERE/example"
 
 Now when you run Terraform, the infrastructure state will be saved in Atlas. This keeps a versioned history of your infrastructure. If you get an error message, make sure the username you specify on the command line matches the username you created in Atlas. Usernames are case sensitive so be sure to match your username exactly.
 
@@ -157,7 +156,7 @@ Now when you run Terraform, the infrastructure state will be saved in Atlas. Thi
 
 Next, let's see what Terraform would do when asked to
 apply this configuration. In the same directory as the
-`example-infrastructure.tf` file, run `terraform push -name="ATLAS_USERNAME/example"`. If you cloned the [example repo](https://github.com/hashicorp/atlas-examples/tree/master/getting-started), you should run `terraform push` in the ops directory. This will automatically trigger a [`terraform plan`](https://www.terraform.io/docs/commands/plan.html), which you can
+`example-infrastructure.tf` file, run `terraform push -name="ATLAS_USERNAME_HERE/example"`. If you cloned the [example repo](https://github.com/hashicorp/atlas-examples/tree/master/getting-started), you should run `terraform push` in the ops directory. This will automatically trigger a [`terraform plan`](https://www.terraform.io/docs/commands/plan.html), which you can
 review in the [Environments tab in Atlas](https://atlas.hashicorp.com/environments).
 The log output will be similar to what is copied below. We've
 truncated some of the output to save space.
@@ -165,20 +164,20 @@ truncated some of the output to save space.
 	...
 
 	+ aws_elb.web
-	    availability_zones.#:          "" => "<computed>"
+		availability_zones.#:                   "" => "<computed>"
 		connection_draining:                    "" => "0"
 		connection_draining_timeout:            "" => "300"
-	    dns_name:                      "" => "<computed>"
+		dns_name:                               "" => "<computed>"
 	    ...
 
 	+ aws_instance.web.0
-		ami:               "" => "ami-408c7f28"
-	    availability_zone: "" => "<computed>"
+		ami:                      "" => "ami-408c7f28"
+		availability_zone:        "" => "<computed>"
 	    ...
 
 	+ aws_instance.web.1
-		ami:               "" => "ami-408c7f28"
-	    availability_zone: "" => "<computed>"
+		ami:                      "" => "ami-408c7f28"
+		availability_zone:        "" => "<computed>"
 	    ...
 
 `terraform plan` shows what changes Terraform will apply to
@@ -206,11 +205,26 @@ create real resources. You can execute changes by clicking "Confirm & Apply"
 in the Atlas UI. The apply process will take a few minutes
 since Terraform waits for the EC2 instance to become available.
 
-	aws_instance.example: Creating...
-	  ami:           "" => "ami-408c7f28"
-	  instance_type: "" => "t1.micro"
+	aws_instance.web.0: Creating...
+      ami:                      "" => "ami-408c7f28"
+	  ...
 
-	Apply complete! Resources: 2 added, 0 changed, 0 destroyed.
+	aws_instance.web.0: Creating...
+      ami:                      "" => "ami-408c7f28"
+	  ...
+
+	aws_instance.web.1: Creation complete
+	aws_instance.web.0: Creation complete
+
+	...
+
+	aws_elb.web: Creating...
+	  availability_zones.#:                   "" => "1"
+	  ...
+
+	aws_elb.web: Creation complete
+
+	Apply complete! Resources: 3 added, 0 changed, 0 destroyed.
 
 	...
 
