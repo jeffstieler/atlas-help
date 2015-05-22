@@ -85,7 +85,7 @@ Now, let's combine the artifact with the [Terraform configuration written in the
 
 	    health_check {
 			healthy_threshold = 2
-			unhealthy_threshold = 2
+			unhealthy_threshold = 1
 			timeout = 5
 			target = "TCP:80"
 			interval = 10
@@ -97,7 +97,10 @@ Now, let's combine the artifact with the [Terraform configuration written in the
 	    instances = ["${aws_instance.web.*.id}"]
 	}
 
-Now, when you run `terraform push -name="ATLAS_USERNAME_HERE/example-environment`, it will reference the proper AMI stored in Atlas that is configured with Apache.
+Now, when you run the below `terraform push` command, it will reference the proper AMI stored in Atlas that is configured with Apache. Be sure to wait for your Packer build to finish!
+
+	$ `terraform push -name="ATLAS_USERNAME_HERE/example-environment`
+	Configuration "hashicorp/example-environment" uploaded! (v2)
 
 ![Terraform Apply](/help-images/example-terraform-apply.png)
 

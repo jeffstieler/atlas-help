@@ -41,14 +41,14 @@ The file `ops/example-template.json` from the [example repo](https://github.com/
 			}
 		],
 	    "post-processors": [
-	      {
-	        "type": "atlas",
-	        "artifact": "ATLAS_USERNAME_HERE/example-artifact",
-	        "artifact_type": "aws.ami",
-			"metadata": {
-				"created_at": "{{timestamp}}"
+			{
+				"type": "atlas",
+				"artifact": "ATLAS_USERNAME_HERE/example-artifact",
+				"artifact_type": "aws.ami",
+				"metadata": {
+					"created_at": "{{timestamp}}"
+				}
 			}
-	      }
 	    ]
 	}
 
@@ -130,16 +130,14 @@ case, we specify inline commands to run in order to install Apache.
 ## Managing the image with post-processors
 
 	"post-processors": [
-		[
-			{
-				"type": "atlas",
-				"artifact": "ATLAS_USERNAME_HERE/example-artifact",
-				"artifact_type": "aws.ami",
-				"metadata": {
-					"created_at": "{{timestamp}}"
-				}
+		{
+			"type": "atlas",
+			"artifact": "ATLAS_USERNAME_HERE/example-artifact",
+			"artifact_type": "aws.ami",
+			"metadata": {
+				"created_at": "{{timestamp}}"
 			}
-		]
+		}
 	]
 
 Packer builds images and then uses a `post-processor` to store them in Atlas. Just supply your Atlas token in the Packer template and the images will be automatically stored in Atlas for you to manage and deploy. The field `artifact` defines the name that you will later reference to deploy the artifact. Be sure to properly input your case-sensitive username.

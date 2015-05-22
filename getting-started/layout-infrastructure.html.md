@@ -67,7 +67,7 @@ Open the file `example-infrastructure.tf` from the [example repo](https://github
 
 	    health_check {
 			healthy_threshold = 2
-			unhealthy_threshold = 2
+			unhealthy_threshold = 1
 			timeout = 5
 			target = "TCP:80"
 			interval = 10
@@ -181,36 +181,37 @@ Now when you run Terraform, the infrastructure state will be saved in Atlas. Thi
 
 ## Execution Plan
 
-Next, let's see what Terraform would do when asked to
-apply this configuration. In the same directory as the
-`example-infrastructure.tf` file, run `terraform push -name="ATLAS_USERNAME_HERE/example-environment"`. If you cloned the [example repo](https://github.com/hashicorp/atlas-examples/tree/master/getting-started), you should run `terraform push` in the ops directory. This will automatically trigger a [`terraform plan`](https://www.terraform.io/docs/commands/plan.html), which you can
+Next, let's see what Terraform would do when asked to apply this configuration. In the same directory as the
+`example-infrastructure.tf` file, run the below command. If you cloned the [example repo](https://github.com/hashicorp/atlas-examples/tree/master/getting-started), you should run this command in the [ops directory](https://github.com/hashicorp/atlas-examples/tree/master/getting-started/ops).
+
+	$ terraform push -name="ATLAS_USERNAME_HERE/example-environment"
+	Configuration "hashicorp/example-environment" uploaded! (v1)
+
+This will automatically trigger a [`terraform plan`](https://www.terraform.io/docs/commands/plan.html), which you can
 review by clicking on your environment name in the [Atlas Environments tab](https://atlas.hashicorp.com/environments), then "Changes" in the left navigation.
-The log output will be similar to what is copied below. We've
-truncated some of the output to save space.
+
+The log output will be similar to what is copied below. We've truncated some of the output to save space.
 
 	...
 
-	+ aws_security_group.allow_all
-		description:                         "" => "Allow all inbound traffic"
-		egress.#:                            "" => "<computed>"
-		ingress.#:                           "" => "1"
-
-	+ aws_elb.web
-		availability_zones.#:                   "" => "<computed>"
-		connection_draining:                    "" => "0"
-		connection_draining_timeout:            "" => "300"
-		dns_name:                               "" => "<computed>"
+	+ aws\_elb.web
+		availability_zones.#: "" => "<computed>"
+		connection_draining:  "" => "0"
 	    ...
 
-	+ aws_instance.web.0
-		ami:                      "" => "ami-408c7f28"
-		availability_zone:        "" => "<computed>"
+	+ aws\_instance.web.0
+		ami:               "" => "ami-408c7f28"
+		availability_zone: "" => "<computed>"
 	    ...
 
-	+ aws_instance.web.1
-		ami:                      "" => "ami-408c7f28"
-		availability_zone:        "" => "<computed>"
+	+ aws\_instance.web.1
+		ami:               "" => "ami-408c7f28"
+		availability_zone: "" => "<computed>"
 	    ...
+
+	+ aws\_security\_group.allow\_all
+		description: "" => "Allow all inbound traffic"
+		egress.#:    "" => "<computed>"
 
 `terraform plan` shows what changes Terraform will apply to
 your infrastructure given the current state of your infrastructure
@@ -240,7 +241,6 @@ since Terraform waits for the EC2 instance to become available.
 	aws_security_group.allow_all: Creating...
 	  description: "" => "Allow all inbound traffic"
 	  egress.#     "" => "<computed>"
-	  ingress.#:   "" => "1"
 	  ...
 
 	aws_security_group.allow_all: Creation complete

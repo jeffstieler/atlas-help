@@ -19,6 +19,9 @@ The `app` configuration option is the name of the application in Atlas. If the a
 
 In the same directory as the Vagrantfile, update the index.html file with body "Hello, World". Now run `vagrant push` in that directory, and the application code will be packaged and sent to Atlas. If you get the error `No VCS found for path`, make sure the directory has git initiated with `git init` and make one commit.
 
+	$ vagrant push
+	Uploaded hashicorp/example-application v1
+
 ## Link the application to images in Atlas
 To link your application code to the Packer-made images created in the previous step, [go to the builds tab in Atlas](http://atlas.hashicorp.com/builds). Click on the "example-build-configuration", then "Links" in the left navigation. Complete the fields with your username, `example-application` as the application name, and `/app` as the path. This path tells Packer where to place your application's code, which can referenced later for provisioning or other uses.
 
@@ -59,33 +62,36 @@ Now that the application is stored in Atlas, we can reference the data in the bu
 			}
 		],
 	    "post-processors": [
-			[
-				{
-					"type": "atlas",
-					"artifact": "ATLAS_USERNAME_HERE/example-artifact",
-					"artifact_type": "aws.ami",
-					"metadata": {
-						"created_at": "{{timestamp}}"
-					}
+			{
+				"type": "atlas",
+				"artifact": "ATLAS_USERNAME_HERE/example-artifact",
+				"artifact_type": "aws.ami",
+				"metadata": {
+					"created_at": "{{timestamp}}"
 				}
-			]
+			}
 	    ]
 	}
 
-The new `file` provisioner takes the application code stored in Atlas and packages it with the artifact output of the build configuration. In the `shell` provisioner the line `sudo mv /tmp/app/* /var/www/` was added to move the application code to Apache's web root. Now run `packer push example-template.json` in the directory with example-template.json to rebuild the artifacts with your application code merged in.
+The new `file` provisioner takes the application code stored in Atlas and packages it with the artifact output of the build configuration. In the `shell` provisioner the line `sudo mv /tmp/app/* /var/www/` was added to move the application code to Apache's web root. Now run `packer push` in the directory with example-template.json to rebuild the artifacts with your application code merged in.
 
 	$ packer push example-template.json
 	Push successful to 'hashicorp/example-build-configuration'
 
 Notice in your Atlas dashboard that a new build configuration version is made.
 
-## Deploy your application!
+## Deploy your application
 Now that your application is linked to the images, anytime you run `vagrant push`, the images will be rebuilt with the latest version of the application code.
 
 	$ vagrant push
 	Uploaded hashicorp/example-application v2
 
-Wait for the new builds to finish, then just run `terraform push` in the directory with example-infrastructure.tf to deploy fully configured infrastructure running your application! Terraform will always deploy the latest version of the artifact unless you hardcode the version in the artifact resource block of the Terraform configuration.
+Wait for the new builds to finish, then just run `terraform push` in the directory with example-infrastructure.tf to deploy fully configured infrastructure running your application!
+
+	$ terraform push -name="ATLAS_USERNAME_HERE/example-environment"
+	Configuration "hashicorp/example-environment" uploaded! (v3)
+
+Terraform will always deploy the latest version of the artifact unless you hardcode the version in the artifact resource block of the Terraform configuration.
 
 	aws_elb.web:
 	  id = terraform-example-elb
@@ -94,7 +100,7 @@ Wait for the new builds to finish, then just run `terraform push` in the directo
 	  availability_zones.1 = us-east-1d
 	  dns_name = terraform-example-elb-1366230309.us-east-1.elb.amazonaws.co7
 
-Now when you go to the public_dns of the load balancer, you'll be able to interact with your application! It may take a minute or two for the instances to pass health checks and register with the load balancer. If you want to bring down your infrastructure, simply run `terraform destroy` and the instances will be terminated.
+Now when you go to the public\_dns of the load balancer, you'll be able to interact with your application! It may take a minute or two for the instances to pass health checks and register with the load balancer. If you want to bring down your infrastructure, simply run `terraform destroy` and the instances will be terminated.
 
 ## How to start transitioning your infrastructure to Atlas
 Now that we've completed the walkthrough, learn how to transition your own infrastructure and application delivery to Atlas!
