@@ -67,7 +67,7 @@ Open the file `example-infrastructure.tf` from the [example repo](https://github
 
 	    health_check {
 			healthy_threshold = 2
-			unhealthy_threshold = 1
+			unhealthy_threshold = 2
 			timeout = 5
 			target = "TCP:80"
 			interval = 10
@@ -194,22 +194,22 @@ The log output will be similar to what is copied below. We've truncated some of 
 
 	...
 
-	+ aws\_elb.web
+	+ aws_elb.web
 		availability_zones.#: "" => "<computed>"
 		connection_draining:  "" => "0"
 	    ...
 
-	+ aws\_instance.web.0
+	+ aws_instance.web.0
 		ami:               "" => "ami-408c7f28"
 		availability_zone: "" => "<computed>"
 	    ...
 
-	+ aws\_instance.web.1
+	+ aws_instance.web.1
 		ami:               "" => "ami-408c7f28"
 		availability_zone: "" => "<computed>"
 	    ...
 
-	+ aws\_security\_group.allow\_all
+	+ aws_security_group.allow_all
 		description: "" => "Allow all inbound traffic"
 		egress.#:    "" => "<computed>"
 

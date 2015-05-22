@@ -24,7 +24,7 @@ Now that we have an artifact stored in Atlas, we can reference it in the Terrafo
 	    type = "aws.ami"
 	}
 
-Now, let's combine the artifact with the [Terraform configuration written in the first step](/help/getting-started/layout-infrastructure) by referencing the Atlas artifact as the ami for our "aws_instance.web" resource. The complete Terraform configuration should now look as below.
+Now, let's combine the artifact with the [Terraform configuration written in the first step](/help/getting-started/layout-infrastructure) by referencing the Atlas artifact as the AMI for our "aws_instance.web" resource. The complete Terraform configuration should now look as below.
 
 	provider "atlas" {
 	    token = "ATLAS_TOKEN_HERE"
@@ -85,7 +85,7 @@ Now, let's combine the artifact with the [Terraform configuration written in the
 
 	    health_check {
 			healthy_threshold = 2
-			unhealthy_threshold = 1
+			unhealthy_threshold = 2
 			timeout = 5
 			target = "TCP:80"
 			interval = 10
@@ -99,7 +99,7 @@ Now, let's combine the artifact with the [Terraform configuration written in the
 
 Now, when you run the below `terraform push` command, it will reference the proper AMI stored in Atlas that is configured with Apache. Be sure to wait for your Packer build to finish!
 
-	$ `terraform push -name="ATLAS_USERNAME_HERE/example-environment`
+	$ terraform push -name="ATLAS_USERNAME_HERE/example-environment"
 	Configuration "hashicorp/example-environment" uploaded! (v2)
 
 ![Terraform Apply](/help-images/example-terraform-apply.png)
