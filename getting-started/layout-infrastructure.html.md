@@ -176,6 +176,7 @@ In order to communicate with Atlas, you must set an environment variable. You ca
 To save the infrastructure state in Atlas, setup a remote.
 
 	$ terraform remote config -backend-config="name=ATLAS_USERNAME_HERE/example-environment"
+	Remote state configured and pulled.
 
 Now when you run Terraform, the infrastructure state will be saved in Atlas. This keeps a versioned history of your infrastructure. If you get an error message, make sure the username you specify on the command line matches the username you created in Atlas. Usernames are case sensitive so be sure to match your username exactly.
 
@@ -271,7 +272,7 @@ since Terraform waits for the EC2 instance to become available.
 Done! You can go to the AWS console to prove to yourself that the
 EC2 instances have been created.
 
-You can view the history of infrastructure changes in the environments tab of your [Atlas dashboard](http://atlas.hashicorp.com/environments). Click the environment name, and then "Changes" in the left navigation. Below is an example screenshot:
+You can also view the history of infrastructure changes in the "Changes" tab of your [Atlas environment](http://atlas.hashicorp.com/environments). Below is an example screenshot:
 
 ![Terraform State Screenshot](/help-images/example-terraform-state.png)
 

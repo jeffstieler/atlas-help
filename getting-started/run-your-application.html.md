@@ -86,7 +86,7 @@ Now that your application is linked to the images, anytime you run `vagrant push
 	$ vagrant push
 	Uploaded hashicorp/example-application v2
 
-Wait for the new builds to finish, then just run `terraform push` in the directory with example-infrastructure.tf to deploy fully configured infrastructure running your application!
+Wait for the new build(s) to finish, then just run `terraform push` in the directory with example-infrastructure.tf to deploy fully configured infrastructure running your application!
 
 	$ terraform push -name="ATLAS_USERNAME_HERE/example-environment"
 	Configuration "hashicorp/example-environment" uploaded! (v3)
