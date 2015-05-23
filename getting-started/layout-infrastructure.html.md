@@ -13,71 +13,71 @@ The format of Terraform configuration files is
 
 Open the file `example-infrastructure.tf` from the [example repo](https://github.com/hashicorp/atlas-examples/blob/master/getting-started/ops/example-infrastructure.tf). The entire configuration is shown below. Verify that there are no other `*.tf` files in your directory, since Terraform loads all of them.
 
-	provider "atlas" {
-	    token = "ATLAS_TOKEN_HERE"
-	}
+    provider "atlas" {
+        token = "ATLAS_TOKEN_HERE"
+    }
 
-	provider "aws" {
-	    access_key = "ACCESS_KEY_HERE"
-	    secret_key = "SECRET_KEY_HERE"
-	    region = "us-east-1"
-	}
+    provider "aws" {
+        access_key = "ACCESS_KEY_HERE"
+        secret_key = "SECRET_KEY_HERE"
+        region = "us-east-1"
+    }
 
-	resource "aws_security_group" "allow_all" {
-		name = "allow_all"
-		description = "Allow all inbound traffic"
+    resource "aws_security_group" "allow_all" {
+        name = "allow_all"
+        description = "Allow all inbound traffic"
 
-		tags {
-			Name = "allow_all"
-		}
+        tags {
+            Name = "allow_all"
+        }
 
-		ingress {
-			from_port = 0
-			to_port = 0
-			protocol = "-1"
-			cidr_blocks = ["0.0.0.0/0"]
-		}
-	}
+        ingress {
+            from_port = 0
+            to_port = 0
+            protocol = "-1"
+            cidr_blocks = ["0.0.0.0/0"]
+        }
+    }
 
-	resource "aws_instance" "web" {
-	    instance_type = "t1.micro"
-		ami = "ami-408c7f28"
-	    security_groups = ["${aws_security_group.allow_all.name}"]
+    resource "aws_instance" "web" {
+        instance_type = "t1.micro"
+        ami = "ami-408c7f28"
+        security_groups = ["${aws_security_group.allow_all.name}"]
 
-		tags {
-			Name = "web_${count.index+1}"
-		}
+        tags {
+            Name = "web_${count.index+1}"
+        }
 
-	    # This will create 2 instances
-	    count = 2
-	}
+        # This will create 2 instances
+        count = 2
+    }
 
-	resource "aws_elb" "web" {
-	    name = "terraform-example-elb"
+    resource "aws_elb" "web" {
+        name = "terraform-example-elb"
 
-	    # The same availability zone as our instances
-	    availability_zones = ["${aws_instance.web.*.availability_zone}"]
+        # The same availability zone as our instances
+        availability_zones = ["${aws_instance.web.*.availability_zone}"]
 
-	    listener {
-	        instance_port = 80
-	        instance_protocol = "http"
-	        lb_port = 80
-	        lb_protocol = "http"
-	    }
+        listener {
+            instance_port = 80
+            instance_protocol = "http"
+            lb_port = 80
+            lb_protocol = "http"
+        }
 
-	    health_check {
-			healthy_threshold = 2
-			unhealthy_threshold = 2
-			timeout = 5
-			target = "TCP:80"
-			interval = 10
-	    }
+        health_check {
+            healthy_threshold = 2
+            unhealthy_threshold = 2
+            timeout = 5
+            target = "TCP:80"
+            interval = 10
+        }
 
-	    security_groups = ["${aws_security_group.allow_all.id}"]
+        security_groups = ["${aws_security_group.allow_all.id}"]
 
-	    # The instances are registered automatically
-	    instances = ["${aws_instance.web.*.id}"]
-	}
+        # The instances are registered automatically
+        instances = ["${aws_instance.web.*.id}"]
+    }
 
 If you haven't already, [create an Atlas account](http://atlas.hashicorp.com/account/new) and generate an Atlas token in your [account settings](https://atlas.hashicorp.com/settings/tokens). By creating an account, you can view the history of your infrastructure states, manage artifacts, and monitor your build and deploy process.
 
@@ -140,23 +140,23 @@ terminal session and checking that `terraform` is available. By executing
 `terraform` you should see help output similar to that below:
 
 
-	$ terraform
-	usage: terraform [--version] [--help] <command> [<args>]
+    $ terraform
+    usage: terraform [--version] [--help] <command> [<args>]
 
-	Available commands are:
-		apply      Builds or changes infrastructure
-		destroy    Destroy Terraform-managed infrastructure
-		get        Download and install modules for the configuration
-		graph      Create a visual graph of Terraform resources
-		init       Initializes Terraform configuration from a module
-		output     Read an output from a state file
-		plan       Generate and show an execution plan
-		push       Upload this Terraform module to Atlas to run
-		refresh    Update local state file against real resources
-		remote     Configure remote state storage
-		show       Inspect Terraform state or plan
-		taint      Manually mark a resource for recreation
-		version    Prints the Terraform version
+    Available commands are:
+        apply      Builds or changes infrastructure
+        destroy    Destroy Terraform-managed infrastructure
+        get        Download and install modules for the configuration
+        graph      Create a visual graph of Terraform resources
+        init       Initializes Terraform configuration from a module
+        output     Read an output from a state file
+        plan       Generate and show an execution plan
+        push       Upload this Terraform module to Atlas to run
+        refresh    Update local state file against real resources
+        remote     Configure remote state storage
+        show       Inspect Terraform state or plan
+        taint      Manually mark a resource for recreation
+        version    Prints the Terraform version
 
 
 If you get an error that `terraform` could not be found, then your PATH
@@ -169,14 +169,14 @@ Otherwise, Terraform is installed and ready to go!
 
 In order to communicate with Atlas, you must set an environment variable. You can find your Atlas token in the [account page](/settings/tokens). Then save your Atlas token as an environment variable in your `.bashrc` file. Once it's saved, open a new terminal session.
 
-	export ATLAS_TOKEN=ATLAS_TOKEN_HERE
+    export ATLAS_TOKEN=ATLAS_TOKEN_HERE
 
 ## Link Terraform to Atlas
 
 To save the infrastructure state in Atlas, setup a remote.
 
-	$ terraform remote config -backend-config="name=ATLAS_USERNAME_HERE/example-environment"
-	Remote state configured and pulled.
+    $ terraform remote config -backend-config="name=ATLAS_USERNAME_HERE/example-environment"
+    Remote state configured and pulled.
 
 Now when you run Terraform, the infrastructure state will be saved in Atlas. This keeps a versioned history of your infrastructure. If you get an error message, make sure the username you specify on the command line matches the username you created in Atlas. Usernames are case sensitive so be sure to match your username exactly.
 
@@ -185,34 +185,34 @@ Now when you run Terraform, the infrastructure state will be saved in Atlas. Thi
 Next, let's see what Terraform would do when asked to apply this configuration. In the same directory as the
 `example-infrastructure.tf` file, run the below command. If you cloned the [example repo](https://github.com/hashicorp/atlas-examples/tree/master/getting-started), you should run this command in the [ops directory](https://github.com/hashicorp/atlas-examples/tree/master/getting-started/ops).
 
-	$ terraform push -name="ATLAS_USERNAME_HERE/example-environment"
-	Configuration "hashicorp/example-environment" uploaded! (v1)
+    $ terraform push -name="ATLAS_USERNAME_HERE/example-environment"
+    Configuration "hashicorp/example-environment" uploaded! (v1)
 
 This will automatically trigger a [`terraform plan`](https://www.terraform.io/docs/commands/plan.html), which you can
 review by clicking on your environment name in the [Atlas Environments tab](https://atlas.hashicorp.com/environments), then "Changes" in the left navigation.
 
 The log output will be similar to what is copied below. We've truncated some of the output to save space.
 
-	...
+    ...
 
-	+ aws_elb.web
-		availability_zones.#: "" => "<computed>"
-		connection_draining:  "" => "0"
-	    ...
+    + aws_elb.web
+        availability_zones.#: "" => "<computed>"
+        connection_draining:  "" => "0"
+        ...
 
-	+ aws_instance.web.0
-		ami:               "" => "ami-408c7f28"
-		availability_zone: "" => "<computed>"
-	    ...
+    + aws_instance.web.0
+        ami:               "" => "ami-408c7f28"
+        availability_zone: "" => "<computed>"
+        ...
 
-	+ aws_instance.web.1
-		ami:               "" => "ami-408c7f28"
-		availability_zone: "" => "<computed>"
-	    ...
+    + aws_instance.web.1
+        ami:               "" => "ami-408c7f28"
+        availability_zone: "" => "<computed>"
+        ...
 
-	+ aws_security_group.allow_all
-		description: "" => "Allow all inbound traffic"
-		egress.#:    "" => "<computed>"
+    + aws_security_group.allow_all
+        description: "" => "Allow all inbound traffic"
+        egress.#:    "" => "<computed>"
 
 `terraform plan` shows what changes Terraform will apply to
 your infrastructure given the current state of your infrastructure
@@ -239,40 +239,40 @@ create real resources. You can execute changes by clicking "Confirm & Apply"
 in the Atlas UI. The apply process will take a few minutes
 since Terraform waits for the EC2 instance to become available.
 
-	aws_security_group.allow_all: Creating...
-	  description: "" => "Allow all inbound traffic"
-	  egress.#     "" => "<computed>"
-	  ...
+    aws_security_group.allow_all: Creating...
+      description: "" => "Allow all inbound traffic"
+      egress.#     "" => "<computed>"
+      ...
 
-	aws_security_group.allow_all: Creation complete
+    aws_security_group.allow_all: Creation complete
 
-	aws_instance.web.0: Creating...
+    aws_instance.web.0: Creating...
       ami:               "" => "ami-408c7f28"
-	  availability_zone: "" => "<computed>"
-	  ...
+      availability_zone: "" => "<computed>"
+      ...
 
-	aws_instance.web.0: Creating...
+    aws_instance.web.0: Creating...
       ami:               "" => "ami-408c7f28"
-	  availability_zone: "" => "<computed>"
-	  ...
+      availability_zone: "" => "<computed>"
+      ...
 
-	aws_instance.web.1: Creation complete
-	aws_instance.web.0: Creation complete
+    aws_instance.web.1: Creation complete
+    aws_instance.web.0: Creation complete
 
-	aws_elb.web: Creating...
-	  availability_zones.#: "" => "1"
-	  ...
+    aws_elb.web: Creating...
+      availability_zones.#: "" => "1"
+      ...
 
-	aws_elb.web: Creation complete
+    aws_elb.web: Creation complete
 
-	Apply complete! Resources: 4 added, 0 changed, 0 destroyed.
+    Apply complete! Resources: 4 added, 0 changed, 0 destroyed.
 
-	...
+    ...
 
 Done! You can go to the AWS console to prove to yourself that the
 EC2 instances have been created.
 
-You can also view the history of infrastructure changes in the "Changes" tab of your [Atlas environment](http://atlas.hashicorp.com/environments). Below is an example screenshot:
+You also view the history of infrastructure changes in the "Changes" tab of your [Atlas environment](http://atlas.hashicorp.com/environments). Below is an example screenshot:
 
 ![Terraform State Screenshot](/help-images/example-terraform-state.png)
 
