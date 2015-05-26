@@ -15,41 +15,41 @@ A Packer template defines what software is installed on the machine image.
 The file `ops/example-template.json` from the [example repo](https://github.com/hashicorp/atlas-examples/blob/master/getting-started/ops/example-template.json) is a Packer template that creates an AMI for a web server with Apache installed:
 
     {
-        "builders": [
-            {
-                "type": "amazon-ebs",
-                "access_key": "ACCESS_KEY_HERE",
-                "secret_key": "SECRET_KEY_HERE",
-                "region": "us-east-1",
-                "source_ami": "ami-de0d9eb7",
-                "instance_type": "t1.micro",
-                "ssh_username": "ubuntu",
-                "ami_name": "atlas-example {{timestamp}}"
-            }
-        ],
-        "push": {
-          "name": "ATLAS_USERNAME_HERE/example-build-configuration"
-        },
-        "provisioners": [
-            {
-                "type": "shell",
-                "inline": [
-                    "sleep 30",
-                    "sudo apt-get update",
-                    "sudo apt-get install apache2 -y"
-                ]
-            }
-        ],
-        "post-processors": [
-            {
-                "type": "atlas",
-                "artifact": "ATLAS_USERNAME_HERE/example-artifact",
-                "artifact_type": "aws.ami",
-                "metadata": {
-                    "created_at": "{{timestamp}}"
-                }
-            }
-        ]
+      "builders": [
+        {
+          "type": "amazon-ebs",
+          "access_key": "ACCESS_KEY_HERE",
+          "secret_key": "SECRET_KEY_HERE",
+          "region": "us-east-1",
+          "source_ami": "ami-de0d9eb7",
+          "instance_type": "t1.micro",
+          "ssh_username": "ubuntu",
+          "ami_name": "atlas-example {{timestamp}}"
+        }
+      ],
+      "push": {
+        "name": "ATLAS_USERNAME_HERE/example-build-configuration"
+      },
+      "provisioners": [
+        {
+          "type": "shell",
+          "inline": [
+            "sleep 30",
+            "sudo apt-get update",
+            "sudo apt-get install apache2 -y"
+          ]
+        }
+      ],
+      "post-processors": [
+        {
+          "type": "atlas",
+          "artifact": "ATLAS_USERNAME_HERE/example-artifact",
+          "artifact_type": "aws.ami",
+          "metadata": {
+            "created_at": "{{timestamp}}"
+          }
+        }
+      ]
     }
 
 If you haven't already, create an AWS account to complete the walkthrough. For the example, we'll use a "t1.micro" instance to build our image, which qualifies under the AWS free-tier, meaning it will be free. If you already have an AWS account, you may be charged some amount of money, but it shouldn't be more than a few cents.
@@ -63,16 +63,16 @@ to keep your secret keys out of the template. If you haven't already, [create an
 ## Builders
 
     "builders": [
-        {
-            "type": "amazon-ebs",
-            "access_key": "ACCESS_KEY_HERE",
-            "secret_key": "SECRET_KEY_HERE",
-            "region": "us-east-1",
-            "source_ami": "ami-de0d9eb7",
-            "instance_type": "t1.micro",
-            "ssh_username": "ubuntu",
-            "ami_name": "atlas-example {{timestamp}}"
-        }
+      {
+        "type": "amazon-ebs",
+        "access_key": "ACCESS_KEY_HERE",
+        "secret_key": "SECRET_KEY_HERE",
+        "region": "us-east-1",
+        "source_ami": "ami-de0d9eb7",
+        "instance_type": "t1.micro",
+        "ssh_username": "ubuntu",
+        "ami_name": "atlas-example {{timestamp}}"
+      }
     ]
 
 The `builders` section contains an array of JSON objects configuring a specific _builder_. A
@@ -92,7 +92,7 @@ specific to each builder and can be found within the [documentation](https://pac
 ## Push
 
     "push": {
-        "name": "ATLAS_USERNAME_HERE/example-build-configuration"
+      "name": "ATLAS_USERNAME_HERE/example-build-configuration"
     }
 
 The `push` section is a dictionary with your build configuration name and Atlas access token. For the name, be sure to replace username with your case-sensitive username. If the build configuration doesn't exist in Atlas, it will be created.
@@ -100,14 +100,14 @@ The `push` section is a dictionary with your build configuration name and Atlas 
 ## Provisioners
 
     "provisioners": [
-        {
-            "type": "shell",
-            "inline": [
-                "sleep 30",
-                "sudo apt-get update",
-                "sudo apt-get install apache2 -y"
-            ]
-        }
+      {
+        "type": "shell",
+        "inline": [
+          "sleep 30",
+          "sudo apt-get update",
+          "sudo apt-get install apache2 -y"
+        ]
+      }
     ]
 
 The provisioners section
@@ -130,14 +130,14 @@ case, we specify inline commands to run in order to install Apache.
 ## Managing the image with post-processors
 
     "post-processors": [
-        {
-            "type": "atlas",
-            "artifact": "ATLAS_USERNAME_HERE/example-artifact",
-            "artifact_type": "aws.ami",
-            "metadata": {
-                "created_at": "{{timestamp}}"
-            }
+      {
+        "type": "atlas",
+        "artifact": "ATLAS_USERNAME_HERE/example-artifact",
+        "artifact_type": "aws.ami",
+        "metadata": {
+          "created_at": "{{timestamp}}"
         }
+      }
     ]
 
 Packer builds images and then uses a `post-processor` to store them in Atlas. Just supply your Atlas token in the Packer template and the images will be automatically stored in Atlas for you to manage and deploy. The field `artifact` defines the name that you will later reference to deploy the artifact. Be sure to properly input your case-sensitive username.

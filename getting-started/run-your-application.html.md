@@ -30,47 +30,47 @@ To link your application code to the Packer-made images created in the previous 
 Now that the application is stored in Atlas, we can reference the data in the build configuration. Your build configuration should now look as below:
 
     {
-        "builders": [
-            {
-                "type": "amazon-ebs",
-                "access_key": "ACCESS_KEY_HERE",
-                "secret_key": "SECRET_KEY_HERE",
-                "region": "us-east-1",
-                "source_ami": "ami-de0d9eb7",
-                "instance_type": "t1.micro",
-                "ssh_username": "ubuntu",
-                "ami_name": "atlas-example {{timestamp}}"
-            }
-        ],
-        "push": {
-            "name": "ATLAS_USERNAME_HERE/example-build-configuration"
+      "builders": [
+        {
+          "type": "amazon-ebs",
+          "access_key": "ACCESS_KEY_HERE",
+          "secret_key": "SECRET_KEY_HERE",
+          "region": "us-east-1",
+          "source_ami": "ami-de0d9eb7",
+          "instance_type": "t1.micro",
+          "ssh_username": "ubuntu",
+          "ami_name": "atlas-example {{timestamp}}"
+        }
+      ],
+      "push": {
+        "name": "ATLAS_USERNAME_HERE/example-build-configuration"
+      },
+      "provisioners": [
+        {
+          "type": "file",
+          "source": "/packer/app",
+          "destination": "/tmp"
         },
-        "provisioners": [
-            {
-                "type": "file",
-                "source": "/packer/app",
-                "destination": "/tmp"
-            },
-            {
-                "type": "shell",
-                "inline": [
-                    "sleep 30",
-                    "sudo apt-get update",
-                    "sudo apt-get install apache2 -y",
-                    "sudo mv /tmp/app/* /var/www/"
-                ]
-            }
-        ],
-        "post-processors": [
-            {
-                "type": "atlas",
-                "artifact": "ATLAS_USERNAME_HERE/example-artifact",
-                "artifact_type": "aws.ami",
-                "metadata": {
-                    "created_at": "{{timestamp}}"
-                }
-            }
-        ]
+        {
+          "type": "shell",
+          "inline": [
+            "sleep 30",
+            "sudo apt-get update",
+            "sudo apt-get install apache2 -y",
+            "sudo mv /tmp/app/* /var/www/"
+          ]
+        }
+      ],
+      "post-processors": [
+        {
+          "type": "atlas",
+          "artifact": "ATLAS_USERNAME_HERE/example-artifact",
+          "artifact_type": "aws.ami",
+          "metadata": {
+            "created_at": "{{timestamp}}"
+          }
+        }
+      ]
     }
 
 The new `file` provisioner takes the application code stored in Atlas and packages it with the artifact output of the build configuration. In the `shell` provisioner the line `sudo mv /tmp/app/* /var/www/` was added to move the application code to Apache's web root. Now run `packer push` in the directory with example-template.json to rebuild the artifacts with your application code merged in.

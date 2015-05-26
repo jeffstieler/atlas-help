@@ -14,69 +14,69 @@ The format of Terraform configuration files is
 Open the file `example-infrastructure.tf` from the [example repo](https://github.com/hashicorp/atlas-examples/blob/master/getting-started/ops/example-infrastructure.tf). The entire configuration is shown below. Verify that there are no other `*.tf` files in your directory, since Terraform loads all of them.
 
     provider "atlas" {
-        token = "ATLAS_TOKEN_HERE"
+      token = "ATLAS_TOKEN_HERE"
     }
 
     provider "aws" {
-        access_key = "ACCESS_KEY_HERE"
-        secret_key = "SECRET_KEY_HERE"
-        region = "us-east-1"
+      access_key = "ACCESS_KEY_HERE"
+      secret_key = "SECRET_KEY_HERE"
+      region = "us-east-1"
     }
 
     resource "aws_security_group" "allow_all" {
-        name = "allow_all"
-        description = "Allow all inbound traffic"
+      name = "allow_all"
+      description = "Allow all inbound traffic"
 
-        tags {
-            Name = "allow_all"
-        }
+      tags {
+        Name = "allow_all"
+      }
 
-        ingress {
-            from_port = 0
-            to_port = 0
-            protocol = "-1"
-            cidr_blocks = ["0.0.0.0/0"]
-        }
+      ingress {
+        from_port = 0
+        to_port = 0
+        protocol = "-1"
+        cidr_blocks = ["0.0.0.0/0"]
+      }
     }
 
     resource "aws_instance" "web" {
-        instance_type = "t1.micro"
-        ami = "ami-408c7f28"
-        security_groups = ["${aws_security_group.allow_all.name}"]
+      instance_type = "t1.micro"
+      ami = "ami-408c7f28"
+      security_groups = ["${aws_security_group.allow_all.name}"]
 
-        tags {
-            Name = "web_${count.index+1}"
-        }
+      tags {
+        Name = "web_${count.index+1}"
+      }
 
-        # This will create 2 instances
-        count = 2
+      # This will create 2 instances
+      count = 2
     }
 
     resource "aws_elb" "web" {
-        name = "terraform-example-elb"
+      name = "terraform-example-elb"
 
-        # The same availability zone as our instances
-        availability_zones = ["${aws_instance.web.*.availability_zone}"]
+      # The same availability zone as our instances
+      availability_zones = ["${aws_instance.web.*.availability_zone}"]
 
-        listener {
-            instance_port = 80
-            instance_protocol = "http"
-            lb_port = 80
-            lb_protocol = "http"
-        }
+      listener {
+        instance_port = 80
+        instance_protocol = "http"
+        lb_port = 80
+        lb_protocol = "http"
+      }
 
-        health_check {
-            healthy_threshold = 2
-            unhealthy_threshold = 2
-            timeout = 5
-            target = "TCP:80"
-            interval = 10
-        }
+      health_check {
+        healthy_threshold = 2
+        unhealthy_threshold = 2
+        timeout = 5
+        target = "TCP:80"
+        interval = 10
+      }
 
-        security_groups = ["${aws_security_group.allow_all.id}"]
+      security_groups = ["${aws_security_group.allow_all.id}"]
 
-        # The instances are registered automatically
-        instances = ["${aws_instance.web.*.id}"]
+      # The instances are registered automatically
+      instances = ["${aws_instance.web.*.id}"]
     }
 
 If you haven't already, [create an Atlas account](http://atlas.hashicorp.com/account/new) and generate an Atlas token in your [account settings](https://atlas.hashicorp.com/settings/tokens). By creating an account, you can view the history of your infrastructure states, manage artifacts, and monitor your build and deploy process.
@@ -101,7 +101,7 @@ as an EC2 instance, or it can be a logical resource such as
 a Heroku application.
 
 The resource block has two strings before opening the block:
-the resource type and the resource name. In our example, we have one resource type "aws_elb" and the name is "web". The second resource type is "aws\_instance" and the name is "web".
+the resource type and the resource name. In our example, we have one resource type "aws\_elb" and the name is "web". The second resource type is "aws\_instance" and the name is "web".
 The prefix of the type maps to the provider. In our case
 "aws\_instance" automatically tells Terraform that it is
 managed by the "aws" provider.
