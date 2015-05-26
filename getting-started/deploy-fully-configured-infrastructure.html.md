@@ -97,7 +97,7 @@ Now, let's combine the artifact with the [Terraform configuration written in the
         instances = ["${aws_instance.web.*.id}"]
     }
 
-Notice the `aws_instance` resource now references the artifact stored in Atlas. Now, when you run the below `terraform push` command, it will reference the proper AMI stored in Atlas that is configured with Apache. Be sure to wait for your Packer build to finish!
+Now, when you run the below `terraform push` command, it will reference the proper AMI stored in Atlas that is configured with Apache. Be sure to wait for your Packer build to finish!
 
     $ terraform push -name="ATLAS_USERNAME_HERE/example-environment"
     Configuration "hashicorp/example-environment" uploaded! (v2)
