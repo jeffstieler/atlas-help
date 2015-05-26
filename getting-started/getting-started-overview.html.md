@@ -27,12 +27,12 @@ This walkthrough will show a simple example of deploying an application and conf
 
 To get started, create a directory named "atlas-example" with the below folders and files. You can also [clone our example repo here](https://github.com/hashicorp/atlas-examples).
 
-	atlas-example
-	|-- ops
-		|-- example-infrastructure.tf
-		|-- example-template.json
-	|-- app
-		|-- index.html
-		|-- Vagrantfile
+    atlas-example
+    |-- ops
+        |-- example-infrastructure.tf
+        |-- example-template.json
+    |-- app
+        |-- index.html
+        |-- Vagrantfile
 
 The ops folder contains all the configurations to deploy your application, and the app folder contains the application code and Vagrantfile which pushes the application code to Atlas. Each file and step will be explained in detail, starting with laying out and deploying infrastucture with Terraform.
