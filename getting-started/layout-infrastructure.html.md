@@ -173,7 +173,7 @@ In order to communicate with Atlas, you must set an environment variable. You ca
 
 ## Link Terraform to Atlas
 
-To save the infrastructure state in Atlas, setup a remote.
+To save the infrastructure state in Atlas, setup a remote by running the below command in the same directory as the `example-infrastructure.tf` file. If you cloned the [example repo](https://github.com/hashicorp/atlas-examples/tree/master/getting-started), all Terraform and Packer commands should be run in the [ops directory](https://github.com/hashicorp/atlas-examples/tree/master/getting-started/ops).
 
     $ terraform remote config -backend-config="name=ATLAS_USERNAME_HERE/example-environment"
     Remote state configured and pulled.
@@ -182,8 +182,7 @@ Now when you run Terraform, the infrastructure state will be saved in Atlas. Thi
 
 ## Execution Plan
 
-Next, let's see what Terraform would do when asked to apply this configuration. In the same directory as the
-`example-infrastructure.tf` file, run the below command. If you cloned the [example repo](https://github.com/hashicorp/atlas-examples/tree/master/getting-started), you should run this command in the [ops directory](https://github.com/hashicorp/atlas-examples/tree/master/getting-started/ops).
+Next, let's see what Terraform would do when asked to apply this configuration. In the same directory as the `example-infrastructure.tf` file, run the below command.
 
     $ terraform push -name="ATLAS_USERNAME_HERE/example-environment"
     Configuration "hashicorp/example-environment" uploaded! (v1)
