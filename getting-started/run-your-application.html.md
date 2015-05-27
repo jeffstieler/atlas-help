@@ -9,7 +9,7 @@ next: "getting-started/transition-to-atlas"
 [Vagrant](https://vagrantup.com) is a cross-platform tool to create and configure lightweight, reproducible, and portable development environments. The template to configure these environments is called a [Vagrantfile](https://docs.vagrantup.com/v2/vagrantfile/index.html). This tutorial will cover one aspect of a Vagrantfile, specifically the `push` config. A Vagrantfile should already be in your [cloned "getting started" directory](https://github.com/hashicorp/atlas-examples/blob/master/getting-started/app/Vagrantfile). If not, simply run `vagrant init` in the `app` folder and one will be generated.
 
 ## Vagrant push
-Vagrant is capable of pushing application code in the same directory as your Vagrantfile to a remote such as HashiCorp's Atlas or an FTP server.
+Vagrant is capable of pushing application code in the same directory as your [Vagrantfile](https://github.com/hashicorp/atlas-examples/blob/master/getting-started/app/Vagrantfile) to a remote such as HashiCorp's Atlas or an FTP server.
 
     config.push.define "atlas" do |push|
       push.app = "ATLAS_USERNAME_HERE/example-application"
@@ -17,7 +17,7 @@ Vagrant is capable of pushing application code in the same directory as your Vag
 
 The `app` configuration option is the name of the application in Atlas. If the application does not exist, it will be created with user confirmation. Make sure the push configuration in your Vagrantfile matches the example above, with your username properly filled in.
 
-In the same directory as the Vagrantfile, update the index.html file with body "Hello, World". Now run `vagrant push` in that directory, and the application code will be packaged and sent to Atlas. If you get the error `No VCS found for path`, make sure the directory has git initiated with `git init` and make one commit.
+In the same directory as the [Vagrantfile](https://github.com/hashicorp/atlas-examples/blob/master/getting-started/app/Vagrantfile), update the index.html file with body "Hello, World". Now run `vagrant push` in that directory, and the application code will be packaged and sent to Atlas. If you get the error `No VCS found for path`, make sure the directory has git initiated with `git init` and make one commit.
 
     $ vagrant push
     Uploaded hashicorp/example-application v1
@@ -73,7 +73,7 @@ Now that the application is stored in Atlas, we can reference the data in the bu
       ]
     }
 
-The new `file` provisioner takes the application code stored in Atlas and packages it with the artifact output of the build configuration. In the `shell` provisioner the line `sudo mv /tmp/app/* /var/www/` was added to move the application code to Apache's web root. Now run `packer push` in the directory with example-template.json to rebuild the artifacts with your application code merged in.
+The new `file` provisioner takes the application code stored in Atlas and packages it with the artifact output of the build configuration. In the `shell` provisioner, the line `sudo mv /tmp/app/* /var/www/` was added to move the application code to Apache's web root. Now, in the same directory as the `example-template.json` file, run the below `packer push` command to rebuild the artifacts with your application code merged in.
 
     $ packer push example-template.json
     Push successful to 'hashicorp/example-build-configuration'
@@ -86,7 +86,7 @@ Now that your application is linked to the images, anytime you run `vagrant push
     $ vagrant push
     Uploaded hashicorp/example-application v2
 
-Wait for the new build(s) to finish, then just run `terraform push` in the directory with example-infrastructure.tf to deploy fully configured infrastructure running your application!
+Wait for the new build(s) to finish, then in the same directory as the `example-infrastructure.tf` file, run the below `terraform push` command to deploy fully configured infrastructure running your application!
 
     $ terraform push -name="ATLAS_USERNAME_HERE/example-environment"
     Configuration "hashicorp/example-environment" uploaded! (v3)

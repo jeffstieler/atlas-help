@@ -185,7 +185,7 @@ Otherwise, Packer is installed and you're ready to go!
 
 ## Push to Atlas
 
-It is time to build your first image. This is done by calling `packer push` with the template file.
+It is time to build your first image. In the same directory as the `example-template.json` file, run the below command.
 
     $ packer push -create example-template.json
 
