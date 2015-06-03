@@ -1,13 +1,20 @@
 <ul class="help-nav-list">
-    <li class="expandable <%= "active" if help_active?("getting-started") %>">
-        <h4><%= help_link "Getting Started Tutorial", "getting-started/getting-started-overview" %></h4>
+    <li class="expandable <%= "active" if active?("/help") %>">
+        <h4><%= link_to "Overview", "/help" %></h4>
         <ul>
-            <li><%= help_link "Overview: Launching an application on 2-tier AWS infrastructure", "getting-started/getting-started-overview" %></li>
-            <li><%= help_link "Step 1: Layout and deploy infrastructure with Terraform", "getting-started/layout-infrastructure" %></li>
-            <li><%= help_link "Step 2: Package services with artifacts using Packer", "getting-started/package-services-with-artifacts" %></li>
-            <li><%= help_link "Step 3: Deploy fully configured infrastructure", "getting-started/deploy-fully-configured-infrastructure" %></li>
-            <li><%= help_link "Step 4: Run your application on infrastructure", "getting-started/run-your-application" %></li>
-            <li><%= help_link "How to start transitioning your stack to Atlas", "getting-started/transition-to-atlas" %></li>
+            <li>
+                <a href="/help" class="<%= "active" if request.path == "/help" %>">Atlas Help</a>
+            </li>
+            <li><%= help_link "Learning About Atlas", "overview/learning-about-atlas" %></li>
+        </ul>
+    </li>
+    <li class="expandable <%= "active" if help_active?("features") %>">
+        <h4><%= help_link "Features", "features/list" %></h4>
+        <ul>
+            <li><%= help_link "Complete List", "features/list" %></li>
+            <li><%= help_link "Vagrant", "features/vagrant" %></li>
+            <li><%= help_link "Packer", "features/packer" %></li>
+            <li><%= help_link "Terraform", "features/terraform" %></li>
         </ul>
     </li>
 
