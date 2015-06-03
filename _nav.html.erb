@@ -1,7 +1,6 @@
-<ul class="docs-nav-list">
-
-    <li class="<%= "active" if help_active?("getting-started") %>">
-        <h3 class="h4"><%= help_link "Getting Started Tutorial", "getting-started/getting-started-overview" %></h3>
+<ul class="help-nav-list">
+    <li class="expandable <%= "active" if help_active?("getting-started") %>">
+        <h4><%= help_link "Getting Started Tutorial", "getting-started/getting-started-overview" %></h4>
         <ul>
             <li><%= help_link "Overview: Launching an application on 2-tier AWS infrastructure", "getting-started/getting-started-overview" %></li>
             <li><%= help_link "Step 1: Layout and deploy infrastructure with Terraform", "getting-started/layout-infrastructure" %></li>
@@ -12,8 +11,8 @@
         </ul>
     </li>
 
-    <li class="<%= "active" if help_active?("video-walkthroughs") %>">
-        <h3 class="h4"><%= help_link "Video Walkthroughs", "video-walkthroughs/build-images" %></h3>
+    <li class="expandable <%= "active" if help_active?("video-walkthroughs") %>">
+        <h4><%= help_link "Video Walkthroughs", "video-walkthroughs/build-images" %></h4>
         <ul>
             <li><%= help_link "How to build images", "video-walkthroughs/build-images" %></li>
             <li><%= help_link "How to configure infrastructure", "video-walkthroughs/configure-infrastructure" %></li>
@@ -21,8 +20,8 @@
         </ul>
     </li>
 
-    <li class="<%= "active" if help_active?("use-cases") %>">
-        <h3 class="h4"><%= help_link "Use Cases", "use-cases/adopt-devops" %></h3>
+    <li class="expandable <%= "active" if help_active?("use-cases") %>">
+        <h4><%= help_link "Use Cases", "use-cases/adopt-devops" %></h4>
         <ul>
             <li><%= help_link "Adopt DevOps in your organization", "use-cases/adopt-devops" %></li>
             <li><%= help_link "Migrate your infrastructure to the cloud", "use-cases/migrate-to-cloud" %></li>
@@ -32,8 +31,8 @@
         </ul>
     </li>
 
-    <li class="<%= "active" if help_active?("comparison") %>">
-        <h3 id="comparison" class="h4"><%= help_link "Atlas vs Other Software", "comparison/paas" %></h3>
+    <li class="expandable <%= "active" if help_active?("comparison") %>">
+        <h4 id="comparison"><%= help_link "Atlas vs Other Software", "comparison/paas" %></h4>
         <ul>
             <li><%= help_link "Platform-as-a-Service (PaaS) - Heroku, CloudFoundry, etc", "comparison/paas" %></li>
             <li><%= help_link "Public Cloud - AWS, GCE, Rackspace, etc", "comparison/public-cloud" %></li>
@@ -43,8 +42,8 @@
         </ul>
     </li>
 
-    <li class="<%= "active" if help_active?("guides") %>">
-        <h3 id="guides" class="h4"><%= help_link "Guides: How to use Atlas with your existing services", "guides/vagrant-box-create-and-distribute" %></h3>
+    <li class="expandable <%= "active" if help_active?("guides") %>">
+        <h4 id="guides"><%= help_link "Guides: How to use Atlas with your existing services", "guides/vagrant-box-create-and-distribute" %></h4>
         <ul>
             <li><%= help_link "Using Atlas to store and distribute Vagrant boxes", "guides/vagrant-box-create-and-distribute" %></li>
             <li><%= help_link "Using Atlas with continuous integration", "guides/continuous-integration" %></li>
@@ -55,15 +54,15 @@
         </ul>
     </li>
 
-    <li class="<%= "active" if help_active?("FAQ") %>">
-        <h3 class="h4"><%= help_link "FAQ", "FAQ/packer" %></h3>
+    <li class="expandable <%= "active" if help_active?("FAQ") %>">
+        <h4><%= help_link "FAQ", "FAQ/packer" %></h4>
         <ul>
             <li><%= help_link "Packer, Build Configurations, and Artifacts", "FAQ/packer" %></li>
         </ul>
     </li>
 
-    <li class="<%= "active" if help_active?("documentation") %>">
-        <h3 class="h4"><%= help_link "Documentation", "documentation/applications-and-dev-environments" %></h3>
+    <li class="expandable <%= "active" if help_active?("documentation") %>">
+        <h4><%= help_link "Documentation", "documentation/applications-and-dev-environments" %></h4>
         <ul>
             <li><%= help_link "Applications and Development Environments", "documentation/applications-and-dev-environments" %></li>
             <li><%= help_link "Build Configurations", "documentation/build-configurations" %></li>
@@ -71,8 +70,8 @@
         </ul>
     </li>
 
-    <li class="<%= "active" if help_active?("account-management") %>">
-        <h3 class="h4"><%= help_link "Account Management", "account-management/vagrant-1-7" %></h3>
+    <li class="expandable <%= "active" if help_active?("account-management") %>">
+        <h4><%= help_link "Account Management", "account-management/vagrant-1-7" %></h4>
         <ul>
             <li><%= help_link "Installing Vagrant 1.7", "account-management/vagrant-1-7" %></li>
             <li><%= help_link "Command-line Login", "account-management/command-line-login" %></li>
