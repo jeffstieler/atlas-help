@@ -9,9 +9,9 @@ to learn about it in detail.
 Vagrant features:
 
 - [Vagrant share](/help/vagrant/shares)
-- [Vagrant box versioning](/help/vagrant/boxes/versioning)
+- [Vagrant box versioning](/help/vagrant/boxes/lifecycle)
 - [Vagrant box catalog](/help/vagrant/boxes/catalog)
-- [Vagrant box creation](/help/vagrant/boxes/vagrant-box-create-and-distribute)
+- [Vagrant box creation](/help/vagrant/boxes/create)
 
 Packer features:
 

@@ -11,3 +11,6 @@ Vagrant is the defacto way to create and configure lightweight, reproducible, an
 environments. It supports providers like Virtualbox, VMware, Hyper-V, Docker and others.
 
 - [Vagrant Share](/help/vagrant/shares)
+- [Vagrant box versioning](/help/vagrant/boxes/versioning)
+- [Vagrant box catalog](/help/vagrant/boxes/catalog)
+- [Vagrant box creation](/help/vagrant/boxes/vagrant-box-create-and-distribute)

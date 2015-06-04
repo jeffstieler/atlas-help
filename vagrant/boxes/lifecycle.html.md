@@ -9,11 +9,9 @@ push fixes and communicate these fixes efficiently.
 
 There are multiple components of a box:
 
-* The box itself, comprised of the box name and description.
-
-* One or more box versions.
-
-* One or more providers for each box version.
+- The box itself, comprised of the box name and description.
+- One or more box versions.
+- One or more providers for each box version.
 
 ## Box Version Release States
 
