@@ -1,9 +1,8 @@
-<h1>Vagrant <small>Help, Guides and reference material</small></h1>
-<p>These are guides to help you use and understand Atlas features.
-    If you can't find what you're looking for or have a
-    suggestion for content improvements please email <a href="mailto:support@hashicorp.com">support@hashicorp.com</a>.</p>
+---
+title: "Vagrant in Atlas"
+---
 
-<hr>
+# Vagrant in Atlas
 
 <h3>Boxes</h3>
 <ul>

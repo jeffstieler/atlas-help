@@ -1,22 +1,29 @@
 <ul class="help-nav-list">
-    <li class="expandable <%= "active" if active?("/help") %>">
+    <li class="expandable <%= "active" if request.path == "/help" || help_active?("overview") %>">
         <h4><%= link_to "Overview", "/help" %></h4>
         <ul>
             <li>
-                <a href="/help" class="<%= "active" if request.path == "/help" %>">Atlas Help</a>
+                <a href="/help" class="<%= "active" if request.path == "/help" %>">About</a>
             </li>
             <li><%= help_link "Learning About Atlas", "overview/learning-about-atlas" %></li>
+            <li><%= help_link "Features List", "overview/features-list" %></li>
+            <li><%= help_link "Updating Tools", "overview/updating-tools" %></li>
         </ul>
     </li>
-    <li class="expandable <%= "active" if help_active?("features") %>">
-        <h4><%= help_link "Features", "features/list" %></h4>
+
+    <li class="expandable <%= "active" if help_active?("vagrant") %>">
+        <h4><%= help_link "Vagrant", "vagrant/features" %></h4>
         <ul>
-            <li><%= help_link "Complete List", "features/list" %></li>
-            <li><%= help_link "Vagrant", "features/vagrant" %></li>
-            <li><%= help_link "Packer", "features/packer" %></li>
-            <li><%= help_link "Terraform", "features/terraform" %></li>
+            <li><%= help_link "Features List", "vagrant/features" %></li>
+            <li class="expandable <%= "active" if help_active?("vagrant/shares") %>" >
+                <div class="embedded-title"><%= help_link "Shares", "vagrant/shares" %></div>
+                <ul>
+                    <li><%= help_link "Creating Shares", "vagrant/shares/create" %></li>
+                </ul>
+            </li>
         </ul>
     </li>
+
 
     <li class="expandable <%= "active" if help_active?("video-walkthroughs") %>">
         <h4><%= help_link "Video Walkthroughs", "video-walkthroughs/build-images" %></h4>

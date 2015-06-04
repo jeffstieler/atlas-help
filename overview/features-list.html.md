@@ -1,17 +1,17 @@
 ---
-title: "Complete Atlas Features List"
+title: "Atlas Features List"
 ---
-# Complete Atlas Features List
+# Atlas Features List
 
 This is a complete list of everything Atlas does. Select a feature
 to learn about it in detail.
 
 Vagrant features:
 
-- [Vagrant environment sharing]()
-- [Vagrant box hosting and versioning]()
-- [Vagrant box catalog]()
-- [Vagrant box creation]()
+- [Vagrant share](/help/vagrant/shares)
+- [Vagrant box versioning](/help/vagrant/boxes/versioning)
+- [Vagrant box catalog](/help/vagrant/boxes/catalog)
+- [Vagrant box creation](/help/vagrant/boxes/vagrant-box-create-and-distribute)
 
 Packer features:
 

@@ -4,19 +4,22 @@ title: "How to Create a Share"
 
 # How to Create a Share
 
-You've learned [what](/help/shares/what) shares are and want to try
-it out.
-
-*Heads up! You'll need [the latest version of vagrant](/help/cloud/vagrant-1-7) installed
-to use this feature.*
+<div class="alert info">
+    Heads up! You'll need <a href="/help/overview/updating-tools">the latest version of Vagrant</a> installed
+    to use this feature.
+</div>
 
 ## HTTP
+
+Share the active HTTP server in your environment.
 
 1. Run `vagrant login` and enter your Atlas by HashiCorp details
 2. Boot a Vagrant environment and verify it's running an HTTP server
 3. Run `vagrant share`. You're done!
 
 ## SSH
+
+Share SSH access to your environment.
 
 1. Run `vagrant login` and enter your Atlas by HashiCorp details
 2. Boot a Vagrant environment
@@ -26,6 +29,8 @@ to use this feature.*
 run `vagrant connect --ssh [SHARE NAME]`
 
 ## Connect
+
+Share any port in your environment.
 
 1. Run `vagrant login` and enter your Atlas by HashiCorp details
 2. Boot a Vagrant environment
