@@ -38,6 +38,24 @@
     </li>
 
 
+    <li class="expandable <%= "active" if help_active?("packer") %>">
+        <h4><%= help_link "Packer", "packer/features" %></h4>
+        <ul>
+            <li><%= help_link "Features", "packer/features" %></li>
+
+            <li class="expandable <%= "active" if help_active?("packer/builds") %>" >
+                <div class="embedded-title"><%= help_link "Builds", "packer/builds" %></div>
+                <ul>
+                    <li><%= help_link "Creating Shares", "vagrant/shares/create" %></li>
+                    <li><%= help_link "Custom names", "vagrant/shares/custom-names" %></li>
+                    <li><%= help_link "Troubleshooting", "vagrant/shares/troubleshooting" %></li>
+                    <li><%= help_link "Wordpress", "vagrant/shares/wordpress" %></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+
     <li class="expandable <%= "active" if help_active?("video-walkthroughs") %>">
         <h4><%= help_link "Video Walkthroughs", "video-walkthroughs/build-images" %></h4>
         <ul>
