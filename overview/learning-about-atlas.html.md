@@ -21,7 +21,7 @@ have a different user experience then Consul monitoring features.
 We recommend reading the following sections to continue gaining an understanding
 of what Atlas can provide:
 
-- [Features]() – a complete list of everything Atlas does
+- [Features](/help/overview/features-list) – a complete list of everything Atlas does
 - [Use cases]() – examples of several places to start using Atlas
 - [Glossary]() – all of the terminology used by Atlas and HashiCorp products
 

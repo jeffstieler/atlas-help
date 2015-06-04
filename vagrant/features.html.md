@@ -1,8 +1,8 @@
 ---
-title: "Vagrant Features"
+title: "Vagrant Features in Atlas"
 ---
 
-# Vagrant Features
+# Vagrant Features in Atlas
 
 This is a list of features specific to [Vagrant](https://vagrantup.com)
 that Atlas provides.

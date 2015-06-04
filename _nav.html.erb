@@ -5,7 +5,7 @@
             <li>
                 <a href="/help" class="<%= "active" if request.path == "/help" %>">About</a>
             </li>
-            <li><%= help_link "Learning About Atlas", "overview/learning-about-atlas" %></li>
+            <li><%= help_link "Learning", "overview/learning-about-atlas" %></li>
             <li><%= help_link "Features List", "overview/features-list" %></li>
             <li><%= help_link "Updating Tools", "overview/updating-tools" %></li>
         </ul>
@@ -14,11 +14,14 @@
     <li class="expandable <%= "active" if help_active?("vagrant") %>">
         <h4><%= help_link "Vagrant", "vagrant/features" %></h4>
         <ul>
-            <li><%= help_link "Features List", "vagrant/features" %></li>
+            <li><%= help_link "Features", "vagrant/features" %></li>
             <li class="expandable <%= "active" if help_active?("vagrant/shares") %>" >
                 <div class="embedded-title"><%= help_link "Shares", "vagrant/shares" %></div>
                 <ul>
                     <li><%= help_link "Creating Shares", "vagrant/shares/create" %></li>
+                    <li><%= help_link "Custom names", "vagrant/shares/custom-names" %></li>
+                    <li><%= help_link "Troubleshooting", "vagrant/shares/troubleshooting" %></li>
+                    <li><%= help_link "Wordpress", "vagrant/shares/wordpress" %></li>
                 </ul>
             </li>
         </ul>
