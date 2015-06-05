@@ -11,7 +11,7 @@ names and recycle previously used names on the
 
 If security is a concern, we recommend using complex or uncommon words for
 custom share names. You can read more about security of shares in
-the [Vagrant Share security](http://docs.vagrantup.com/v2/share/security.html)
+the [share security](/help/vagrant/shares#security-concerns) section of the
 documentation.
 
 ## How to Use a Custom Name
