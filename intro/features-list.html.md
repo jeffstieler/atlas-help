@@ -8,23 +8,23 @@ to learn about it in detail.
 
 Vagrant features:
 
-- [Vagrant share](/help/vagrant/shares)
-- [Vagrant box versioning](/help/vagrant/boxes/lifecycle)
-- [Vagrant box catalog](/help/vagrant/boxes/catalog)
-- [Vagrant box creation](/help/vagrant/boxes/create)
+- [Vagrant Share](/help/vagrant/shares)
+- [Vagrant Box Versioning](/help/vagrant/boxes/lifecycle)
+- [Vagrant Box Catalog](/help/vagrant/boxes/catalog)
+- [Vagrant Box Creation](/help/vagrant/boxes/create)
 
 Packer features:
 
-- [Packer builds]()
-- [Packer artifact storage]()
+- [Packer Builds]()
+- [Packer Artifact Storage]()
 
 Terraform features:
 
-- [Terraform plans and applies]()
-- [Terraform artifact registry]()
-- [Terraform remote state storage]()
+- [Terraform Plans and Applies]()
+- [Terraform Artifact Registry]()
+- [Terraform Remote State Storage]()
 
 Consul features:
 
 - [Consul UI]()
-- [Consul alerting and monitoring]()
+- [Consul Alerting and Monitoring]()

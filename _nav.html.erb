@@ -7,7 +7,17 @@
             </li>
             <li><%= help_link "Getting Started", "intro/getting-started" %></li>
             <li><%= help_link "Feature List", "intro/features-list" %></li>
-            <li><%= help_link "Use Cases", "intro/use-cases" %></li>
+
+            <li class="expandable <%= "active" if help_active?("intro/use-cases") %>" >
+                <div class="embedded-title"><%= help_link "Use Cases", "intro/use-cases" %></div>
+                <ul>
+                    <li><%= help_link "Continuous Deployment", "intro/use-cases/continuous-deployment-of-immutable-infrastructure" %></li>
+                    <li><%= help_link "Collaborating on Terraform Changes", "intro/use-cases/terraform-changes" %></li>
+                    <li><%= help_link "Managing Development Environments", "intro/use-cases/development-environments" %></li>
+                    <li><%= help_link "Automating Packer Builds", "intro/use-cases/automating-packer-builds" %></li>
+                    <li><%= help_link "Infrastructure Monitoring", "intro/use-cases/infrastructure-monitoring" %></li>
+                </ul>
+            </li>
 
             <li class="expandable <%= "active" if help_active?("intro/vs") %>" >
                 <div class="embedded-title"><%= help_link "Atlas vs. Other Software", "intro/vs" %></div>
@@ -68,21 +78,46 @@
         </ul>
     </li>
 
+    <li class="expandable <%= "active" if help_active?("packer") %>">
+        <h4><%= help_link "Terraform", "packer/features" %></h4>
+        <ul>
+            <li><%= help_link "Features", "packer/features" %></li>
+
+            <li class="expandable <%= "active" if help_active?("packer/builds") %>" >
+                <div class="embedded-title"><%= help_link "Builds", "packer/builds" %></div>
+                <ul>
+                    <li><%= help_link "Creating Shares", "vagrant/shares/create" %></li>
+                    <li><%= help_link "Custom names", "vagrant/shares/custom-names" %></li>
+                    <li><%= help_link "Troubleshooting", "vagrant/shares/troubleshooting" %></li>
+                    <li><%= help_link "Wordpress", "vagrant/shares/wordpress" %></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+
+    <li class="expandable <%= "active" if help_active?("packer") %>">
+        <h4><%= help_link "Consul", "packer/features" %></h4>
+        <ul>
+            <li><%= help_link "Features", "packer/features" %></li>
+
+            <li class="expandable <%= "active" if help_active?("packer/builds") %>" >
+                <div class="embedded-title"><%= help_link "Builds", "packer/builds" %></div>
+                <ul>
+                    <li><%= help_link "Creating Shares", "vagrant/shares/create" %></li>
+                    <li><%= help_link "Custom names", "vagrant/shares/custom-names" %></li>
+                    <li><%= help_link "Troubleshooting", "vagrant/shares/troubleshooting" %></li>
+                    <li><%= help_link "Wordpress", "vagrant/shares/wordpress" %></li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+
     <li class="expandable <%= "active" if help_active?("user-accounts") %>">
         <h4><%= help_link "User Accounts", "user-accounts" %></h4>
         <ul>
             <li><%= help_link "Command-line Login", "user-accounts/command-line-login" %></li>
             <li><%= help_link "Organization Accounts", "user-accounts/organizations" %></li>
             <li><%= help_link "Migrate Organization", "user-accounts/migrate-organization" %></li>
-        </ul>
-    </li>
-
-    <li class="expandable <%= "active" if help_active?("organizations") %>">
-        <h4><%= help_link "Organizations", "organizations" %></h4>
-        <ul>
-            <li><%= help_link "Command-line Login", "organizations/command-line-login" %></li>
-            <li><%= help_link "Organization Accounts", "organizations/organizations" %></li>
-            <li><%= help_link "Migrate Organization", "organizations/migrate-organization" %></li>
         </ul>
     </li>
 </ul>
