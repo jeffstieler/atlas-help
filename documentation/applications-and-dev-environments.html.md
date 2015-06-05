@@ -3,7 +3,7 @@ title: "Applications and Development Environments"
 ---
 ## Documentation - Applications and Development Environments
 
-As explained in the [getting started tutorial](/help/getting-started/getting-started-overview), Atlas's foundation for applications and development environments is built on HashiCorp's open source project [Vagrant](https://vagrantup.com). 
+As explained in the [getting started tutorial](/help/getting-started/getting-started-overview), Atlas's foundation for applications and development environments is built on HashiCorp's open source project [Vagrant](https://vagrantup.com).
 
 To learn about the internals of Vagrant in greater detail, visit the [Vagrant Documentation](https://docs.vagrantup.com/v2/).
 

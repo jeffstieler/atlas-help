@@ -1,26 +1,19 @@
 ---
-title: "About Builds"
+title: "About Packer and Artifacts "
 ---
-# About Builds
+# About Packer and Artifacts
 
-Builds are instances of `packer build` being run within Atlas. Every
-build belongs to a build configuration.
+Packer creates and uploads artifacts to Atlas. This is done
+with the [Atlas post-processor]().
 
-__Build configurations__ represent a set of Packer configuration versions and
-builds run. It is used as a namespace within Atlas, Packer commands and URLs. Packer
-configuration sent to Atlas are stored and versioned under
-these build configurations.
+Artifacts can then be used in Atlas to deploy services or access
+via Vagrant. Artifacts are generic, but can be of varying types
+like `amazon.ami` or `vagrant.box`. These types define different
+behavior within Atlas.
 
-These __versions__ of Packer configuration can contain:
+Packer can create artifacts both while running in Atlas and out of Atlas'
+network. This is possible due to the post-processors use of the public
+artifact API to store the artifacts.
 
-- The Packer template, a JSON file whichs define one or
-more builds by configuring the various components of Packer
-- Any provisioning scripts or packages used by the template
-- [Applications that have been linked]() and merged into the version
-prior to Atlas running Packer on it
-
-When Atlas recieves a new version of Packer configuration and associated
-scripts from GitHub or `packer push`, it automatically starts a new
-Packer build. That Packer build runs in an isolated machine environment with the contents
-of that version available to it.
-
+You can read more about artifacts and their use in the [Terraform section]()
+of the documentation.
