@@ -1,7 +1,7 @@
 ---
-title: "Learning About Atlas"
+title: "Getting Started with Atlas"
 ---
-# Learning About Atlas
+# Getting Started with Atlas
 
 Atlas has a wide range of features that cover many use cases. It's important
 to understand how Atlas is positioned before diving in.

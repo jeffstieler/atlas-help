@@ -1,13 +1,26 @@
 <ul class="help-nav-list">
-    <li class="expandable <%= "active" if request.path == "/help" || help_active?("overview") %>">
-        <h4><%= link_to "Overview", "/help" %></h4>
+    <li class="expandable <%= "active" if request.path == "/help" || help_active?("intro") %>">
+        <h4><%= link_to "Intro", "/help" %></h4>
         <ul>
             <li>
                 <a href="/help" class="<%= "active" if request.path == "/help" %>">About</a>
             </li>
-            <li><%= help_link "Learning", "overview/learning-about-atlas" %></li>
-            <li><%= help_link "Features List", "overview/features-list" %></li>
-            <li><%= help_link "Updating Tools", "overview/updating-tools" %></li>
+            <li><%= help_link "Getting Started", "intro/getting-started" %></li>
+            <li><%= help_link "Feature List", "intro/features-list" %></li>
+            <li><%= help_link "Use Cases", "intro/use-cases" %></li>
+
+            <li class="expandable <%= "active" if help_active?("intro/vs") %>" >
+                <div class="embedded-title"><%= help_link "Atlas vs. Other Software", "intro/vs" %></div>
+                <ul>
+                    <li><%= help_link "Chef, Puppet, Ansible, etc.", "intro/vs/configuration-management" %></li>
+                    <li><%= help_link "Heroku and other PaaS", "intro/vs/paas" %></li>
+                    <li><%= help_link "Cloudformation, Heat, etc.", "intro/vs/infrastructure-management" %></li>
+                    <li><%= help_link "HashiCorp Tools", "intro/vs/hashicorp-tools" %></li>
+                    <li><%= help_link "AWS, GCE, Azure, etc.", "intro/vs/infrastructure-providers" %></li>
+                    <li><%= help_link "Custom Solutions", "intro/vs/custom-solutions" %></li>
+                </ul>
+            </li>
+            <li><%= help_link "Updating Tools", "intro/updating-tools" %></li>
         </ul>
     </li>
 
@@ -55,74 +68,21 @@
         </ul>
     </li>
 
-
-    <li class="expandable <%= "active" if help_active?("video-walkthroughs") %>">
-        <h4><%= help_link "Video Walkthroughs", "video-walkthroughs/build-images" %></h4>
+    <li class="expandable <%= "active" if help_active?("user-accounts") %>">
+        <h4><%= help_link "User Accounts", "user-accounts" %></h4>
         <ul>
-            <li><%= help_link "How to build images", "video-walkthroughs/build-images" %></li>
-            <li><%= help_link "How to configure infrastructure", "video-walkthroughs/configure-infrastructure" %></li>
-            <li><%= help_link "How to deploy an application", "video-walkthroughs/deploy-application" %></li>
+            <li><%= help_link "Command-line Login", "user-accounts/command-line-login" %></li>
+            <li><%= help_link "Organization Accounts", "user-accounts/organizations" %></li>
+            <li><%= help_link "Migrate Organization", "user-accounts/migrate-organization" %></li>
         </ul>
     </li>
 
-    <li class="expandable <%= "active" if help_active?("use-cases") %>">
-        <h4><%= help_link "Use Cases", "use-cases/adopt-devops" %></h4>
+    <li class="expandable <%= "active" if help_active?("organizations") %>">
+        <h4><%= help_link "Organizations", "organizations" %></h4>
         <ul>
-            <li><%= help_link "Adopt DevOps in your organization", "use-cases/adopt-devops" %></li>
-            <li><%= help_link "Migrate your infrastructure to the cloud", "use-cases/migrate-to-cloud" %></li>
-            <li><%= help_link "Deploy to a hybrid cloud", "use-cases/hybrid-cloud-deployments" %></li>
-            <li><%= help_link "Use one workflow to move from development to production on any infrastructure", "use-cases/one-workflow" %></li>
-            <li><%= help_link "Use one dashboard to monitor and maintain infrastructure on any provider", "use-cases/one-dashboard" %></li>
+            <li><%= help_link "Command-line Login", "organizations/command-line-login" %></li>
+            <li><%= help_link "Organization Accounts", "organizations/organizations" %></li>
+            <li><%= help_link "Migrate Organization", "organizations/migrate-organization" %></li>
         </ul>
     </li>
-
-    <li class="expandable <%= "active" if help_active?("comparison") %>">
-        <h4 id="comparison"><%= help_link "Atlas vs Other Software", "comparison/paas" %></h4>
-        <ul>
-            <li><%= help_link "Platform-as-a-Service (PaaS) - Heroku, CloudFoundry, etc", "comparison/paas" %></li>
-            <li><%= help_link "Public Cloud - AWS, GCE, Rackspace, etc", "comparison/public-cloud" %></li>
-            <li><%= help_link "Configuration Management - Puppet, Chef, Ansible, Salt, etc", "comparison/configuration-management" %></li>
-            <li><%= help_link "Infrastructure Management - CloudFormation, Heat, etc", "comparison/infrastructure-management" %></li>
-            <li><%= help_link "HashiCorp Open Source Software - Vagrant, Packer, Consul, Terraform", "comparison/hashicorp-oss" %></li>
-        </ul>
-    </li>
-
-    <li class="expandable <%= "active" if help_active?("guides") %>">
-        <h4 id="guides"><%= help_link "Guides: How to use Atlas with your existing services", "guides/vagrant-box-create-and-distribute" %></h4>
-        <ul>
-            <li><%= help_link "Using Atlas to store and distribute Vagrant boxes", "guides/vagrant-box-create-and-distribute" %></li>
-            <li><%= help_link "Using Atlas with continuous integration", "guides/continuous-integration" %></li>
-            <li><%= help_link "Using Atlas with GitHub", "guides/version-control" %></li>
-            <li><%= help_link "Using Atlas with containers", "guides/containers" %></li>
-            <li><%= help_link "Using Atlas with configuration management tools", "guides/configuration-management" %></li>
-            <li><%= help_link "Using Atlas with public cloud providers", "guides/public-cloud" %></li>
-        </ul>
-    </li>
-
-    <li class="expandable <%= "active" if help_active?("FAQ") %>">
-        <h4><%= help_link "FAQ", "FAQ/packer" %></h4>
-        <ul>
-            <li><%= help_link "Packer, Build Configurations, and Artifacts", "FAQ/packer" %></li>
-        </ul>
-    </li>
-
-    <li class="expandable <%= "active" if help_active?("documentation") %>">
-        <h4><%= help_link "Documentation", "documentation/applications-and-dev-environments" %></h4>
-        <ul>
-            <li><%= help_link "Applications and Development Environments", "documentation/applications-and-dev-environments" %></li>
-            <li><%= help_link "Build Configurations", "documentation/build-configurations" %></li>
-            <li><%= help_link "Environments", "documentation/environments" %></li>
-        </ul>
-    </li>
-
-    <li class="expandable <%= "active" if help_active?("account-management") %>">
-        <h4><%= help_link "Account Management", "account-management/vagrant-1-7" %></h4>
-        <ul>
-            <li><%= help_link "Installing Vagrant 1.7", "account-management/vagrant-1-7" %></li>
-            <li><%= help_link "Command-line Login", "account-management/command-line-login" %></li>
-            <li><%= help_link "Organization Accounts", "account-management/organizations" %></li>
-            <li><%= help_link "Migrate Organization", "account-management/migrate-organization" %></li>
-        </ul>
-    </li>
-
 </ul>

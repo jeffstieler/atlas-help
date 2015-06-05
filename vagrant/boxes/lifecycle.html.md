@@ -13,6 +13,18 @@ There are multiple components of a box:
 - One or more box versions.
 - One or more providers for each box version.
 
+## Vagrant Messaging
+
+Upon `vagrant up` or `vagrant box outdated`, an out-of-date box
+user will see the following message in Vagrant:
+
+    Bringing machine 'default' up with 'virtualbox' provider...
+    ==> default: Checking if box 'hashicorp/example' is up to date...
+    ==> default: A newer version of the box 'hashicorp/example' is available! You currently
+    ==> default: have version '0.0.5'. The latest is version '0.0.6'. Run
+    ==> default: `vagrant box update` to update.
+    ...
+
 ## Box Version Release States
 
 Atlas lets you create new versions of boxes without

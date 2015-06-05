@@ -48,7 +48,7 @@ must match the format `[0-9].[0-9].[0-9]`
 1. Create a provider for the box, matching the provider you need
 locally in Vagrant. `virtualbox` is the most common provider.
 
-1. Upload the `.box` file for each provider, or use a link to the `.box`
+1. Upload the `.box` file for each provider, or use a url to the `.box`
 file that is publicly accessible
 
 You can find all of your boxes in the [Vagrant section](/vagrant) of Atlas.
