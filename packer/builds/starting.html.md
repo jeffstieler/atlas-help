@@ -12,7 +12,7 @@ master).
 ### Packer Push
 
 Packer `push` is a [Packer command](https://packer.io/docs/command-line/push.html)
-that packages and uploads a Packer template and directory to Atlas. This then starts a build
+that packages and uploads a Packer template and directory to Atlas. This then creates a build
 in Atlas, which performs `packer build` against the uploaded template
 and packaged directory.
 
