@@ -113,6 +113,15 @@
                     <li><%= help_link "Collaborating on State", "terraform/state/collaborating" %></li>
                 </ul>
             </li>
+
+            <li class="expandable <%= "active" if help_active?("terraform/artifacts") %>" >
+                <div class="embedded-title"><%= help_link "Artifacts", "terraform/artifacts" %></div>
+                <ul>
+                    <li><%= help_link "Artifact Provider", "terraform/artifacts/artifact-provider" %></li>
+                    <li><%= help_link "Managing Versions", "terraform/artifacts/managing-versions" %></li>
+                    <li><%= help_link "Creating AMI Artifacts", "terraform/artifacts/creating-amis" %></li>
+                </ul>
+            </li>
         </ul>
     </li>
 
