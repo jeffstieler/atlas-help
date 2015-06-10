@@ -31,6 +31,9 @@ An example of this with the Shell provisioner is below.
         }
     ]
 
+We encourage use of relative paths over absolute paths to maintain portability
+between Atlas and local builds.
+
 ### Hardware Limitations
 
 Currently, each builder defined in the Packer template recieves

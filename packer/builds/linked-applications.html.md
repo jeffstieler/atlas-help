@@ -9,7 +9,7 @@ include the source of the application in the environment that Packer runs.
 
 This can be used to create an image with application code embedded upon
 changes to the application. Some use this as part of a
-[continous deployment](help/intro/use-cases/continuous-deployment-of-immutable-infrastructure)
+[continuous deployment](/help/intro/use-cases/continuous-deployment-of-immutable-infrastructure)
 workflow.
 
 You can link any number of applications to builds in
@@ -37,22 +37,22 @@ Linked applications are copied into the Packer build environment
 at the path specified while linking. This may end up looking something
 like this:
 
-    /packer/.packer-template
-    /packer/LICENSE
-    /packer/http/
-    /packer/http/preseed.cfg
-    /packer/scripts/
-    /packer/scripts/base.sh
-    /packer/scripts/cleanup.sh
-    /packer/scripts/dep.sh
-    /packer/scripts/vagrant.sh
-    /packer/scripts/virtualbox.sh
-    /packer/scripts/vmware.sh
-    /packer/scripts/zerodisk.sh
-    /packer/template.json
-    /packer/webapp/config.ru
-    /packer/webapp/routes/index.rb
-    /packer/webapp/views/index.html.erb
+    .packer-template
+    LICENSE
+    http/
+    http/preseed.cfg
+    scripts/
+    scripts/base.sh
+    scripts/cleanup.sh
+    scripts/dep.sh
+    scripts/vagrant.sh
+    scripts/virtualbox.sh
+    scripts/vmware.sh
+    scripts/zerodisk.sh
+    template.json
+    webapp/config.ru
+    webapp/routes/index.rb
+    webapp/views/index.html.erb
 
 In this example, the application is linked to the `webapp` path. Packer
 provisioners can now access these files at that path.
@@ -67,7 +67,7 @@ directly onto the target:
     "provisioners": [
         {
             "type": "file",
-            "source": "/packer/webapp",
+            "source": "webapp",
             "destination": "/srv/web"
         }
     ]
