@@ -91,20 +91,28 @@
     </li>
 
     <li class="expandable <%= "active" if help_active?("terraform") %>">
-        <h4><%= help_link "Terraform", "packer/features" %></h4>
+        <h4><%= help_link "Terraform", "terraform/features" %></h4>
         <ul>
-            <li><%= help_link "Features", "packer/features" %></li>
+            <li><%= help_link "Features", "terraform/features" %></li>
 
-            <li class="expandable <%= "active" if help_active?("packer/builds") %>" >
-                <div class="embedded-title"><%= help_link "Builds", "packer/builds" %></div>
+            <li class="expandable <%= "active" if help_active?("terraform/runs") %>" >
+                <div class="embedded-title"><%= help_link "Runs", "terraform/runs" %></div>
                 <ul>
-                    <li><%= help_link "Creating Shares", "vagrant/shares/create" %></li>
-                    <li><%= help_link "Custom names", "vagrant/shares/custom-names" %></li>
-                    <li><%= help_link "Troubleshooting", "vagrant/shares/troubleshooting" %></li>
-                    <li><%= help_link "Wordpress", "vagrant/shares/wordpress" %></li>
+                    <li><%= help_link "Starting Runs", "terraform/runs/starting" %></li>
+                    <li><%= help_link "Variables and Config", "terraform/runs/variables-and-configuration" %></li>
+                    <li><%= help_link "How Runs Execute", "terraform/runs/how-runs-execute" %></li>
+                    <li><%= help_link "Plans and Applies", "terraform/runs/plans-and-applies" %></li>
                 </ul>
             </li>
 
+            <li class="expandable <%= "active" if help_active?("terraform/state") %>" >
+                <div class="embedded-title"><%= help_link "State", "terraform/state" %></div>
+                <ul>
+                    <li><%= help_link "Uploading State", "terraform/state/uploading" %></li>
+                    <li><%= help_link "Resolving Conflicts", "terraform/state/resolving-conflicts" %></li>
+                    <li><%= help_link "Collaborating on State", "terraform/state/collaborating" %></li>
+                </ul>
+            </li>
         </ul>
     </li>
 
