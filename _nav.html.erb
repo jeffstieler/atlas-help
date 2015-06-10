@@ -126,17 +126,17 @@
     </li>
 
     <li class="expandable <%= "active" if help_active?("consul") %>">
-        <h4><%= help_link "Consul", "packer/features" %></h4>
+        <h4><%= help_link "Consul", "consul/features" %></h4>
         <ul>
-            <li><%= help_link "Features", "packer/features" %></li>
+            <li><%= help_link "Features", "consul/features" %></li>
+            <li><%= help_link "Monitoring UI", "consul/monitoring-ui" %></li>
+            <li><%= help_link "Auto-Join", "consul/auto-join" %></li>
 
-            <li class="expandable <%= "active" if help_active?("packer/builds") %>" >
-                <div class="embedded-title"><%= help_link "Builds", "packer/builds" %></div>
+            <li class="expandable <%= "active" if help_active?("consul/alerts") %>" >
+                <div class="embedded-title"><%= help_link "Alerts", "consul/alerts" %></div>
                 <ul>
-                    <li><%= help_link "Creating Shares", "vagrant/shares/create" %></li>
-                    <li><%= help_link "Custom names", "vagrant/shares/custom-names" %></li>
-                    <li><%= help_link "Troubleshooting", "vagrant/shares/troubleshooting" %></li>
-                    <li><%= help_link "Wordpress", "vagrant/shares/wordpress" %></li>
+                    <li><%= help_link "Alert Methods", "consul/alerts/methods" %></li>
+                    <li><%= help_link "Debugging Noisy Alerts", "consul/alerts/noise" %></li>
                 </ul>
             </li>
         </ul>

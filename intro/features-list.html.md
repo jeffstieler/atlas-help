@@ -28,3 +28,4 @@ Consul features:
 
 - [Consul UI]()
 - [Consul Alerting and Monitoring]()
+- [Consul Auto-Join]()
