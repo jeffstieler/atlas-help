@@ -24,15 +24,10 @@ This can also be used locally:
     PACKER_LOG=1 packer build ...
 
 
-### Hardware Constraints
+### Hardware Limitations
 
-Currently, each builder defined in the Packer template recieves
-the following hardware resources. This is subject to change.
-
-- 1 GB of memory
-- 20 GBs of disk space
-
-If this doesn't suit your needs, please [contact us](mailto:support@hashicorp.com).
+Your build may be failing by requesting larger memory or
+disk usage then is available. Read more about the [build environment](/help/packer/builds/build-environment#hardware-limitations).
 
 ### Local Debugging
 

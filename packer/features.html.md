@@ -12,5 +12,5 @@ This is a list of features specific to Packer
 that Atlas provides.
 
 - [Running Packer Builds](/help/packer/builds)
-- [Creating and Uploading Atlas Artifacts](/help/packer/artifacts/creating-artifacts)
+- [Creating and Uploading AMIs](/help/packer/artifacts/creating-amis)
 - [Creating Vagrant Boxes](/help/packer/artifacts/creating-vagrant-boxes)
