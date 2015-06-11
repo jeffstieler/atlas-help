@@ -135,7 +135,7 @@
             <li class="expandable <%= "active" if help_active?("consul/alerts") %>" >
                 <div class="embedded-title"><%= help_link "Alerts", "consul/alerts" %></div>
                 <ul>
-                    <li><%= help_link "Alert Methods", "consul/alerts/methods" %></li>
+                    <li><%= help_link "Notification Methods", "consul/alerts/notification-methods" %></li>
                     <li><%= help_link "Debugging Noisy Alerts", "consul/alerts/noise" %></li>
                 </ul>
             </li>
@@ -145,7 +145,8 @@
     <li class="expandable <%= "active" if help_active?("user-accounts") %>">
         <h4><%= help_link "User Accounts", "user-accounts" %></h4>
         <ul>
-            <li><%= help_link "Command-line Login", "user-accounts/command-line-login" %></li>
+            <li><%= help_link "Authentication", "user-accounts/authentication" %></li>
+            <li><%= help_link "Recovery", "user-accounts/recovery" %></li>
             <li><%= help_link "Organization Accounts", "user-accounts/organizations" %></li>
             <li><%= help_link "Migrate Organization", "user-accounts/migrate-organization" %></li>
         </ul>

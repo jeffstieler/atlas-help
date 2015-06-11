@@ -18,6 +18,5 @@ of the organization into the username text field and press "Migrate".
 4. You should now be logged out and receive a confirmation email with
 the personal account you migrated to.
 
-5. Now, sign in with your personal account. If you visit the organizations
-page from the navigation dropdown, you should see your migrated organization
-available to administrate.
+5. Now, sign in with your personal account. If you visit you settings page,
+you should see your migrated organization available to administrate.
