@@ -18,6 +18,24 @@ When using Atlas, it's important to remember it attempts to serve those
 different groups and contexts within an organization. Vagrant features, for example,
 have a different user experience then Consul monitoring features.
 
+## Tutorials
+
+The following tutorials are currently available.
+
+- __[Create a Vagrant Box with Packer](/tutorial/packer-vagrant)__. This tutorial helps
+you create your first Vagrant box with Packer and Atlas. No need to install Packer
+on your machine. A great starting point for automating
+box builds.
+- __[Launch AWS infrastructure from GitHub with Terraform](/tutorial/terraform-github)__.
+Automatically fork a GitHub repository with Terraform configuration and spin up real
+infrastructure, all without touching the command line.
+
+- __[Using Terraform with Atlas](/tutorial/terraform)__. Integrate Terraform
+remote state storage, Terraform push and
+watch as Atlas builds infrastructure.
+
+## Further Reading
+
 We recommend reading the following sections to continue gaining an understanding
 of what Atlas can provide:
 
