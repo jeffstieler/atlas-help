@@ -92,7 +92,16 @@ datacenter within Consul.
 
 Environments show the real-time status of your infrastructure,
 any pending changes, and its change history. Environments can be configured
-to use any or all of the three components.
+to use any or all of these three components.
+
+Environments are the namespace of your Atlas managed infrastructure.
+As an example, if you to have a production environment
+for a company named Acme Inc., your environment
+may be named `acmeinc/production`.
+
+To read more about features provided under environments,
+read the [Terraform](/help/terraform/features) and [Consul](/help/consul/features)
+sections.
 
 ### Environment Variables
 
