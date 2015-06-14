@@ -49,6 +49,6 @@ When used within an organization, this can be extremely valuable for keeping
 differences in environments and last mile changes from occuring before an
 upload to Atlas.
 
-This works by first connecting your [Build Configuration]() to the target
+This works by first connecting your [Build Configuration](/help/glossary#build-configuration) to the target
 GitHub repository and then pushing changes to the default branch.
 

@@ -6,9 +6,17 @@ title: "Packer Build Environment"
 
 This page outlines the environment that Packer runs in within Atlas.
 
+### Environment Variables
+
+You can set any number of environment variables that will be injected
+into your build environment at runtime. These variables can be
+used to configure your build with secrets or other key value configuration.
+
+Variables are encrypted and stored securely.
+
 ### Files
 
-All files in the uploading package (via [Packer push or GitHub]()),
+All files in the uploading package (via [Packer push or GitHub](/help/packer/builds/starting)),
 and any [linked applications](/help/packer/builds/linked-applications) are available on the filesystem
 of the build environment.
 

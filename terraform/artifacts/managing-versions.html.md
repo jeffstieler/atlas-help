@@ -7,8 +7,8 @@ Artifacts stored in Atlas are versioned and assigned a version number.
 Versions are useful to roll back, audit and deploy images specific versions
 of images to certain environments in a targeted way.
 
-This assumes you are familiar with the [Atlas artifact provider]() in
-Terraform.
+This assumes you are familiar with the [Atlas artifact provider](https://terraform.io/docs/providers/atlas/index.html)
+in Terraform.
 
 ### Finding the Version of an Artifact
 

@@ -10,8 +10,8 @@ Remote state gives you the ability to version and collaborate on Terraform chang
 stores infromation about the changes Terraform makes based on configuration.
 
 In order to collaborate safely on remote state, we recommend
-[creating an organization]() to manage teams of users.
+[creating an organization](/help/user-accounts/organizations/create) to manage teams of users.
 
-Then, following a [remote state push]() you can view state versions
-in the changes tab of the [environment]() created under the same name
+Then, following a [remote state push](/help/terraform/state) you can view state versions
+in the changes tab of the [environment](/help/glossary#environment) created under the same name
 as the remote state.

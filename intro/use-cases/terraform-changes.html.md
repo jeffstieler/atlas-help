@@ -13,4 +13,4 @@ Atlas runs Terraform for you. Changes and logs are shown in the Atlas UI.
 Plain text Terraform configuration is either pushed with the
 Terraform command line client or linked to a GitHub repository.
 
-Learn more about [running Terraform in Atlas]().
+Learn more about [running Terraform in Atlas](/help/terraform/features).

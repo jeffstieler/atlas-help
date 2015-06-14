@@ -160,7 +160,11 @@
         </ul>
     </li>
 
-    <li class="<%= "active" if help_active?("glossary") %>">
+    <li class="expandable <%= "active" if help_active?("glossary") %>">
         <h4><%= help_link "Glossary", "glossary" %></h4>
+    </li>
+
+    <li class="expandable <%= "active" if help_active?("support") %>">
+        <h4><%= help_link "Contact Support", "support" %></h4>
     </li>
 </ul>

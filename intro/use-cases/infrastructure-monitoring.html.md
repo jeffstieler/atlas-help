@@ -4,7 +4,7 @@ title: "Infrastructure Monitoring"
 
 ## Infrastructure Monitoring
 
-Leveraging [Consul health checks](), Atlas can monitor at the node or
+Leveraging [Consul health checks](/help/consul/alerts), Atlas can monitor at the node or
 service level across datacenters. Alerts of failed health checks
 can be automatically sent to Email, Slack or Pagerduty and are
 recorded in a web UI for auditing and management.

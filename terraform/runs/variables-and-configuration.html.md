@@ -29,7 +29,7 @@ Environment Variables allow you to set variables that will be injected
 into the environment that Terraform runs in during `plan` and `apply`.
 
 You can add, edit or delete environment variables by visiting the
-Variables item in the menu of an [environment]().
+Variables item in the menu of an [environment](/help/glossary#environment).
 
 ### Security
 

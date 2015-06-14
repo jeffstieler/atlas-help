@@ -31,12 +31,12 @@ the boxes with post-processors.
 
 ## Post-Processors
 
-Packer uses [post-processors]() to define how to process
+Packer uses [post-processors](https://packer.io/docs/templates/post-processors.html) to define how to process
 images and artifacts after provisioning. Both the `vagrant` and `atlas` post-processors must be used in order
 to upload Vagrant Boxes to Atlas via Packer.
 
-It's important that they are [sequenced]() in the Packer template so
-they run in order. This is done by nesting arrays:
+It's important that they are [sequenced](https://packer.io/docs/templates/post-processors.html)
+in the Packer template so they run in order. This is done by nesting arrays:
 
     "post-processors": [
         [
@@ -56,7 +56,7 @@ post-processor to the next – in this case, the `.box` file.
 
 ### Vagrant Post-Processor
 
-The [Vagrant post-processor]() is required to package the image
+The [Vagrant post-processor](https://packer.io/docs/post-processors/vagrant.html) is required to package the image
 from the build (an `.ovf` file, for example) into a `.box` file before
 passing it to the `atlas` post-processor.
 
@@ -70,7 +70,7 @@ as the resulting `.box` will contain it.
 
 ### Atlas Post-Processor
 
-The [Atlas post-processor]() takes the resulting `.box` file and uploads
+The [Atlas post-processor](https://packer.io/docs/post-processors/atlas.html) takes the resulting `.box` file and uploads
 it to Atlas, adding metadata about the box version.
 
     {
@@ -98,8 +98,8 @@ For `vagrant.box` type artifacts, Atlas also requires two keys:
 
 - `provider`: The Vagrant provider for the box. Common providers are
 `virtualbox`, `vmware`, `aws` and so on
-- `metadata`: This is the Vagrant box [version]() and is constrained to the
-same formatting as in the web UI: `[0-9].[0-9].[0-9]`
+- `metadata`: This is the Vagrant box [version](/help/vagrant/boxes/lifecycle) and is constrained to the
+same formatting as in the web UI: `*.*.*`
 
 ## Example
 

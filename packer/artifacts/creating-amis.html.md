@@ -3,9 +3,10 @@ title: "Creating AMI Artifacts with Atlas"
 ---
 # Creating AMI Artifacts with Atlas
 
-In an [immutable infrastructure]() workflow, it's important to version
-and store full images (artifacts) to be deployed. This section covers
-storing [AWS AMI]() images in Atlas to be queried and used later.
+In an [immutable infrastructure](/help/intro/use-cases/continuous-deployment-of-immutable-infrastructure)
+workflow, it's important to version and store full images (artifacts)
+to be deployed. This section covers storing [AWS AMI](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/AMIs.html)
+images in Atlas to be queried and used later.
 
 Note the actual AMI does _not get stored in Atlas_. Atlas
 simply keeps the AMI ID as a reference to the target image. Tools
@@ -13,7 +14,7 @@ like Terraform can then use this in a deploy.
 
 ### Steps
 
-If you run Packer in Atlas, the following will happen after a [push]():
+If you run Packer in Atlas, the following will happen after a [push](/help/packer/builds/starting):
 
 1. Atlas will run `packer build` against your template in our infrastructure.
 This spins up an AWS instance in your account and provisions it with

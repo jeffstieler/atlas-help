@@ -9,4 +9,4 @@ shared history, web UI workflows and notifications.
 
 In this way, Atlas functions as a CI for image creation. When combined
 with other Atlas features, these images can be deployed or turned into
-[Vagrant Boxes]().
+[Vagrant Boxes](/help/vagrant/boxes).

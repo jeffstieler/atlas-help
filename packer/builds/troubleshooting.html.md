@@ -10,10 +10,10 @@ are all possible. Below is a list of debugging options you can use.
 
 ### Verbose Packer Logging
 
-You can [set a variable]() in the UI that increases the logging verbosity
+You can [set a variable](/help/packer/builds/build-environment#environment-variables) in the UI that increases the logging verbosity
 in Packer. Set the `PACKER_LOG` key to a value of `1` to accomplish this.
 
-After setting the variable, you'll need to [rebuild]().
+After setting the variable, you'll need to [rebuild](/help/packer/builds/rebuilding).
 
 Verbose logging will be much louder than normal Packer logs and isn't
 recommended for day-to-day operations. Once enabled, you'll be able to
@@ -32,7 +32,7 @@ disk usage then is available. Read more about the [build environment](/help/pack
 ### Local Debugging
 
 Sometimes it's faster to debug failing builds locally. In this case,
-you'll want to [install Packer]() and any providers (like Virtualbox) necessary.
+you'll want to [install Packer](/help/intro/updating-tools) and any providers (like Virtualbox) necessary.
 
 Because Atlas runs the open source version of Packer, there should be
 no difference in execution between the two, other than the environment that

@@ -43,7 +43,7 @@ When used within an organization, this can be extremely valuable for keeping
 differences in environments and last mile changes from occuring before an
 upload to Atlas.
 
-This works by first connecting your [Environment]() to the target
+This works by first connecting your [environment](/help/glossary#environment) to the target
 GitHub repository and then pushing changes. Currently, an environment
 must already exist to be connected to Github. You can create the environment
 with `terraform push`, detailed above, and then link it to GitHub.

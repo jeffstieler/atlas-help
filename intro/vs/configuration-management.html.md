@@ -20,9 +20,9 @@ should be launched in a configured state, rather then being configured
 after being launched.
 
 When using Atlas to deploy images as covered
-in the [continuous deployment use case](), Atlas expects configuration
-to be applied at build-time, during Packer builds. Packer can leverage
-many different configuration management tools to configure the
+in the [continuous deployment use case](/help/intro/use-cases/continuous-deployment-of-immutable-infrastructure), Atlas
+expects configuration to be applied at build-time, during Packer builds.
+Packer can leverage many different configuration management tools to configure the
 image. It's often the case that Puppet, Ansible or Chef are used to
 configure the image, but once configured the image is deployed
 and managed by Terraform.
