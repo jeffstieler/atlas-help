@@ -1,83 +1,170 @@
 <ul class="help-nav-list">
-    <li class="expandable <%= "active" if help_active?("getting-started") %>">
-        <h4><%= help_link "Getting Started Tutorial", "getting-started/getting-started-overview" %></h4>
+    <li class="expandable <%= "active" if request.path == "/help" || help_active?("intro") %>">
+        <h4><%= link_to "Intro", "/help" %></h4>
         <ul>
-            <li><%= help_link "Overview: Launching an application on 2-tier AWS infrastructure", "getting-started/getting-started-overview" %></li>
-            <li><%= help_link "Step 1: Layout and deploy infrastructure with Terraform", "getting-started/layout-infrastructure" %></li>
-            <li><%= help_link "Step 2: Package services with artifacts using Packer", "getting-started/package-services-with-artifacts" %></li>
-            <li><%= help_link "Step 3: Deploy fully configured infrastructure", "getting-started/deploy-fully-configured-infrastructure" %></li>
-            <li><%= help_link "Step 4: Run your application on infrastructure", "getting-started/run-your-application" %></li>
-            <li><%= help_link "How to start transitioning your stack to Atlas", "getting-started/transition-to-atlas" %></li>
+            <li>
+                <a href="/help" class="<%= "active" if request.path == "/help" %>">About</a>
+            </li>
+            <li><%= help_link "Getting Started", "intro/getting-started" %></li>
+            <li><%= help_link "Feature List", "intro/features-list" %></li>
+
+            <li class="expandable <%= "active" if help_active?("intro/use-cases") %>" >
+                <div class="embedded-title"><%= help_link "Use Cases", "intro/use-cases" %></div>
+                <ul>
+                    <li><%= help_link "Continuous Deployment", "intro/use-cases/continuous-deployment-of-immutable-infrastructure" %></li>
+                    <li><%= help_link "Collaborating on Terraform Changes", "intro/use-cases/terraform-changes" %></li>
+                    <li><%= help_link "Managing Development Environments", "intro/use-cases/development-environments" %></li>
+                    <li><%= help_link "Automating Packer Builds", "intro/use-cases/automating-packer-builds" %></li>
+                    <li><%= help_link "Infrastructure Monitoring", "intro/use-cases/infrastructure-monitoring" %></li>
+                </ul>
+            </li>
+
+            <li class="expandable <%= "active" if help_active?("intro/vs") %>" >
+                <div class="embedded-title"><%= help_link "Atlas vs. Other Software", "intro/vs" %></div>
+                <ul>
+                    <li><%= help_link "Chef, Puppet, Ansible, etc.", "intro/vs/configuration-management" %></li>
+                    <li><%= help_link "Heroku and other PaaS", "intro/vs/paas" %></li>
+                    <li><%= help_link "Cloudformation, Heat, etc.", "intro/vs/infrastructure-management" %></li>
+                    <li><%= help_link "HashiCorp Tools", "intro/vs/hashicorp-tools" %></li>
+                    <li><%= help_link "AWS, GCE, Azure, etc.", "intro/vs/infrastructure-providers" %></li>
+                    <li><%= help_link "Custom Solutions", "intro/vs/custom-solutions" %></li>
+                </ul>
+            </li>
+            <li><%= help_link "Updating Tools", "intro/updating-tools" %></li>
         </ul>
     </li>
 
-    <li class="expandable <%= "active" if help_active?("video-walkthroughs") %>">
-        <h4><%= help_link "Video Walkthroughs", "video-walkthroughs/build-images" %></h4>
+    <li class="expandable <%= "active" if help_active?("vagrant") %>">
+        <h4><%= help_link "Vagrant", "vagrant/features" %></h4>
         <ul>
-            <li><%= help_link "How to build images", "video-walkthroughs/build-images" %></li>
-            <li><%= help_link "How to configure infrastructure", "video-walkthroughs/configure-infrastructure" %></li>
-            <li><%= help_link "How to deploy an application", "video-walkthroughs/deploy-application" %></li>
+            <li><%= help_link "Features", "vagrant/features" %></li>
+            <li class="expandable <%= "active" if help_active?("vagrant/shares") %>" >
+                <div class="embedded-title"><%= help_link "Shares", "vagrant/shares" %></div>
+                <ul>
+                    <li><%= help_link "Creating Shares", "vagrant/shares/create" %></li>
+                    <li><%= help_link "Custom names", "vagrant/shares/custom-names" %></li>
+                    <li><%= help_link "Custom domains", "vagrant/shares/custom-domains" %></li>
+                    <li><%= help_link "Troubleshooting", "vagrant/shares/troubleshooting" %></li>
+                    <li><%= help_link "Wordpress", "vagrant/shares/wordpress" %></li>
+                </ul>
+            </li>
+
+            <li class="expandable <%= "active" if help_active?("vagrant/boxes") %>" >
+                <div class="embedded-title"><%= help_link "Boxes", "vagrant/boxes" %></div>
+                <ul>
+                    <li><%= help_link "Creating Boxes", "vagrant/boxes/create" %></li>
+                    <li><%= help_link "Versioning and Lifecycle", "vagrant/boxes/lifecycle" %></li>
+                    <li><%= help_link "Box Catalog", "vagrant/boxes/catalog" %></li>
+                    <li><%= help_link "Distributing Boxes", "vagrant/boxes/distributing" %></li>
+                </ul>
+            </li>
         </ul>
     </li>
 
-    <li class="expandable <%= "active" if help_active?("use-cases") %>">
-        <h4><%= help_link "Use Cases", "use-cases/adopt-devops" %></h4>
+
+    <li class="expandable <%= "active" if help_active?("packer") %>">
+        <h4><%= help_link "Packer", "packer/features" %></h4>
         <ul>
-            <li><%= help_link "Adopt DevOps in your organization", "use-cases/adopt-devops" %></li>
-            <li><%= help_link "Migrate your infrastructure to the cloud", "use-cases/migrate-to-cloud" %></li>
-            <li><%= help_link "Deploy to a hybrid cloud", "use-cases/hybrid-cloud-deployments" %></li>
-            <li><%= help_link "Use one workflow to move from development to production on any infrastructure", "use-cases/one-workflow" %></li>
-            <li><%= help_link "Use one dashboard to monitor and maintain infrastructure on any provider", "use-cases/one-dashboard" %></li>
+            <li><%= help_link "Features", "packer/features" %></li>
+
+            <li class="expandable <%= "active" if help_active?("packer/builds") %>" >
+                <div class="embedded-title"><%= help_link "Builds", "packer/builds" %></div>
+                <ul>
+                    <li><%= help_link "Starting Builds", "packer/builds/starting" %></li>
+                    <li><%= help_link "Rebuilding", "packer/builds/rebuilding" %></li>
+                    <li><%= help_link "Linked Applications", "packer/builds/linked-applications" %></li>
+                    <li><%= help_link "How Builds Run", "packer/builds/how-builds-run" %></li>
+                    <li><%= help_link "Build Environment", "packer/builds/build-environment" %></li>
+                    <li><%= help_link "Troubleshooting", "packer/builds/troubleshooting" %></li>
+                </ul>
+            </li>
+
+            <li class="expandable <%= "active" if help_active?("packer/artifacts") %>" >
+                <div class="embedded-title"><%= help_link "Artifacts", "packer/artifacts" %></div>
+                <ul>
+                    <li><%= help_link "Creating AMIs", "packer/artifacts/creating-amis" %></li>
+                <li><%= help_link "Creating Vagrant Boxes", "packer/artifacts/creating-vagrant-boxes" %></li>
+                </ul>
+            </li>
+
+
         </ul>
     </li>
 
-    <li class="expandable <%= "active" if help_active?("comparison") %>">
-        <h4 id="comparison"><%= help_link "Atlas vs Other Software", "comparison/paas" %></h4>
+    <li class="expandable <%= "active" if help_active?("terraform") %>">
+        <h4><%= help_link "Terraform", "terraform/features" %></h4>
         <ul>
-            <li><%= help_link "Platform-as-a-Service (PaaS) - Heroku, CloudFoundry, etc", "comparison/paas" %></li>
-            <li><%= help_link "Public Cloud - AWS, GCE, Rackspace, etc", "comparison/public-cloud" %></li>
-            <li><%= help_link "Configuration Management - Puppet, Chef, Ansible, Salt, etc", "comparison/configuration-management" %></li>
-            <li><%= help_link "Infrastructure Management - CloudFormation, Heat, etc", "comparison/infrastructure-management" %></li>
-            <li><%= help_link "HashiCorp Open Source Software - Vagrant, Packer, Consul, Terraform", "comparison/hashicorp-oss" %></li>
+            <li><%= help_link "Features", "terraform/features" %></li>
+
+            <li class="expandable <%= "active" if help_active?("terraform/runs") %>" >
+                <div class="embedded-title"><%= help_link "Runs", "terraform/runs" %></div>
+                <ul>
+                    <li><%= help_link "Starting Runs", "terraform/runs/starting" %></li>
+                    <li><%= help_link "Variables and Config", "terraform/runs/variables-and-configuration" %></li>
+                    <li><%= help_link "How Runs Execute", "terraform/runs/how-runs-execute" %></li>
+                    <li><%= help_link "Plans and Applies", "terraform/runs/plans-and-applies" %></li>
+                </ul>
+            </li>
+
+            <li class="expandable <%= "active" if help_active?("terraform/state") %>" >
+                <div class="embedded-title"><%= help_link "State", "terraform/state" %></div>
+                <ul>
+                    <li><%= help_link "Pushing State", "terraform/state/pushing" %></li>
+                    <li><%= help_link "Resolving Conflicts", "terraform/state/resolving-conflicts" %></li>
+                    <li><%= help_link "Collaborating on State", "terraform/state/collaborating" %></li>
+                </ul>
+            </li>
+
+            <li class="expandable <%= "active" if help_active?("terraform/artifacts") %>" >
+                <div class="embedded-title"><%= help_link "Artifacts", "terraform/artifacts" %></div>
+                <ul>
+                    <li><%= help_link "Artifact Provider", "terraform/artifacts/artifact-provider" %></li>
+                    <li><%= help_link "Managing Versions", "terraform/artifacts/managing-versions" %></li>
+                    <li><%= help_link "Creating AMI Artifacts", "terraform/artifacts/creating-amis" %></li>
+                </ul>
+            </li>
         </ul>
     </li>
 
-    <li class="expandable <%= "active" if help_active?("guides") %>">
-        <h4 id="guides"><%= help_link "Guides: How to use Atlas with your existing services", "guides/vagrant-box-create-and-distribute" %></h4>
+    <li class="expandable <%= "active" if help_active?("consul") %>">
+        <h4><%= help_link "Consul", "consul/features" %></h4>
         <ul>
-            <li><%= help_link "Using Atlas to store and distribute Vagrant boxes", "guides/vagrant-box-create-and-distribute" %></li>
-            <li><%= help_link "Using Atlas with continuous integration", "guides/continuous-integration" %></li>
-            <li><%= help_link "Using Atlas with GitHub", "guides/version-control" %></li>
-            <li><%= help_link "Using Atlas with containers", "guides/containers" %></li>
-            <li><%= help_link "Using Atlas with configuration management tools", "guides/configuration-management" %></li>
-            <li><%= help_link "Using Atlas with public cloud providers", "guides/public-cloud" %></li>
+            <li><%= help_link "Features", "consul/features" %></li>
+            <li><%= help_link "Monitoring UI", "consul/monitoring-ui" %></li>
+            <li><%= help_link "Auto-Join", "consul/auto-join" %></li>
+            <li><%= help_link "SCADA", "consul/SCADA" %></li>
+
+            <li class="expandable <%= "active" if help_active?("consul/alerts") %>" >
+                <div class="embedded-title"><%= help_link "Alerts", "consul/alerts" %></div>
+                <ul>
+                    <li><%= help_link "Notification Methods", "consul/alerts/notification-methods" %></li>
+                    <li><%= help_link "Debugging Noisy Alerts", "consul/alerts/noise" %></li>
+                </ul>
+            </li>
         </ul>
     </li>
 
-    <li class="expandable <%= "active" if help_active?("FAQ") %>">
-        <h4><%= help_link "FAQ", "FAQ/packer" %></h4>
+    <li class="expandable <%= "active" if help_active?("user-accounts") %>">
+        <h4><%= help_link "User Accounts", "user-accounts" %></h4>
         <ul>
-            <li><%= help_link "Packer, Build Configurations, and Artifacts", "FAQ/packer" %></li>
+            <li><%= help_link "Authentication", "user-accounts/authentication" %></li>
+            <li><%= help_link "Recovery", "user-accounts/recovery" %></li>
+
+            <li class="expandable <%= "active" if help_active?("user-accounts/organizations") %>" >
+                <div class="embedded-title"><%= help_link "Organizations", "user-accounts/organizations" %></div>
+                <ul>
+                    <li><%= help_link "Create", "user-accounts/organizations/create" %></li>
+                    <li><%= help_link "Migrate", "user-accounts/organizations/migrate" %></li>
+                </ul>
+            </li>
         </ul>
     </li>
 
-    <li class="expandable <%= "active" if help_active?("documentation") %>">
-        <h4><%= help_link "Documentation", "documentation/applications-and-dev-environments" %></h4>
-        <ul>
-            <li><%= help_link "Applications and Development Environments", "documentation/applications-and-dev-environments" %></li>
-            <li><%= help_link "Build Configurations", "documentation/build-configurations" %></li>
-            <li><%= help_link "Environments", "documentation/environments" %></li>
-        </ul>
+    <li class="expandable <%= "active" if help_active?("glossary") %>">
+        <h4><%= help_link "Glossary", "glossary" %></h4>
     </li>
 
-    <li class="expandable <%= "active" if help_active?("account-management") %>">
-        <h4><%= help_link "Account Management", "account-management/vagrant-1-7" %></h4>
-        <ul>
-            <li><%= help_link "Installing Vagrant 1.7", "account-management/vagrant-1-7" %></li>
-            <li><%= help_link "Command-line Login", "account-management/command-line-login" %></li>
-            <li><%= help_link "Organization Accounts", "account-management/organizations" %></li>
-            <li><%= help_link "Migrate Organization", "account-management/migrate-organization" %></li>
-        </ul>
+    <li class="expandable <%= "active" if help_active?("support") %>">
+        <h4><%= help_link "Contact Support", "support" %></h4>
     </li>
-
 </ul>
