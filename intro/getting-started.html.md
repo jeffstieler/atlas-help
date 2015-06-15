@@ -39,7 +39,7 @@ watch as Atlas builds infrastructure.
 We recommend reading the following sections to continue gaining an understanding
 of what Atlas can provide:
 
-- __[Features](/help/overview/features-list)__ – A complete list of everything Atlas does
+- __[Features](/help/intro/features-list)__ – A complete list of everything Atlas does
 - __[Use cases](/help/intro/use-cases)__ – Examples of several places to start using Atlas
 - __[Glossary](/help/glossary)__ – All of the terminology used by Atlas and HashiCorp products
 
