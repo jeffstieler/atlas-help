@@ -6,7 +6,7 @@ title: "How to Create a Share"
 
 <div class="alert info">
     <span class="alert-text">
-        Heads up! You'll need <a href="/help/overview/updating-tools">the latest version of Vagrant</a> installed
+        Heads up! You'll need <a href="/help/intro/updating-tools">the latest version of Vagrant</a> installed
         to use this feature.
     </span>
 </div>

@@ -21,7 +21,7 @@ want to use
 2. The share should be created with that name as the leading subdomain
 3. Share names are recycled when they expire automatically, meaning they
 can be used again (by any user, if not on a custom domain)
-4. If a share doesn't expire correctly, you can visit the [shares page](/shares)
+4. If a share doesn't expire correctly, you can visit the [Vagrant page](/vagrant)
 and manually recycle the name by clicking the "Recycle name" link
 
 ### Uniqueness

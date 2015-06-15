@@ -15,7 +15,7 @@ Atlas provides a consistent workflow that still leverages toolsets inside
 of each unique infrastructure provider, but applies a layer of abstraction
 to allow for easy lateral movement between providers.
 
-This is seen largely in the [Terraform](/help/terraform) tool, which
+This is seen largely in the [Terraform](/help/terraform/features) tool, which
 is primarily designed to launch and manage infrastructure _across_
 different providers. Combining the best features from all providers
 enables organizations to leverage strengths and adapt to legacy

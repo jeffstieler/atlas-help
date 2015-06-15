@@ -38,7 +38,7 @@ like git, this basically does a `git ls-files`.
 
 <div class="alert info">
     <span class="alert-text">
-        GitHub importing for Packer configurations is an unreleased beta feature. <a href="/help/contact">Contact us</a>.
+        GitHub importing for Packer configurations is an unreleased beta feature. <a href="/help/support">Contact us</a>.
     </span>
 </div>
 

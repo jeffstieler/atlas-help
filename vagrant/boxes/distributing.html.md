@@ -15,7 +15,7 @@ Now when a team member runs `vagrant up`, the box will be downloaded from Atlas.
 If the box is private, the team member will be prompted to authorize access. Users
 are granted access to private resources by logging in with an Atlas username and
 password or by using a shared Atlas token.
-[Learn more about authorization options here](/help/account-management/command-line-login).
+[Learn more about authorization options here](/help/user-accounts/authentication).
 
 ## Private Boxes
 
@@ -43,7 +43,7 @@ and if necessary a collaborator can be removed
 In order to access these private boxes from Vagrant, you'll need to first
 authenticate with your Atlas account.
 
-1. Run `vagrant login` (with [the latest version of Vagrant](/help/overview/updating-tools))
+1. Run `vagrant login` (with [the latest version of Vagrant](/help/intro/updating-tools))
 2. Enter your credentials
 
 You should now be logged in. We use these credentials to request
