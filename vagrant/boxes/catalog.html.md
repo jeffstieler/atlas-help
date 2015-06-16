@@ -1,8 +1,7 @@
 ---
-title: "Using the Box Catalog"
+title: "Discovering Vagrant Boxes"
 ---
-
-# Using the Box Catalog
+# Discovering Vagrant Boxes
 
 Atlas serves a public, searchable index of Vagrant boxes. It's easy to find
 boxes you can use with Vagrant that contain the technologies you need
