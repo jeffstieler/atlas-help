@@ -9,7 +9,7 @@ for a Vagrant environment.
 
 You don't need an Atlas account to use public boxes.
 
-1. Go to the [Discover page](/discover)
+1. Go to the [Box search page](/boxes/search)
 
 1. Once you find a box, click its name to learn more about it.
 
