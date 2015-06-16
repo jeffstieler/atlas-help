@@ -14,6 +14,22 @@ used to configure your build with secrets or other key value configuration.
 
 Variables are encrypted and stored securely.
 
+### Supported Builders
+
+Atlas currently supports running the following Packer builders:
+
+- amazon-chroot
+- amazon-ebs
+- amazon-instance
+- digitalocean
+- docker
+- googlecompute
+- null
+- openstack
+- qemu
+- virtualbox-iso
+- vmware-iso
+
 ### Files
 
 All files in the uploading package (via [Packer push or GitHub](/help/packer/builds/starting)),
