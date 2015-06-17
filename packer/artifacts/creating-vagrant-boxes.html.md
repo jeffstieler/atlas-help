@@ -104,7 +104,7 @@ same formatting as in the web UI: `*.*.*`
 ## Example
 
 An example post-processor block for Atlas and Vagrant is below. In this example,
-the build runs on both VMware and Virtualbox and creatings two
+the build runs on both VMware and Virtualbox creating two
 different providers for the same box version (`0.0.1`).
 
     "post-processors": [

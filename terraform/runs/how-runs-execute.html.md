@@ -4,7 +4,7 @@ title: "How Terraform Runs Execute in Atlas"
 
 ## How Terraform Runs Execute in Atlas
 
-This briefly covers the internal process of running Terrafom plan and
+This briefly covers the internal process of running Terraform plan and
 applies in Atlas. It's not necessary to know this information, but may be valuable to
 help understand implications of running in Atlas or debug failing
 runs.

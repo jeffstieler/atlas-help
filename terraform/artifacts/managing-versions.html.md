@@ -14,7 +14,7 @@ in Terraform.
 
 Artifact versions can be found with the [`terraform show` command](https://terraform.io/docs/commands/show.html),
 or by looking at the Packer logs generated during builds. After a
-succesful artifact upload, version numbers are displayed. "latest" can
+successful artifact upload, version numbers are displayed. "latest" can
 be used to use the latest version of the artifact.
 
 The following output is from `terraform show`.

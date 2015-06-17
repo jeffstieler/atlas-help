@@ -17,7 +17,7 @@ in Atlas, which performs `terraform plan` and `terraform apply` against the uplo
 configuration.
 
 The directory is included in order to run any associated provisioners,
-that might use local files. For example, a remote-exec provsioner
+that might use local files. For example, a remote-exec provisioner
 that executes a shell script.
 
 By default, everything in your directory is uploaded as part of the push.
@@ -40,7 +40,7 @@ automatically queuing runs when changes are merged into the default branch
 or plans when a PR is made.
 
 When used within an organization, this can be extremely valuable for keeping
-differences in environments and last mile changes from occuring before an
+differences in environments and last mile changes from occurring before an
 upload to Atlas.
 
 This works by first connecting your [environment](/help/glossary#environment) to the target

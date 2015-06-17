@@ -60,7 +60,7 @@ between Atlas and local builds.
 
 ### Hardware Limitations
 
-Currently, each builder defined in the Packer template recieves
+Currently, each builder defined in the Packer template receives
 the following hardware resources. This is subject to change.
 
 - 1 GB of memory

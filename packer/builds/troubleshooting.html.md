@@ -17,7 +17,7 @@ After setting the variable, you'll need to [rebuild](/help/packer/builds/rebuild
 
 Verbose logging will be much louder than normal Packer logs and isn't
 recommended for day-to-day operations. Once enabled, you'll be able to
-see in futher detail why things failed or what operations Packer was performing.
+see in further detail why things failed or what operations Packer was performing.
 
 This can also be used locally:
 

@@ -7,7 +7,7 @@ Consul can be configured to auto-join via Atlas. Atlas will track the most recen
 members to join the infrastructure named by the configured`-atlas` flag and automatically
 join them on start. For servers, the LAN and WAN pool are both joined.
 
-This enables quick discovery of peers for nodes in a datacenter. Atlasc
+This enables quick discovery of peers for nodes in a datacenter. Atlas
 authenticates and verifies this join.
 
 This can be enabled with the `-atlas-join` flag.

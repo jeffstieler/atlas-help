@@ -26,7 +26,7 @@ types are color coded and show a brief snippet of relevant information.
 To configure Slack:
 
 1. Log into your Slack account and [create an incoming webhook](https://my.slack.com/services/new/incoming-webhook/)
-1. Enter the webhook URL into the field provided in the "Integrations" tab of the enviornment
+1. Enter the webhook URL into the field provided in the "Integrations" tab of the environment
 1. Optionally, test the alert
 
 ## Pagerduty
@@ -39,6 +39,6 @@ To configure Pagerduty:
 
 1. Log in to your PagerDuty account
 1. Visit Configuration > Services to choose an existing service API key, or to create a new one
-1. Enter the service API key into the "Integrations" tab of the enviornment
+1. Enter the service API key into the "Integrations" tab of the environment
 tab of the environment in Atlas
 1. Optionally, test the alert
