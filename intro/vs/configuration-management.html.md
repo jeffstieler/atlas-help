@@ -10,7 +10,7 @@ configuration management is still required.
 
 Sometimes, configuration management systems launch and manage infrastructure.
 In this case, Atlas replaces that functionality by launching
-images with Terraform. This immutable approach can speed up deploy times, increase visiblity
+images with Terraform. This immutable approach can speed up deploy times, increase visibility
 into what is deployed and help guarantee safety in deployments. "Immutable
 infrastructure", as it is sometimes called, has numerous other benefits
 that are written about broadly.

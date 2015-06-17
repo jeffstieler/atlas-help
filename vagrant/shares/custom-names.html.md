@@ -16,7 +16,7 @@ documentation.
 
 ## How to Use a Custom Name
 
-1. Run Vagrant share with the `--name` flag, specifiying the name you
+1. Run Vagrant share with the `--name` flag, specifying the name you
 want to use
 2. The share should be created with that name as the leading subdomain
 3. Share names are recycled when they expire automatically, meaning they

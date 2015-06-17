@@ -38,6 +38,6 @@ responds to reports of malicious software distributed via Atlas
 and takes down boxes
 - __The latest release date__. More up-to-date boxes contain up-to-date
 software
-- __Availibility of the box download__. Atlas periodically checks if box
+- __Availability of the box download__. Atlas periodically checks if box
 has is publicly accessible. You can see this information on the box
 page next to the provider

@@ -46,7 +46,7 @@ Optionally, GitHub can be used to import Packer templates and configurations,
 automatically building when changes are merged into the default branch.
 
 When used within an organization, this can be extremely valuable for keeping
-differences in environments and last mile changes from occuring before an
+differences in environments and last mile changes from occurring before an
 upload to Atlas.
 
 This works by first connecting your [Build Configuration](/help/glossary#build-configuration) to the target
