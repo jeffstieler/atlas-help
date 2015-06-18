@@ -94,12 +94,15 @@ created
 - `artifact_type`: This must be `vagrant.box`. Atlas uses this to determine
 how to treat this artifact.
 
-For `vagrant.box` type artifacts, Atlas also requires two keys:
+For `vagrant.box` type artifacts, you can specify keys in the metadata block:
 
 - `provider`: The Vagrant provider for the box. Common providers are
-`virtualbox`, `vmware`, `aws` and so on
-- `metadata`: This is the Vagrant box [version](/help/vagrant/boxes/lifecycle) and is constrained to the
-same formatting as in the web UI: `*.*.*`
+`virtualbox`, `vmware`, `aws` and so on _(required)_
+- `version`: This is the Vagrant box [version](/help/vagrant/boxes/lifecycle) and is constrained to the
+same formatting as in the web UI: `*.*.*` _(optional, but required for boxes
+with multiple providers)_
+- `description`: This is the desciption that will be shown with the
+version of the box. You can use Markdown for links and style. _(optional)_
 
 ## Example
 
