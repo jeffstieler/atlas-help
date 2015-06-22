@@ -23,8 +23,7 @@ have a different user experience then Consul monitoring features.
 The following tutorials are currently available.
 
 - __[Create a Vagrant Box with Packer](/tutorial/packer-vagrant)__. This tutorial helps
-you create your first Vagrant box with Packer and Atlas. No need to install Packer
-on your machine. A great starting point for automating
+you create your first Vagrant box with Packer and Atlas. A great starting point for automating
 box builds.
 - __[Launch AWS infrastructure from GitHub with Terraform](/tutorial/terraform-github)__.
 Automatically fork a GitHub repository with Terraform configuration and spin up real
@@ -42,4 +41,3 @@ of what Atlas can provide:
 - __[Features](/help/intro/features-list)__ – A complete list of everything Atlas does
 - __[Use cases](/help/intro/use-cases)__ – Examples of several places to start using Atlas
 - __[Glossary](/help/glossary)__ – All of the terminology used by Atlas and HashiCorp products
-
