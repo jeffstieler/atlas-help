@@ -82,5 +82,5 @@ grouped under a single "job number".
 - `ATLAS_BUILD_ID` - a unique identifier for this particular builder within a
 job. This is an internal number that uniquely refers to the particular builder
 in a job.
-- `ATLAS_BUILD_CONFIGURATION_VERSION` - the version of the build configuration
-version (Packer template) used during this build.
+- `ATLAS_BUILD_CONFIGURATION_VERSION` - the version of the
+[build configuration](/help/glossary) version used during this build.
