@@ -67,3 +67,15 @@ the following hardware resources. This is subject to change.
 - 20 GBs of disk space
 
 If this doesn't suit your needs, please [contact us](mailto:support@hashicorp.com).
+
+### Environment Variables
+
+During each Packer build, the following environment variables are available as
+part of the build:
+
+- `ATLAS_TOKEN` - a unique token that can communicate with Atlas for the
+duration of this build. This token will expire upon completion of the build.
+This token is used as part of any Atlas-specific providers or post processors.
+- `ATLAS_BUILD_NUMBER` - a unique identifier for the Packer build.
+- `ATLAS_BUILD_CONFIGURATION_VERSION` - the version of the
+[build configuration](/help/glossary) version used during this build.
