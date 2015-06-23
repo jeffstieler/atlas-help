@@ -48,3 +48,7 @@ GitHub repository and then pushing changes. Currently, an environment
 must already exist to be connected to Github. You can create the environment
 with `terraform push`, detailed above, and then link it to GitHub.
 
+By default, all commits to the default branch of your repository and all commits
+to an open Pull Request will trigger a Terraform plan. You can disable a plan by
+adding the text `[atlas skip]` or `[ci skip]` to your commit message.
+
