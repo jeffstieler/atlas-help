@@ -75,6 +75,7 @@ part of the build:
 
 - `ATLAS_TOKEN` - a unique token that can communicate with Atlas for the
 duration of this build. This token will expire upon completion of the build.
+This token is used as part of any Atlas-specific providers or post processors.
 - `ATLAS_JOB_NUMBER` - a unique identifier for the complete Packer run including
 all builds. Given a Packer template with multiple builders, all builders will be
 grouped under a single "job number".
