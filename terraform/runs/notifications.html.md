@@ -1,14 +1,14 @@
 ---
-title: "About Terraform Run Notifications"
+title: "Terraform Run Notifications"
 ---
 
-<div class="alert info">
-    <span class="alert-text">
-        Notifications for Terraform runs is an unreleased beta feature. <a href="/help/support">Contact us</a> if you're interested in using them.
-    </span>
-</div>
+# Terraform Run Notifications
 
-# About Terraform Run Notifications
+<div class="alert info">
+  <span class="alert-text">
+    This is an unreleased beta feature. Please <a href="/help/support">contact support</a> if you are interested in helping us test this feature.
+  </span>
+</div>
 
 Atlas can send run notifications to your organization via Email, Slack, or
 Webhooks. The following events are configurable:

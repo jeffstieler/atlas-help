@@ -2,14 +2,18 @@
 title: "Starting Terraform Runs in Atlas"
 ---
 
-## Starting Terraform Runs in Atlas
+# Starting Terraform Runs in Atlas
 
-You can start a Terraform run (plan and subsequent apply) in two ways: `terraform push`
-to upload the configuration and directory or via a GitHub connection that retrieves
-the contents of a repository after changes to the default branch (usually
-master).
+There are a variety of ways to queue a Terraform run in Atlas. In addition to
+`terraform push`, you can connect your [environment](/help/glossary#environment)
+to GitHub and have Atlas queue Terraform runs based on new commits. Atlas can
+also intelligently queue new runs when linked artifacts are uploaded or changed.
+Remember from the [previous section about Terraform runs](/help/terraform/runs)
+that it is safe to trigger many plans without consequence since Terraform plans
+do not change infrastructure.
 
-### Terraform Push
+
+## Terraform Push
 
 Terraform `push` is a [Terraform command](https://terraform.io/docs/commands/push.html)
 that packages and uploads a set of Terraform configuration and directory to Atlas. This then creates a run
@@ -33,7 +37,7 @@ useful for automatically excluding ignored files. In a VCS like git, this
 basically does a `git ls-files`.
 
 
-### GitHub Import
+## GitHub Import
 
 Optionally, GitHub can be used to import Terraform configuration,
 automatically queuing runs when changes are merged into the default branch
@@ -52,3 +56,34 @@ By default, all commits to the default branch of your repository and all commits
 to an open Pull Request will trigger a Terraform plan. You can disable a plan by
 adding the text `[atlas skip]` or `[ci skip]` to your commit message.
 
+
+## Artifact Uploads
+
+<div class="alert info">
+  <span class="alert-text">
+    This is an unreleased beta feature. Please <a href="/help/support">contact support</a> if you are interested in helping us test this feature.
+  </span>
+</div>
+
+Upon successful completion of a Terraform run, Atlas parses the remote state and
+detects any [Atlas artifacts](/help/terraform/artifacts/artifact-provider) that
+were referenced. When new versions of those referenced artifacts are uploaded
+to Atlas, you have the option to automatically queue a new Terraform run.
+
+For example, consider the following Terraform configuration which references an
+Atlas artifact named "worker":
+
+    resource "aws_instance" "worker" {
+      ami = "${atlas_artifact.worker.metadata_full.region-us-east-1}"
+      instance_type = "m1.small"
+    }
+
+When a new version of the Atlas artifact "worker" is uploaded either manually
+or as the output of a [Packer build](/help/packer/builds/starting.html), Atlas
+can automatically trigger a Terraform plan with this new artifact version.
+You can enable this feature on a per-environment basis from the
+[environment](/help/glossary#environment) settings page in Atlas.
+
+Combined with
+[Terraform auto apply](/help/terraform/runs/automatic-applies), you can
+continuously deliver infrastructure using Terraform and Atlas.
