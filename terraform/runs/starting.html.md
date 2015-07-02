@@ -85,5 +85,5 @@ You can enable this feature on a per-environment basis from the
 [environment](/help/glossary#environment) settings page in Atlas.
 
 Combined with
-[Terraform auto apply](/help/FILL_OUT_LATER), you can continuously deliver
-infrastructure using Terraform and Atlas.
+[Terraform auto apply](/help/terraform/runs/automatic-applies), you can
+continuously deliver infrastructure using Terraform and Atlas.
