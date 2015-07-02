@@ -2,14 +2,14 @@
 title: "How Terraform Runs Execute in Atlas"
 ---
 
-## How Terraform Runs Execute in Atlas
+# How Terraform Runs Execute in Atlas
 
 This briefly covers the internal process of running Terraform plan and
-applies in Atlas. It's not necessary to know this information, but may be valuable to
-help understand implications of running in Atlas or debug failing
+applies in Atlas. Iti s not necessary to know this information, but may be
+valuable to help understand implications of running in Atlas or debug failing
 runs.
 
-### Steps of Execution
+## Steps of Execution
 
 1. A set of Terraform configuration and directory of files is uploaded via Terraform Push or GitHub
 1. Atlas creates a version of the Terraform configuration and waits for the upload
