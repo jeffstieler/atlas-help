@@ -40,7 +40,7 @@ is to require user confirmation as part of the
 [Terraform run execution](/help/terraform/runs/how-runs-execute). Upon
 user confirmation, Atlas will queue and execute the Terraform apply. It is also
 possible to configure Atlas to
-[automatically apply](/help/terraform/runs/FIX ME LATER), but this option is
+[automatically apply](/help/terraform/runs/automatic-applies), but this option is
 disabled by default.
 
 To receive alerts when user confirmation is needed or for any other phase of the
