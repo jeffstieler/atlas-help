@@ -23,5 +23,8 @@ Webhooks. The following events are configurable:
 - **Applied** - The plan was applied successfully.
 - **Errored** - An error has occurred during the plan or apply phase.
 
+> Emails will include logs for the **Needs Confirmation**, **Applied**, and
+> **Errored** events.
+
 You can toggle notifications for each of these events on the "Integrations" tab
 of an environment.
