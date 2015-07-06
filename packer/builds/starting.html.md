@@ -36,10 +36,10 @@ like git, this basically does a `git ls-files`.
 
 ### GitHub Import
 
-<div class="alert info">
-    <span class="alert-text">
+<div class="alert-infos">
+    <div class="row alert-info">
         GitHub importing for Packer configurations is an unreleased beta feature. <a href="/help/support">Contact us</a>.
-    </span>
+    </div>
 </div>
 
 Optionally, GitHub can be used to import Packer templates and configurations,

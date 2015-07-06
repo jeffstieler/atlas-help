@@ -59,10 +59,10 @@ adding the text `[atlas skip]` or `[ci skip]` to your commit message.
 
 ## Artifact Uploads
 
-<div class="alert info">
-  <span class="alert-text">
+<div class="alert-infos">
+  <div class="row alert-info">
     This is an unreleased beta feature. Please <a href="/help/support">contact support</a> if you are interested in helping us test this feature.
-  </span>
+  </div>
 </div>
 
 Upon successful completion of a Terraform run, Atlas parses the remote state and
