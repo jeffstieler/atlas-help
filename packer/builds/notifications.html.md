@@ -2,12 +2,6 @@
 title: "About Packer Build Notifications"
 ---
 
-<div class="alert-info">
-    <div class="row alert-text">
-        Notifications for Packer builds is an unreleased beta feature. <a href="/help/support">Contact us</a> if you're interested in using them.
-    </div>
-</div>
-
 # About Packer Build Notifications
 
 Atlas can send build notifications to your organization via Email, Slack, or
