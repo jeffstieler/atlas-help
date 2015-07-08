@@ -7,7 +7,9 @@ title: "Continuous Deployment of Immutable Infrastructure"
 Organizations can use the complete HashiCorp toolset to continuously deploy
 immutable infrastructure. Build deployable artifacts with Packer, provision
 instances with Terraform using those artifacts, and monitor and maintain the
-infrastructure with Consul.
+infrastructure with Consul. All Packer, Terraform, and Consul changes
+are versioned, so when all the tools are used together, it creates
+a version control system for infrastructure.
 
 Below is a small example of this workflow.
 
