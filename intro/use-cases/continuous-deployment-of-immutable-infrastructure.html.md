@@ -25,7 +25,7 @@ under a namespace defining the artifact, such as `acmeinc/web`.
 deploys an instance using the artifact. For example, on Amazon Web Services, an
 instance would be provisioned using a fully baked AMI.
 5. When an update is made to an artifact, a
-[Terraform `plan`](/help/terraform/runs/plans-and-applies) is automatically run, which
+[Terraform `plan`](/help/terraform/runs) is automatically run, which
 shows the difference in the artifact version for a deployed instance. 
 An __operator__ is [notified of a pending change](/help/terraform/runs/notifications).
 5. An __operator__ reviews and confirms this infrastructure change which triggers
