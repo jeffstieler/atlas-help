@@ -23,6 +23,21 @@ This can also be used locally:
 
     PACKER_LOG=1 packer build ...
 
+### Hanging Builds
+
+Some VM builds, such as VMware or Virtualbox, may hang at various stages, 
+most notably `Waiting for SSH...`. 
+
+Things to pay attention to when this happens:
+
+- SSH credentials must be properly configured. AWS keypairs should
+match, SSH usernames should be correct, passwords should match, etc.
+- Any VM preseed configuration should have the same SSH configuration
+as your template defines
+
+A good way to debug this is to manually attempt to use the same SSH
+configuration locally, running with `packer build -debug`. See
+more about [debugging Packer builds](https://packer.io/docs/other/debugging.html).
 
 ### Hardware Limitations
 
