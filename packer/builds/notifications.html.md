@@ -4,8 +4,9 @@ title: "About Packer Build Notifications"
 
 # About Packer Build Notifications
 
-Atlas can send build notifications to your organization via Email, Slack, or
-Webhooks. The following events are configurable:
+Atlas can send build notifications to your organization via one of our
+[supported notification methods](/help/consul/alerts/notification-methods). The
+following events are configurable:
 
 - **Starting** - The build has begun.
 - **Finished** - All build jobs have finished successfully.

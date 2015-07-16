@@ -39,6 +39,7 @@ so when Terraform deploys a new instance of this `web` service, the
 infrastructure can automatically discover it.
 7. If the Consul health status of this `web` node changes, it displays the change
 in the [Atlas UI](/help/consul/monitoring-ui), triggers an alert in Atlas, and
-[sends a notification](/help/consul/alerts) via Slack or Email to the operations team.
+[sends a notification](/help/consul/alerts) via one of our [supported
+notification methods](/help/consul/alerts/notification-methods) the operations team.
 8. If the alert identifies an issue which requires an application code change,
 start at step 1!

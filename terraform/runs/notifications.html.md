@@ -4,8 +4,9 @@ title: "Terraform Run Notifications"
 
 # Terraform Run Notifications
 
-Atlas can send run notifications to your organization via Email, Slack, or
-Webhooks. The following events are configurable:
+Atlas can send run notifications to your organization via one of our [supported
+notification methods](/help/consul/alerts/notification-methods). The following
+events are configurable:
 
 - **Needs Confirmation** - The plan phase has succeeded, and there are changes
   that need to be confirmed before applying.
