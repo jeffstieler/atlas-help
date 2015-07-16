@@ -6,10 +6,9 @@ title: "Alert Notification Methods"
 Atlas currently supports many different types of notification methods, outlined
 below.
 
-Notification methods can be managed by visiting the
-<strong>Configuration</strong> page for your user or organization.
-Notification methods can also be overridden for a specific build configuration,
-environment, or infrastructure.
+Notification methods can be managed by visiting the **Configuration** page for
+your user or organization. Notification methods can also be overridden for a
+specific build configuration, environment, or infrastructure.
 
 ## Email
 
@@ -31,13 +30,13 @@ two ways to configure HipChat notifications:
 
 This API token can post to any room that your user account has access to.
 
-1. In your <strong>Account Settings</strong>, click [API
+1. In your **Account Settings**, click [API
    Access](https://hipchat.com/account/api).
 1. Enter a label for the new token, such as "Atlas". This will be the username
    that messages are sent from.
-1. Ensure the <strong>Send Notification</strong> scope is selected.
-1. Click <strong>Create</strong>, and then copy the token from the confirmation
-   page into your Atlas notification methods.
+1. Ensure the **Send Notification** scope is selected.
+1. Click **Create**, and then copy the token from the confirmation page into
+   your Atlas notification methods.
 
 ### Group Integration
 
@@ -49,8 +48,8 @@ creation.
 1. Select the room that this integration should post messages to.
 1. Choose a name for the integration, such as "Atlas". This will be the
    username that messages are posted as.
-1. Click <strong>Create</strong>, and then copy the token from the examples on
-   the next page into your Atlas notification methods.
+1. Click **Create**, and then copy the token from the examples on the next page
+   into your Atlas notification methods.
 
 ## Slack
 
@@ -74,8 +73,8 @@ PagerDuty incident is resolved by Atlas.
 To configure PagerDuty:
 
 1. Log in to your PagerDuty account
-1. Visit <strong>Configuration > Services</strong> to choose an existing
-   service API key, or to create a new one
+1. Visit **Configuration > Services** to choose an existing service API key, or
+   to create a new one
 1. Enter the service API key into the "Integrations" tab of the environment tab
    of the environment in Atlas
 1. Optionally, test the alert.
