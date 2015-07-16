@@ -63,16 +63,19 @@ To configure Slack:
 1. Enter the webhook URL into the field provided in the "Integrations" tab of the environment
 1. Optionally, test the alert
 
-## Pagerduty
+## PagerDuty
 
-[Pagerduty](https://www.pagerduty.com) incidents can be automatically created based on alerts
-triggered by Atlas. When the alert recovers, the Pagerduty incident
-is resolved by Atlas.
+[PagerDuty](https://www.pagerduty.com) incidents can be automatically created
+based on Consul Alerts triggered by Atlas. When the alert recovers, the
+PagerDuty incident is resolved by Atlas.
 
-To configure Pagerduty:
+> Only Consul Alerts are sent to PagerDuty
+
+To configure PagerDuty:
 
 1. Log in to your PagerDuty account
-1. Visit Configuration > Services to choose an existing service API key, or to create a new one
-1. Enter the service API key into the "Integrations" tab of the environment
-tab of the environment in Atlas
-1. Optionally, test the alert
+1. Visit <strong>Configuration > Services</strong> to choose an existing
+   service API key, or to create a new one
+1. Enter the service API key into the "Integrations" tab of the environment tab
+   of the environment in Atlas
+1. Optionally, test the alert.
