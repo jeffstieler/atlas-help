@@ -3,9 +3,13 @@ title: "Alert Notification Methods"
 ---
 # Alert Notification Methods
 
-Atlas currently supports three different types of notification methods.
-All three are outlined below. Alert methods can be configured in the
-"Integrations" tab of an environment.
+Atlas currently supports many different types of notification methods, outlined
+below.
+
+Notification methods can be managed by visiting the
+<strong>Configuration</strong> page for your user or organization.
+Notification methods can also be overridden for a specific build configuration,
+environment, or infrastructure.
 
 ## Email
 
