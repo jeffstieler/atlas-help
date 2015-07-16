@@ -24,8 +24,8 @@ To configure Email notifications:
 
 ## HipChat
 
-Notifications can be sent to a [HipChat](https://hipchat.com) room. There are 2
-ways to configure HipChat notifications:
+Notifications can be sent to a [HipChat](https://hipchat.com) room. There are
+two ways to configure HipChat notifications:
 
 ### User Account
 
