@@ -110,7 +110,7 @@ AWS example:
           "access_key": "",
           "secret_key": "",
           "region": "us-east-1",
-          "source_ami": "{{user `base_ami`}}"g
+          "source_ami": "{{user `base_ami`}}"
         }
       ]
     }
