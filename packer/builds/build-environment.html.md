@@ -101,13 +101,16 @@ You can then reference this artifact in your Packer template, like this
 AWS example:
 
     {
+      "variables": {
+          "base_ami": "{{env `ATLAS_BASE_ARTIFACT_AWS_AMI_ID`}}"
+      },
       "builders": [
         {
           "type": "amazon-ebs",
           "access_key": "",
           "secret_key": "",
           "region": "us-east-1",
-          "source_ami": "{{ env `ATLAS_BASE_ARTIFACT_AWS_AMI_ID`}}",
+          "source_ami": "{{user `base_ami`}}"g
         }
       ]
     }
