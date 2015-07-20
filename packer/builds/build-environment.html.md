@@ -6,14 +6,6 @@ title: "Packer Build Environment"
 
 This page outlines the environment that Packer runs in within Atlas.
 
-### Environment Variables
-
-You can set any number of environment variables that will be injected
-into your build environment at runtime. These variables can be
-used to configure your build with secrets or other key value configuration.
-
-Variables are encrypted and stored securely.
-
 ### Supported Builders
 
 Atlas currently supports running the following Packer builders:
@@ -70,6 +62,12 @@ If this doesn't suit your needs, please [contact us](mailto:support@hashicorp.co
 
 ### Environment Variables
 
+You can set any number of environment variables that will be injected
+into your build environment at runtime. These variables can be
+used to configure your build with secrets or other key value configuration.
+
+Variables are encrypted and stored securely.
+
 During each Packer build, the following environment variables are available as
 part of the build:
 
@@ -79,3 +77,37 @@ This token is used as part of any Atlas-specific providers or post processors.
 - `ATLAS_BUILD_NUMBER` - a unique identifier for the Packer build.
 - `ATLAS_BUILD_CONFIGURATION_VERSION` - the version of the
 [build configuration](/help/glossary) version used during this build.
+
+### Base Artifact Variable Injection
+
+<div class="alert-infos">
+  <div class="alert-info">
+    This is an unreleased beta feature. Please <a href="/help/support">contact support</a>
+    if you are interested in helping us test this feature.
+  </div>
+</div>
+
+A base artifact can be selected on the "Settings" page for a build configuration.
+During each build, the latest artifact version will have it's external
+ID (such as an AMI for AWS) injected as an environment variable for the
+environment.
+
+The keys for the following artifact types will be injected:
+
+- `aws.ami`: `ATLAS_BASE_ARTIFACT_AWS_AMI_ID`
+- `amazon.ami`: `ATLAS_BASE_ARTIFACT_AMAZON_AMI_ID`
+
+You can then reference this artifact in your Packer template, like this
+AWS example:
+
+    {
+      "builders": [
+        {
+          "type": "amazon-ebs",
+          "access_key": "",
+          "secret_key": "",
+          "region": "us-east-1",
+          "source_ami": "{{ env `ATLAS_BASE_ARTIFACT_AWS_AMI_ID`}}",
+        }
+      ]
+    }
