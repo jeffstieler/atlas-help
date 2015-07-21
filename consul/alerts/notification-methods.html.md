@@ -28,12 +28,12 @@ two ways to configure HipChat notifications:
 
 ### User Account
 
-This API token can post to any room that your user account has access to.
+This API token can post to any room that the user account has access to, but
+will be displayed as that user's name. You may want to create an "Atlas" user.
 
 1. In your **Account Settings**, click [API
    Access](https://hipchat.com/account/api).
-1. Enter a label for the new token, such as "Atlas". This will be the username
-   that messages are sent from.
+1. Enter a label for the new token, such as "Atlas".
 1. Ensure the **Send Notification** scope is selected.
 1. Click **Create**, and then copy the token from the confirmation page into
    your Atlas notification methods.
@@ -41,7 +41,8 @@ This API token can post to any room that your user account has access to.
 ### Group Integration
 
 The API token generated here will only have access to the room you chose during
-creation.
+creation, but you can customize the display name. You may want to create a
+Group Integration for each room you intend to post to.
 
 1. Create a [new integration](https://hipchat.com/admin/byo) for your HipChat
    group.
