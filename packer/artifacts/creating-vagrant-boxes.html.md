@@ -97,7 +97,7 @@ how to treat this artifact.
 For `vagrant.box` type artifacts, you can specify keys in the metadata block:
 
 - `provider`: The Vagrant provider for the box. Common providers are
-`virtualbox`, `vmware`, `aws` and so on _(required)_
+`virtualbox`, `vmware_desktop`, `aws` and so on _(required)_
 - `version`: This is the Vagrant box [version](/help/vagrant/boxes/lifecycle) and is constrained to the
 same formatting as in the web UI: `*.*.*` _(optional, but required for boxes
 with multiple providers)_
