@@ -52,7 +52,7 @@ Each environment should setup [remote state storage in Atlas](http://terraform.i
 
 	terraform remote config -backend-config="name=hashicorp/prod"
 	terraform remote config -backend-config="name=hashicorp/qa"
-	terraform remote config -backend-config="name=myname/stage"
+	terraform remote config -backend-config="name=hashicorp/stage"
 
 And then [push the configurations to Atlas](http://terraform.io/docs/commands/push.html) so Terraform can be run remotely:
 
