@@ -50,6 +50,13 @@ An example of this with the Shell provisioner is below.
 We encourage use of relative paths over absolute paths to maintain portability
 between Atlas and local builds.
 
+The total size of all files in the package being uploaded via
+[Packer push or GitHub](/help/packer/builds/starting) must be 5 GB or less.
+
+If you need to upload objects that are larger, such as dmgs, see the
+[`packer push` "Limits" documentation](https://packer.io/docs/command-line/push.html)
+for ways around this limitation.
+
 ### Hardware Limitations
 
 Currently, each builder defined in the Packer template receives
