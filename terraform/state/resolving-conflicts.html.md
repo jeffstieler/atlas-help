@@ -4,7 +4,36 @@ title: "Resolving Conflicts in Atlas Remote State"
 
 ## Resolving Conflicts in Atlas Remote State
 
-The best way to resolve conflicts in Atlas remote state
+Resolving state conflicts can be time consuming and error prone, so
+it's important to approach it carefully.
+
+There are several tools provided by Atlas to help resolve conflicts
+and fix remote state issues. First, you can navigate between state
+versions in the changes view of your environment (after toggling on
+the remote state checkbox) and view plain-text differences between
+versions.
+
+This allows you to pinpoint where things may have gone wrong and
+make a educated decision about resolving the conflict.
+
+### Rolling Back to a Specific State Version
+
+The rollback feature allows you to choose a new version to set as the
+"Head" version of the state. Rolling back to a version means it will
+then return that state upon request from a client. It will not
+increment the serial in the state, but perform a hard rollback to the
+exact version of the state provided.
+
+This allows you to reset the state to an older version, essentially
+forgetting changes made in versions after that point.
+
+To roll back to a specific version, navigate to it in the changes view
+and use the rollback link. You'll need to confirm the version number
+to perform the operation.
+
+### Using Terraform Locally
+
+Another way to resolve conflicts in Atlas remote state
 is to merge and conflicted copies locally by inspecting the
 raw state available in the path `.terraform/terraform.tfstate`.
 
