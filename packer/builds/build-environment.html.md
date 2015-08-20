@@ -121,3 +121,11 @@ AWS example:
         }
       ]
     }
+
+- - -
+
+## Notes on Security
+
+Environment variables in Atlas are encrypted using [Vault](https://vaultproject.io) 
+and closely guarded and audited. If you have questions or concerns about the 
+safety of your configuration, please contact our security team at [security@hashicorp.com](mailto:security@hashicorp.com).
