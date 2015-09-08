@@ -25,8 +25,8 @@ The following output is from `terraform show`.
       metadata_full.# = 1
       metadata_full.region-us-east-1 = ami-3a0a1d52
       name = acmeinc/web-worker
-      slug = acmeinc/web-worker/amazon.ami/7
-      type = amazon.ami
+      slug = acmeinc/web-worker/amazon.image/7
+      type = amazon.image
 
 In this case, the version is 7 and can be found in the persisted slug
 attribute.
@@ -38,7 +38,7 @@ deploy.
 
     resource "atlas_artifact" "web-worker" {
         name = "acmeinc/web-worker"
-        type = "amazon.ami"
+        type = "amazon.image"
         version = 7
     }
 
@@ -51,7 +51,7 @@ possible if Atlas was used to build the artifact with Packer.
 
     resource "atlas_artifact" "web-worker" {
         name = "acmeinc/web-worker"
-        type = "amazon.ami"
+        type = "amazon.image"
         build = 5
     }
 

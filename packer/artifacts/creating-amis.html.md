@@ -22,7 +22,7 @@ This spins up an AWS instance in your account and provisions it with
 1. Packer stops the instance and stores the result as an AMI in AWS
 under your account. This then returns an ID (the artifact) that it passes to the Atlas post-processor
 1. The Atlas post-processor creates and uploads the new artifact version with the
-ID in Atlas of the type `amazon.ami` for use later
+ID in Atlas of the type `amazon.image` for use later
 
 ### Example
 
@@ -49,7 +49,7 @@ Below is a complete example Packer template that starts an AWS instance.
         {
           "type": "atlas",
           "artifact": "acmeinc/web-server",
-          "artifact_type": "amazon.ami"
+          "artifact_type": "amazon.image"
         }
       ]
     }

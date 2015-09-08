@@ -8,8 +8,9 @@ with the [Atlas post-processor](https://packer.io/docs/post-processors/atlas.htm
 
 Artifacts can then be used in Atlas to deploy services or access
 via Vagrant. Artifacts are generic, but can be of varying types
-like `amazon.ami` or `vagrant.box`. These types define different
-behavior within Atlas.
+like `amazon.image` or `vagrant.box`. These types define different
+behavior within Atlas. See the Packer [`artifact_type`](https://packer.io/docs/post-processors/atlas.html#artifact_type)
+docs for more information.
 
 Packer can create artifacts both while running in Atlas and out of Atlas'
 network. This is possible due to the post-processors use of the public

@@ -103,6 +103,7 @@ The keys for the following artifact types will be injected:
 
 - `aws.ami`: `ATLAS_BASE_ARTIFACT_AWS_AMI_ID`
 - `amazon.ami`: `ATLAS_BASE_ARTIFACT_AMAZON_AMI_ID`
+- `amazon.image`: `ATLAS_BASE_ARTIFACT_AMAZON_IMAGE_ID`
 
 You can then reference this artifact in your Packer template, like this
 AWS example:
@@ -126,7 +127,7 @@ AWS example:
 
 ## Notes on Security
 
-Packer environment variables in Atlas are encrypted using [Vault](https://vaultproject.io) 
-and closely guarded and audited. If you have questions or concerns 
-about the safety of your configuration, please contact our security team 
+Packer environment variables in Atlas are encrypted using [Vault](https://vaultproject.io)
+and closely guarded and audited. If you have questions or concerns
+about the safety of your configuration, please contact our security team
 at [security@hashicorp.com](mailto:security@hashicorp.com).
