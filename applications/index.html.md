@@ -4,12 +4,6 @@ title: "About Applications in Atlas"
 
 # About Applications in Atlas
 
-<div class="alert-infos">
-    <div class="row alert-info">
-        Application deployment with Atlas is a beta feature. <a href="/help/support">Contact us</a> to use it.
-    </div>
-</div>
-
 Atlas can be used to deploy applications by storing,
 compiling and injecting application slugs (i.e binaries or archives)
 into Packer builds in order to build any number of machine images
