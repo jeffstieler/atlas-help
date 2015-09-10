@@ -147,6 +147,15 @@
         </ul>
     </li>
 
+    <li class="expandable <%= "active" if help_active?("applications") %>">
+        <h4><%= help_link "Applications", "applications" %></h4>
+        <ul>
+            <li><%= help_link "Compilation", "applications/compilation" %></li>
+            <li><%= help_link "Uploading", "applications/uploading" %></li>
+            <li><%= help_link "Build Pipeline", "applications/build-pipeline" %></li>
+        </ul>
+    </li>
+
     <li class="expandable <%= "active" if help_active?("user-accounts") %>">
         <h4><%= help_link "User Accounts", "user-accounts" %></h4>
         <ul>
