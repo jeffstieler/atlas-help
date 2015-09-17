@@ -36,6 +36,14 @@ executes in during the `plan` and `apply` phases.
 You can add, edit, and delete environment variables from the "variables" page
 on your [environment](/help/glossary#environment).
 
+## Keys & Certs
+
+The recommended way to manage your keys and certs is to add them as [Terraform Variables](#terraform-variables) in Atlas. View the [Terraform Variable Documentation](https://www.terraform.io/docs/configuration/variables.html) to determine how you want to pass these variables.
+
+It is recommended that you never check-in these keys/certs to version control. So, best practice would be setting a blank variable in a `variables.tf` or `terraform.tfvars` file that resources utilizing the key/cert will use, `terraform push` to Atlas, navigate to the "Variables" section of your Atlas Environment, paste your key/cert in and save.
+
+Now, any resource that consumes that variable will have the correct key/cert in Atlas. If you want to run Terraform locally, that variable will still need to be passed in with the correct key/cert.
+
 - - -
 
 ## Notes on Security
