@@ -36,9 +36,9 @@ executes in during the `plan` and `apply` phases.
 You can add, edit, and delete environment variables from the "variables" page
 on your [environment](/help/glossary#environment).
 
-## Managing Multi-Line Secret Files
+## Managing Secret Multi-Line Files
 
-Atlas has the ability store multi-line files as variables. The recommended way to manage your multi-line secret files (SSL keys, certificates, etc.) is to add them as [Terraform Variables](#terraform-variables) in Atlas.
+Atlas has the ability store multi-line files as variables. The recommended way to manage your secret/sensitive multi-line files (SSL keys, certificates, etc.) is to add them as [Terraform Variables](#terraform-variables) in Atlas.
 
 Just like secret strings, it is recommended that you never check-in these multi-line secret files to version control. Best practice is setting a blank [variable in Terraform](https://www.terraform.io/docs/configuration/variables.html) that resources utilizing the file will reference, `terraform push` to Atlas, navigate to the "Variables" section of your Atlas Environment, paste the contents of that file into the variable and save.
 
