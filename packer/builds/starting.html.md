@@ -36,12 +36,6 @@ like git, this basically does a `git ls-files`.
 
 ### GitHub Import
 
-<div class="alert-infos">
-    <div class="row alert-info">
-        GitHub importing for Packer configurations is an unreleased beta feature. <a href="/help/support">Contact us</a>.
-    </div>
-</div>
-
 Optionally, GitHub can be used to import Packer templates and configurations,
 automatically building when changes are merged into the default branch.
 
@@ -51,4 +45,3 @@ upload to Atlas.
 
 This works by first connecting your [Build Configuration](/help/glossary#build-configuration) to the target
 GitHub repository and then pushing changes to the default branch.
-
