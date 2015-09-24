@@ -15,8 +15,8 @@ into what is deployed and help guarantee safety in deployments. "Immutable
 infrastructure", as it is sometimes called, has numerous other benefits
 that are written about broadly.
 
-The Atlas workflow focuses on immutability in deployment. Infrastructure
-should be launched in a configured state, rather then being configured
+The Atlas workflow focuses on immutability in deployment, taking the view that infrastructure
+should be launched in a configured state rather then being configured
 after being launched.
 
 When using Atlas to deploy images as covered
