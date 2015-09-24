@@ -7,10 +7,23 @@ Packer creates and uploads artifacts to Atlas. This is done
 with the [Atlas post-processor](https://packer.io/docs/post-processors/atlas.html).
 
 Artifacts can then be used in Atlas to deploy services or access
-via Vagrant. Artifacts are generic, but can be of varying types
-like `amazon.image` or `vagrant.box`. These types define different
-behavior within Atlas. See the Packer [`artifact_type`](https://packer.io/docs/post-processors/atlas.html#artifact_type)
-docs for more information.
+via Vagrant. Artifacts are generic, but can be of varying types.
+These types define different behavior within Atlas.
+
+For uploading artifacts to Atlas, `artifact_type` can be set to any
+unique identifier, however, the following are recommended for consistency.
+
+- `amazon.image`
+- `digitalocean.image`
+- `docker.image`
+- `googlecompute.image`
+- `openstack.image`
+- `parallels.image`
+- `qemu.image`
+- `virtualbox.image`
+- `vmware.image`
+- `custom.image`
+- `vagrant.box`
 
 Packer can create artifacts both while running in Atlas and out of Atlas'
 network. This is possible due to the post-processors use of the public
