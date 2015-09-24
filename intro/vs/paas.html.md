@@ -14,7 +14,7 @@ stage, you must either bend your application to fit with a PaaS or
 move off of it.
 
 Atlas attempts to bridge this gap and is focused on the workflow of
-deployment and infrastructure management, rather then where applications
+deployment and infrastructure management, rather than where applications
 run. For example, Terraform can manage Heroku resources and combine them
 with AWS compute.
 
