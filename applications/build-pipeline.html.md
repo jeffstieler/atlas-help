@@ -31,7 +31,7 @@ configuration.
 
 ## Build Environment
 
-When this build runs, the following variables will be injecting into
+When this build runs, the following variables will be injected into
 the environment, along with the standard
 [Packer environment variables](/help/packer/builds/build-environment#environment-variables).
 
