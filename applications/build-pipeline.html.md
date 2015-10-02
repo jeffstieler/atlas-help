@@ -4,13 +4,6 @@ title: "Application Build Pipeline"
 
 # Application Build Pipeline
 
-<div class="alert-infos">
-    <div class="row alert-info">
-        The build pipeline is a beta feature different from
-<a href="http://localhost:3000/help/packer/builds/linked-applications">linked applications</a>. <a href="/help/support">Contact us</a> to use it.
-    </div>
-</div>
-
 Optionally, you can configure an application to use a build configuration
 as a template for the build process. This allows operators to maintain
 a single set of configuration for the build step and create similiar images
