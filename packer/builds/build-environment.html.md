@@ -25,7 +25,7 @@ Atlas currently supports running the following Packer builders:
 ### Files
 
 All files in the uploading package (via [Packer push or GitHub](/help/packer/builds/starting)),
-and any [linked applications](/help/packer/builds/linked-applications) are available on the filesystem
+and the application from the [build pipeline](/help/applications/build-pipeline) are available on the filesystem
 of the build environment.
 
 You can use the file icon on the running build to show a list of
