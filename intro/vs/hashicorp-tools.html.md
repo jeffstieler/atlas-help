@@ -2,7 +2,7 @@
 title: "Atlas vs. HashiCorp Tools"
 ---
 
-## Atlas vs. HashiCorp Tools
+# Atlas vs. HashiCorp Tools
 
 HashiCorp tools are used by Atlas to perform core operations against
 infrastructure, development processes, image building and more. Because

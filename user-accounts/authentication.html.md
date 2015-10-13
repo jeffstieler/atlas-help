@@ -1,7 +1,8 @@
 ---
 title: "Authentication with Atlas"
 ---
-## Authentication with Atlas
+
+# Authentication with Atlas
 
 Atlas requires a username and password to sign up and login. However,
 there are several ways to authenticate with your Atlas account.

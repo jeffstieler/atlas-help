@@ -1,6 +1,7 @@
 ---
 title: "About Terraform Artifacts in Atlas"
 ---
+
 # About Terraform Artifacts in Atlas
 
 Atlas can be used to store artifacts for use by Terraform. Typically,

@@ -1,6 +1,7 @@
 ---
 title: "SCADA in Atlas"
 ---
+
 ## SCADA in Atlas
 
 [SCADA](https://scada.hashicorp.com) is a service to allow tools to
@@ -30,4 +31,3 @@ commands to be received. Commands map to APIs exposed by the product,
 and are subject to any ACLs, authentication or authorization mechanisms
 of the client. More specific details are available in the product
 documentation.
-

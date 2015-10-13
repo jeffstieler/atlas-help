@@ -1,7 +1,8 @@
 ---
 title: "Atlas vs. Cloudformation, Heat, and Other Infrastructure Management"
 ---
-## Atlas vs. Cloudformation, Heat, and Other Infrastructure Management
+
+# Atlas vs. Cloudformation, Heat, and Other Infrastructure Management
 
 Tools like CloudFormation, Heat, etc. allow the details of an infrastructure
 to be codified into a configuration file. The configuration files allow

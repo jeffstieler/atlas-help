@@ -2,7 +2,7 @@
 title: "Resolving Conflicts in Atlas Remote State"
 ---
 
-## Resolving Conflicts in Atlas Remote State
+# Resolving Conflicts in Atlas Remote State
 
 Resolving state conflicts can be time consuming and error prone, so
 it's important to approach it carefully.
@@ -46,15 +46,15 @@ than the known serial when the MD5 of the state does not match.
 The serial is embedded in the state file:
 
     {
-        "version": 1,
-        "serial": 555,
-        "remote": {
-            "type": "atlas",
-            "config": {
-                "name": "acmeinc/production"
-            }
-        },
-        ...
+      "version": 1,
+      "serial": 555,
+      "remote": {
+        "type": "atlas",
+        "config": {
+          "name": "acmeinc/production"
+        }
+      },
+      ...
     }
 
 Once a conflict has been resolved locally by editing the state file,

@@ -2,7 +2,7 @@
 title: "Collaborating on Terraform Remote State in Atlas"
 ---
 
-## Collaborating on Terraform Remote State in Atlas
+# Collaborating on Terraform Remote State in Atlas
 
 Atlas is one of a few options to store [remote state](/help/terraform/state).
 

@@ -1,6 +1,7 @@
 ---
 title: "Atlas Use Cases"
 ---
+
 # Atlas Use Cases
 
 This section documents some common use cases of Atlas. Select a

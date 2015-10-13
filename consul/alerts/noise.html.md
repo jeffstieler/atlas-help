@@ -1,6 +1,7 @@
 ---
 title: "Debugging Noisy Alerts"
 ---
+
 # Debugging Noisy Alerts
 
 If alerts are too frequent, or "noisy", there are several strategies

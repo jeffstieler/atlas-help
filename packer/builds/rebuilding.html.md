@@ -2,7 +2,7 @@
 title: "Rebuilding Builds"
 ---
 
-## Rebuilding Builds
+# Rebuilding Builds
 
 Sometimes builds fail due to temporary or remotely controlled conditions.
 

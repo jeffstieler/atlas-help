@@ -1,6 +1,7 @@
 ---
 title: "About Vagrant Shares"
 ---
+
 # About Vagrant Shares
 
 With the `vagrant share` command, you can instantly share public

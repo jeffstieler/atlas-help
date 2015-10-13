@@ -1,6 +1,7 @@
 ---
 title: "About Vagrant Boxes"
 ---
+
 # About Vagrant Boxes
 
 Boxes are the package format for [Vagrant](https://vagrantup.com) environments.

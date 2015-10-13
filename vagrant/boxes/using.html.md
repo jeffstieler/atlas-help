@@ -1,6 +1,7 @@
 ---
 title: "Finding and Using Boxes"
 ---
+
 # Finding and Using Boxes
 
 A primary use case of Atlas by HashiCorp is to be able to easily find

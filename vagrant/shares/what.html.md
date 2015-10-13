@@ -1,6 +1,7 @@
 ---
 title: "What are Shares?"
 ---
+
 # What are Shares?
 
 Shares let you share access to a running Vagrant environment with anyone,

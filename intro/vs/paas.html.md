@@ -2,7 +2,7 @@
 title: "Atlas vs. Heroku and other PaaS"
 ---
 
-## Atlas vs. Heroku and other PaaS
+# Atlas vs. Heroku and other PaaS
 
 PaaS, like Heroku, typically manage the entire application and
 service stack within their own infrastructure. This means

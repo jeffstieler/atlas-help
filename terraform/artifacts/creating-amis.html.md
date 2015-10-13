@@ -1,6 +1,7 @@
 ---
 title: "Creating AMI Artifacts with Packer and Atlas"
 ---
+
 # Creating AMI Artifacts with Packer and Atlas
 
 Currently, the best way to create AWS AMI artifacts is with Packer.

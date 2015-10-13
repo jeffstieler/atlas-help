@@ -2,7 +2,7 @@
 title: "Packer Build Environment"
 ---
 
-## Packer Build Environment
+# Packer Build Environment
 
 This page outlines the environment that Packer runs in within Atlas.
 
@@ -37,14 +37,14 @@ with [Packer Provisioners](https://packer.io/docs/templates/provisioners.html).
 An example of this with the Shell provisioner is below.
 
     "provisioners": [
-        {
-            "type": "shell",
-            "scripts": [
-                "scripts/vagrant.sh",
-                "scripts/dependencies.sh",
-                "scripts/cleanup.sh"
-            ]
-        }
+      {
+        "type": "shell",
+        "scripts": [
+          "scripts/vagrant.sh",
+          "scripts/dependencies.sh",
+          "scripts/cleanup.sh"
+        ]
+      }
     ]
 
 We encourage use of relative paths over absolute paths to maintain portability

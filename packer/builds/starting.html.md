@@ -2,7 +2,7 @@
 title: "Starting Packer Builds in Atlas"
 ---
 
-## Starting Packer Builds in Atlas
+# Starting Packer Builds in Atlas
 
 Packer builds can be started in Atlas in two ways: `packer push`
 to upload the template and directory or via a GitHub connection that retrieves

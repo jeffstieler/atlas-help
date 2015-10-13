@@ -2,7 +2,7 @@
 title: "Managing Multiple Environments (Stage, QA, Prod)"
 ---
 
-## Managing Multiple Environments
+# Managing Multiple Environments
 
 Terraform in Atlas makes it easy to reuse configurations and manage multiple environments.
 Common configurations should be written as [modules](http://terraform.io/docs/modules/index.html),
@@ -50,15 +50,15 @@ the modules and their output:
 
 Each environment should setup [remote state storage in Atlas](http://terraform.io/docs/state/remote.html) separately:
 
-	terraform remote config -backend-config="name=hashicorp/prod"
-	terraform remote config -backend-config="name=hashicorp/qa"
-	terraform remote config -backend-config="name=hashicorp/stage"
+	$ terraform remote config -backend-config="name=hashicorp/prod"
+	$ terraform remote config -backend-config="name=hashicorp/qa"
+	$ terraform remote config -backend-config="name=hashicorp/stage"
 
 And then [push the configurations to Atlas](http://terraform.io/docs/commands/push.html) so Terraform can be run remotely:
 
-	terraform push -name="hashicorp/prod"
-	terraform push -name="hashicorp/qa"
-	terraform push -name="hashicorp/stage"
+	$ terraform push -name="hashicorp/prod"
+	$ terraform push -name="hashicorp/qa"
+	$ terraform push -name="hashicorp/stage"
 
 With this setup, any time you make a change to a shared module, the update
 propogates to all the environments to ensure parity.

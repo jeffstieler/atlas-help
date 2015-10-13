@@ -1,6 +1,7 @@
 ---
 title: "About Packer and Artifacts "
 ---
+
 # About Packer and Artifacts
 
 Packer creates and uploads artifacts to Atlas. This is done

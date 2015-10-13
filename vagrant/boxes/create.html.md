@@ -1,6 +1,7 @@
 ---
 title: "Creating a New Vagrant Box"
 ---
+
 # Creating a New Vagrant Box
 
 This page will cover creating a new box in Atlas and how to distribute
@@ -65,10 +66,9 @@ get started, you'll need to get an [access token](/settings/tokens).
 
 Then, prepare the upload:
 
-    curl 'https://atlas.hashicorp.com/api/v1/box/USERNAME/BOX_NAME/version/VERSION/provider/PROVIDER_NAME/upload?access_token=ACCESS_TOKEN'
+    $ curl 'https://atlas.hashicorp.com/api/v1/box/USERNAME/BOX_NAME/version/VERSION/provider/PROVIDER_NAME/upload?access_token=ACCESS_TOKEN'
 
 This should return something like this:
-
 
     {
       "upload_path": "https://binstore.hashicorp.com/630e42d9-2364-2412-4121-18266770468e",
@@ -77,11 +77,10 @@ This should return something like this:
 
 Then, upload your box with the following command, with the filename in this case being `foo.box`:
 
-    curl -X PUT --upload-file foo.box https://binstore.hashicorp.com/630e42d9-2364-2412-4121-18266770468e
+    $ curl -X PUT --upload-file foo.box https://binstore.hashicorp.com/630e42d9-2364-2412-4121-18266770468e
 
 When the upload finishes, you can verify it worked by making this request and matching the `hosted_token` it returns to the previously retrieved upload token.
 
-
-    curl 'https://atlas.hashicorp.com/api/v1/box/USERNAME/BOX_NAME/version/VERSION_NUMBER/provider/PROVIDER_NAME?access_token=ACCESS_TOKEN'
+    $ curl 'https://atlas.hashicorp.com/api/v1/box/USERNAME/BOX_NAME/version/VERSION_NUMBER/provider/PROVIDER_NAME?access_token=ACCESS_TOKEN'
 
 Your box should then be available for download.

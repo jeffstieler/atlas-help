@@ -1,7 +1,8 @@
 ---
 title: "Atlas vs. Custom Solutions"
 ---
-## Atlas vs. Custom Solutions
+
+# Atlas vs. Custom Solutions
 
 Most organizations start by manually managing infrastructure and deploying
 applications through simple scripts or web-based interfaces. As the organization

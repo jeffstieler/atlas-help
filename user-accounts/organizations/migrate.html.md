@@ -1,7 +1,8 @@
 ---
 title: "Migrate Organization"
 ---
-## Migrate Organization
+
+# Migrate Organization
 
 To migrate an existing user account to an organization:
 

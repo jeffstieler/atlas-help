@@ -1,6 +1,7 @@
 ---
 title: "Box Versioning and Lifecycle"
 ---
+
 # Box Versioning and Lifecycle
 
 Boxes support versioning so that members of your team using Vagrant can
