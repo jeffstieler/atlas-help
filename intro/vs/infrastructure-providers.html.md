@@ -2,7 +2,7 @@
 title: "Atlas vs. AWS, GCE, Azure and Other Infrastructure Providers"
 ---
 
-## Atlas vs. AWS, GCE, Azure and Other Infrastructure Providers
+# Atlas vs. AWS, GCE, Azure and Other Infrastructure Providers
 
 AWS, GCE and Azure, among others, often offer infrastructure
 management solutions within their own systems. These tools

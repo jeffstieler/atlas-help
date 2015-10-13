@@ -1,6 +1,7 @@
 ---
 title: "Alert Notification Methods"
 ---
+
 # Alert Notification Methods
 
 Atlas currently supports many different types of notification methods, outlined

@@ -1,7 +1,8 @@
 ---
 title: "Create an Organization Account"
 ---
-## Create an Organization Account
+
+# Create an Organization Account
 
 To create an organization:
 

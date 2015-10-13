@@ -10,20 +10,20 @@ Terraform for interpolation. In the following example, an artifact
 is defined and references an AMI ID stored in Atlas.
 
     provider "atlas" {
-        # You can also set the atlas token by exporting
-        # ATLAS_TOKEN into your env
-        token = "${var.atlas_token}"
+      # You can also set the atlas token by exporting
+      # ATLAS_TOKEN into your env
+      token = "${var.atlas_token}"
     }s
 
     resource "atlas_artifact" "web-worker" {
-        name = "acmeinc/web-worker"
-        type = "amazon.image"
-        version = "latest"
+      name = "acmeinc/web-worker"
+      type = "amazon.image"
+      version = "latest"
     }
 
     resource "aws_instance" "worker-machine" {
-        ami = "${atlas_artifact.web-worker.metadata_full.region-us-east-1}"
-        instance_type = "m1.small"
+      ami = "${atlas_artifact.web-worker.metadata_full.region-us-east-1}"
+      instance_type = "m1.small"
     }
 
 This automatically pulls the "latest" artifact version.

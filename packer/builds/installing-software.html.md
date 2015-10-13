@@ -2,7 +2,7 @@
 title: "Installing Software"
 ---
 
-## Installing Software
+# Installing Software
 
 Please review the [Packer Build Environment](/help/packer/builds/build-environment)
 specification for important information on isolation, security, and hardware

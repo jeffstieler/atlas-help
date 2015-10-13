@@ -1,10 +1,11 @@
 ---
 title: "About Consul Alerts"
 ---
+
 # About Consul Alerts
 
 Consul can be connected to Atlas to automatically provide
-alerts to several different [notification methods](/help/consul/alerts/notification-methods), 
+alerts to several different [notification methods](/help/consul/alerts/notification-methods),
 including Slack, email, HipChat and Pagerduty.
 
 Alerts can be set at three thresholds:

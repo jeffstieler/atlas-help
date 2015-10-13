@@ -1,6 +1,7 @@
 ---
 title: "Consul Auto-Join"
 ---
+
 # Consul Auto-Join
 
 Consul can be configured to auto-join via Atlas. Atlas will track the most recent
@@ -12,6 +13,6 @@ authenticates and verifies this join.
 
 This can be enabled with the `-atlas-join` flag.
 
-    consul agent -atlas acmeinc/infrastructure -atlas-join
+    $ consul agent -atlas acmeinc/infrastructure -atlas-join
 
 Read more in the [Consul documentation](https://consul.io/docs/agent/options.html#_atlas_join).

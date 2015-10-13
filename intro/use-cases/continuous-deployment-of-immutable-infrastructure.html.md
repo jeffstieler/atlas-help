@@ -2,7 +2,7 @@
 title: "Continuous Deployment of Immutable Infrastructure"
 ---
 
-## Continuous Deployment of Immutable Infrastructure
+# Continuous Deployment of Immutable Infrastructure
 
 Organizations can use the complete HashiCorp toolset to continuously deploy
 immutable infrastructure. Build deployable artifacts with Packer, provision
@@ -20,15 +20,15 @@ starts the process of turning this application code into a running, deployed app
 2. [Packer](/help/packer/builds) ingests the application code and merges it with its
 required dependencies using a provisioning script
 (Puppet, Ansible, Shell, etc) to create a deployable artifact for the `web` service.
-This artifact could be an Amazon Machine Image, OpenStack image, Docker container, etc. 
+This artifact could be an Amazon Machine Image, OpenStack image, Docker container, etc.
 3. The Packer-built artifact is stored in [Atlas's artifact registry](/help/packer/artifacts)
-under a namespace defining the artifact, such as `acmeinc/web`. 
+under a namespace defining the artifact, such as `acmeinc/web`.
 4. [Terraform](/help/terraform/runs) then references this artifact from the registry and
 deploys an instance using the artifact. For example, on Amazon Web Services, an
 instance would be provisioned using a fully baked AMI.
 5. When an update is made to an artifact, a
 [Terraform `plan`](/help/terraform/runs) is automatically run, which
-shows the difference in the artifact version for a deployed instance. 
+shows the difference in the artifact version for a deployed instance.
 An __operator__ is [notified of a pending change](/help/terraform/runs/notifications).
 5. An __operator__ reviews and confirms this infrastructure change which triggers
 Terraform, running in Atlas, to apply the change.

@@ -1,6 +1,7 @@
 ---
 title: "Managing Artifact Versions"
 ---
+
 # Managing Artifact Versions
 
 Artifacts stored in Atlas are versioned and assigned a version number.
@@ -37,9 +38,9 @@ You can pin artifacts to a specific version. This allows for a targeted
 deploy.
 
     resource "atlas_artifact" "web-worker" {
-        name = "acmeinc/web-worker"
-        type = "amazon.image"
-        version = 7
+      name = "acmeinc/web-worker"
+      type = "amazon.image"
+      version = 7
     }
 
 This will use version 7 of the `web-worker` artifact.
@@ -50,9 +51,9 @@ Artifacts can also be pinned to an Atlas build number. This is only
 possible if Atlas was used to build the artifact with Packer.
 
     resource "atlas_artifact" "web-worker" {
-        name = "acmeinc/web-worker"
-        type = "amazon.image"
-        build = 5
+      name = "acmeinc/web-worker"
+      type = "amazon.image"
+      build = 5
     }
 
 It's recommended to use versions, instead of builds, as it will

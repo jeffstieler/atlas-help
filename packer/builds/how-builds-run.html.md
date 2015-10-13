@@ -2,7 +2,7 @@
 title: "How Packer Builds Run in Atlas"
 ---
 
-## How Packer Builds Run in Atlas
+# How Packer Builds Run in Atlas
 
 This briefly covers the internal process of running builds in Atlas. It's
 not necessary to know this information, but may be valuable to

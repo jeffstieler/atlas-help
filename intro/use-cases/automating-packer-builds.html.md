@@ -1,7 +1,8 @@
 ---
 title: "Automating Packer Builds"
 ---
-## Automating Packer Builds
+
+# Automating Packer Builds
 
 Atlas can run Packer for you in our infrastructure. This enables
 faster and more reliable build times, consistent build environments,

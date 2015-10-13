@@ -1,6 +1,7 @@
 ---
 title: "Discovering Vagrant Boxes"
 ---
+
 # Discovering Vagrant Boxes
 
 Atlas serves a public, searchable index of Vagrant boxes. It's easy to find

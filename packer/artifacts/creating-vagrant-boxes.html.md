@@ -1,6 +1,7 @@
 ---
 title: "Creating Vagrant Boxes with Packer"
 ---
+
 # Creating Vagrant Boxes with Packer
 
 We recommend using Packer to create boxes, as is it is fully repeatable and keeps a strong
@@ -39,16 +40,16 @@ It's important that they are [sequenced](https://packer.io/docs/templates/post-p
 in the Packer template so they run in order. This is done by nesting arrays:
 
     "post-processors": [
-        [
-            {
-                "type": "vagrant"
-                ...
-            },
-            {
-                "type": "atlas"
-                ...
-            }
-        ]
+      [
+        {
+          "type": "vagrant"
+          ...
+        },
+        {
+          "type": "atlas"
+          ...
+        }
+      ]
     ]
 
 Sequencing automatically passes the resulting artifact from one
@@ -61,8 +62,8 @@ from the build (an `.ovf` file, for example) into a `.box` file before
 passing it to the `atlas` post-processor.
 
     {
-        "type": "vagrant",
-        "keep_input_artifact": false
+      "type": "vagrant",
+      "keep_input_artifact": false
     }
 
 The input artifact (i.e and `.ovf` file) does not need to be kept when building Vagrant Boxes,
@@ -74,13 +75,13 @@ The [Atlas post-processor](https://packer.io/docs/post-processors/atlas.html) ta
 it to Atlas, adding metadata about the box version.
 
     {
-        "type": "atlas",
-        "artifact": "acmeinc/dev-environment",
-        "artifact_type": "vagrant.box",
-        "metadata": {
-            "provider": "vmware_desktop",
-            "version": "0.0.1"
-        }
+      "type": "atlas",
+      "artifact": "acmeinc/dev-environment",
+      "artifact_type": "vagrant.box",
+      "metadata": {
+        "provider": "vmware_desktop",
+        "version": "0.0.1"
+      }
     }
 
 #### Attributes Required
@@ -111,28 +112,30 @@ the build runs on both VMware and Virtualbox creating two
 different providers for the same box version (`0.0.1`).
 
     "post-processors": [
-        [{
-            "type": "vagrant",
-            "keep_input_artifact": false
+      [
+        {
+          "type": "vagrant",
+          "keep_input_artifact": false
         },
         {
-            "type": "atlas",
-            "only": ["vmware-iso"],
-            "artifact": "acmeinc/dev-environment",
-            "artifact_type": "vagrant.box",
-            "metadata": {
-                "provider": "vmware_desktop",
-                "version": "0.0.1"
-            }
+          "type": "atlas",
+          "only": ["vmware-iso"],
+          "artifact": "acmeinc/dev-environment",
+          "artifact_type": "vagrant.box",
+          "metadata": {
+            "provider": "vmware_desktop",
+            "version": "0.0.1"
+          }
         },
         {
-            "type": "atlas",
-            "only": ["virtualbox-iso"],
-            "artifact": "acmeinc/dev-environment",
-            "artifact_type": "vagrant.box",
-            "metadata": {
-                "provider": "virtualbox",
-                "version": "0.0.1"
-            }
-        }]
+          "type": "atlas",
+          "only": ["virtualbox-iso"],
+          "artifact": "acmeinc/dev-environment",
+          "artifact_type": "vagrant.box",
+          "metadata": {
+            "provider": "virtualbox",
+            "version": "0.0.1"
+          }
+        }
+      ]
     ]

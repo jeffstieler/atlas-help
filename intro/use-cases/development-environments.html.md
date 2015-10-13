@@ -2,7 +2,7 @@
 title: "Managing Development Environments"
 ---
 
-## Managing Development Environments
+# Managing Development Environments
 
 Using Atlas with [Vagrant](https://www.vagrantup.com) enables teams to update and version
 development environments via [Boxes](/help/vagrant/boxes). Boxes can be

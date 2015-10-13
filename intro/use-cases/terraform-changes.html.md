@@ -2,7 +2,7 @@
 title: "Collaborating on Terraform Changes"
 ---
 
-## Collaborating on Terraform Changes
+# Collaborating on Terraform Changes
 
 Using Terraform in Atlas you can make changes to infrastructure
 across large teams with total transparency of changes made. Changes are

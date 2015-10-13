@@ -2,7 +2,7 @@
 title: "Infrastructure Monitoring"
 ---
 
-## Infrastructure Monitoring
+# Infrastructure Monitoring
 
 Leveraging [Consul health checks](/help/consul/alerts), Atlas can monitor at the node or
 service level across datacenters. Alerts of failed health checks

@@ -1,6 +1,7 @@
 ---
 title: "Create a New Box Version"
 ---
+
 # Create a New Box Version
 
 To release a new version of a box to the public or to your team:

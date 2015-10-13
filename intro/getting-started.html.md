@@ -1,6 +1,7 @@
 ---
 title: "Getting Started with Atlas"
 ---
+
 # Getting Started with Atlas
 
 Atlas has a wide range of features that cover many use cases. It's important

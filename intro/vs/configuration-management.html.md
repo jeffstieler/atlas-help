@@ -2,7 +2,7 @@
 title: "Atlas vs. Chef, Puppet, Ansible and Other Configuration Management"
 ---
 
-## Atlas vs. Chef, Puppet, Ansible and Other Configuration Management
+# Atlas vs. Chef, Puppet, Ansible and Other Configuration Management
 
 Configuration management tools install and manage software on a
 machine that already exists. Depending on how you use Atlas,

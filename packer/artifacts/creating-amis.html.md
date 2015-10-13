@@ -1,6 +1,7 @@
 ---
 title: "Creating AMI Artifacts with Atlas"
 ---
+
 # Creating AMI Artifacts with Atlas
 
 In an [immutable infrastructure](/help/intro/use-cases/continuous-deployment-of-immutable-infrastructure)

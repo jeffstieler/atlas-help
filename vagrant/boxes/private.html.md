@@ -1,6 +1,7 @@
 ---
 title: "Private Boxes"
 ---
+
 # Private Boxes
 
 If you create a private box, only you (the owner) and collaborators

@@ -1,6 +1,7 @@
 ---
 title: "About Remote State"
 ---
+
 # About Remote State
 
 Terraform stores the state of your managed infrastructure from the last

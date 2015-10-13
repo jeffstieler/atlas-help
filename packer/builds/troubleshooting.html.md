@@ -2,7 +2,7 @@
 title: "Troubleshooting Failing Builds"
 ---
 
-## Troubleshooting Failing Builds
+# Troubleshooting Failing Builds
 
 Packer builds can fail in Atlas for a number of reasons – improper
 configuration, transient networking errors, and hardware constraints
@@ -25,8 +25,8 @@ This can also be used locally:
 
 ### Hanging Builds
 
-Some VM builds, such as VMware or Virtualbox, may hang at various stages, 
-most notably `Waiting for SSH...`. 
+Some VM builds, such as VMware or Virtualbox, may hang at various stages,
+most notably `Waiting for SSH...`.
 
 Things to pay attention to when this happens:
 
