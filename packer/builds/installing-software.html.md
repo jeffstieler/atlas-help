@@ -24,3 +24,5 @@ machine running Packer.
 
 Please note that nothing is persisted between Packer builds, so you will need
 to install custom software on each run.
+
+The Packer builders run the latest version of Ubuntu LTS.

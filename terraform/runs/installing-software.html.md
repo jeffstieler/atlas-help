@@ -24,3 +24,5 @@ Terraform.
 
 Please note that nothing is persisted between Terraform runs, so you will need
 to install custom software on each run.
+
+The Packer builders run the latest version of Ubuntu LTS.
