@@ -87,7 +87,7 @@ connection between the application and build configuration.
 duration of this build. This token will expire upon completion of the build.
 This token is used as part of any Atlas-specific providers or post processors.
 
-If the build was triggered by a new application verison, the following environment
+If the build was triggered by a new application version, the following environment
 variables are also available:
 
 - `ATLAS_APPLICATION_NAME` - the name of the application connected to the Packer build.
