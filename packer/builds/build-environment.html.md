@@ -78,14 +78,6 @@ Variables are encrypted and stored securely.
 During each Packer build, the following environment variables are available as
 part of the build:
 
-- `ATLAS_APPLICATION_NAME` - the name of the application connected to the Packer build.
-For example, `logstream`
-- `ATLAS_APPLICATION_SLUG` - the full name of the application connected to the Packer
-build. For example, `hashicorp/logstream`.
-- `ATLAS_APPLICATION_USERNAME` - the username associated with the application
-connected to the Packer build. For example, `hashicorp`.
-- `ATLAS_APPLICATION_VERSION` - the version of the application connected to the
-Packer build. For example, `2`.
 - `ATLAS_BUILD_CONFIGURATION_VERSION` - the version of the
 [build configuration](/help/glossary) version used during this build.
 - `ATLAS_BUILD_ID` - a unique identifier for the Packer build.
@@ -94,6 +86,18 @@ connection between the application and build configuration.
 - `ATLAS_TOKEN` - a unique token that can communicate with Atlas for the
 duration of this build. This token will expire upon completion of the build.
 This token is used as part of any Atlas-specific providers or post processors.
+
+If an application is connected to the build, the following environment variables
+are also available:
+
+- `ATLAS_APPLICATION_NAME` - the name of the application connected to the Packer build.
+For example, `logstream`
+- `ATLAS_APPLICATION_SLUG` - the full name of the application connected to the Packer
+build. For example, `hashicorp/logstream`.
+- `ATLAS_APPLICATION_USERNAME` - the username associated with the application
+connected to the Packer build. For example, `hashicorp`.
+- `ATLAS_APPLICATION_VERSION` - the version of the application connected to the
+Packer build. For example, `2`.
 
 
 ### Base Artifact Variable Injection
