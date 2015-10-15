@@ -38,7 +38,9 @@ your username and password.
 You can enable Two Factor authentication in the [security section](/settings/security)
 of your account settings.
 
-Be sure to save the generated recovery codes to
+Be sure to save the generated recovery codes. Each backup code can
+be used once to sign in if you do not have access to your two-factor
+authentication device.
 
 
 ### Vagrant Login
