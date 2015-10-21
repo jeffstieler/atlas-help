@@ -50,6 +50,7 @@ of compile templates and remove special casing from each template.
 - `ATLAS_APPLICATION_USERNAME`: The username of the application owner
 - `ATLAS_APPLICATION_NAME`: The name of the application
 - `ATLAS_APPLICATION_SLUG`: Both the username and the name separated by a forward slash, i.e `acmeinc/webapp`
+- `ATLAS_APPLICATION_GITHUB_COMMIT_SHA`: The GitHub commit, if this application version was ingressed from GitHub
 
 ### Post-Processors
 
