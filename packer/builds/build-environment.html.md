@@ -80,6 +80,7 @@ part of the build:
 
 - `ATLAS_BUILD_CONFIGURATION_VERSION` - the version of the
 [build configuration](/help/glossary) version used during this build.
+- `ATLAS_BUILD_GITHUB_COMMIT_SHA` - the GitHub commit, if this build configuration version was ingressed from GitHub
 - `ATLAS_BUILD_ID` - a unique identifier for the Packer build.
 - `ATLAS_BUILD_NUMBER` - the version number of the build. A build is the
 connection between the application and build configuration.
@@ -98,6 +99,7 @@ build. For example, `hashicorp/logstream`.
 connected to the Packer build. For example, `hashicorp`.
 - `ATLAS_APPLICATION_VERSION` - the version of the application connected to the
 Packer build. For example, `2`.
+- `ATLAS_APPLICATION_GITHUB_COMMIT_SHA` - the GitHub commit, if this application version was ingressed from GitHub
 
 
 ### Base Artifact Variable Injection
