@@ -57,6 +57,17 @@ read below.
 Once your builds are running smoothly locally you can push it up to Atlas
 for versioning and automated builds.
 
+### Internal Errors
+
+This is a short list of internal errors and what they mean.
+
+- SIC-001: Your data was being ingressed from GitHub but failed
+to properly unpack. This can be caused by bad permissions, improper
+symlinks or very large repository sizes.
+- SEC-001: Your data was being unpacked from a tarball uploaded to Atlas
+and encountered an error. This can be caused by bad permissions, improper
+symlinks or very large tarball sizes.
+
 ### Community Resources
 
 Packer is an open source project with an active community. If you're
