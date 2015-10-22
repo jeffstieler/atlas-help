@@ -28,7 +28,7 @@ to narrow down your search.
 ## Choosing the Right Box
 
 As with all software and configuration used from a public source,
-it's important to keep in mind who's box you're using. Here
+it's important to keep in mind whose box you're using. Here
 are some things to note when you're choosing a box:
 
 - __The username of the user__. If it's `bento` or `canonical`, you can likely
