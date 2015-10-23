@@ -11,7 +11,7 @@ is used to monitor and maintain services and nodes.
 Atlas unites the open source tools to provide an
 automated solution for application delivery. When an application connected
 to Atlas pushes a new version, it automatically triggers a Packer build which produces
-a deployable artifact. The artifact is stored in Atlas's artfiact registry.
+a deployable artifact. The artifact is stored in Atlas's artifact registry.
 When the artifact is successfully stored in Atlas, it automatically triggers a Terraform run, which
 creates a new host with the Packer-built artifact. Consul is configured in the
 build stage with Packer, so when the new host is provisioned, it automatically
