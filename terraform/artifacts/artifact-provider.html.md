@@ -13,7 +13,7 @@ is defined and references an AMI ID stored in Atlas.
       # You can also set the atlas token by exporting
       # ATLAS_TOKEN into your env
       token = "${var.atlas_token}"
-    }s
+    }
 
     resource "atlas_artifact" "web-worker" {
       name = "acmeinc/web-worker"
