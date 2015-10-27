@@ -75,31 +75,49 @@ used to configure your build with secrets or other key value configuration.
 
 Variables are encrypted and stored securely.
 
-During each Packer build, the following environment variables are available as
-part of the build:
+Additionally, the following environment variables are automatically injected by
+Atlas. All Atlas-injected environment variables will be prefixed with `ATLAS_`
 
-- `ATLAS_BUILD_CONFIGURATION_VERSION` - the version of the
-[build configuration](/help/glossary) version used during this build.
-- `ATLAS_BUILD_GITHUB_COMMIT_SHA` - the GitHub commit, if this build configuration version was ingressed from GitHub
-- `ATLAS_BUILD_ID` - a unique identifier for the Packer build.
-- `ATLAS_BUILD_NUMBER` - the version number of the build. A build is the
-connection between the application and build configuration.
-- `ATLAS_TOKEN` - a unique token that can communicate with Atlas for the
-duration of this build. This token will expire upon completion of the build.
-This token is used as part of any Atlas-specific providers or post processors.
+- `ATLAS_TOKEN` - This is a unique, per-build token that expires at the end of
+  build execution (e.g. `"abcd.atlasv1.ghjkl..."`)
+- `ATLAS_BUILD_ID - This is a unique identifier for this build (e.g. `"33"`)
+- `ATLAS_BUILD_NUMBER - This is a unique identifier for all builds in the same
+  scope (e.g. `"12"`)
+- `ATLAS_BUILD_CONFIGURATION_VERSION` - This is the unique, auto-incrementing
+  version for the [Packer build configuration](/help/glossary) (e.g. `"34"`).
+- `ATLAS_BUILD_GITHUB_BRANCH` - This is the name of the branch
+  that the associated Packer build configuration version was ingressed from
+  (e.g. `master`).
+- `ATLAS_BUILD_GITHUB_COMMIT_SHA` - This is the full commit hash
+  of the commit that the associated Packer build configuration version was
+  ingressed from (e.g. `"abcd1234..."`).
+- `ATLAS_BUILD_GITHUB_TAG` - This is the name of the tag
+  that the associated Packer build configuration version was ingressed from
+  (e.g. `"v0.1.0"`).
 
-If the build was triggered by a new application version, the following environment
-variables are also available:
+If the build was triggered by a new application version, the following
+environment variables are also available:
 
-- `ATLAS_APPLICATION_NAME` - the name of the application connected to the Packer build.
-For example, `logstream`
-- `ATLAS_APPLICATION_SLUG` - the full name of the application connected to the Packer
-build. For example, `hashicorp/logstream`.
-- `ATLAS_APPLICATION_USERNAME` - the username associated with the application
-connected to the Packer build. For example, `hashicorp`.
-- `ATLAS_APPLICATION_VERSION` - the version of the application connected to the
-Packer build. For example, `2`.
-- `ATLAS_APPLICATION_GITHUB_COMMIT_SHA` - the GitHub commit, if this application version was ingressed from GitHub
+- `ATLAS_APPLICATION_NAME` - This is the name of the application connected to
+  the Packer build (e.g. `"myapp"`).
+- `ATLAS_APPLICATION_SLUG` - This is the full name of the application connected
+  to the Packer build (e.g. `"company/myapp"`).
+- `ATLAS_APPLICATION_USERNAME` - This is the username associated with the
+  application connected to the Packer build (e.g. `"sammy"`)
+- `ATLAS_APPLICATION_VERSION` - This is the version of the application connected
+  to the Packer build (e.g. `"2"`).
+- `ATLAS_APPLICATION_GITHUB_BRANCH` - This is the name of the branch that the
+  associated application version was ingressed from (e.g. `master`).
+- `ATLAS_APPLICATION_GITHUB_COMMIT_SHA` - This is the full commit hash
+  of the commit that the associated application version was ingressed from
+  (e.g. `"abcd1234..."`).
+- `ATLAS_APPLICATION_GITHUB_TAG` - This is the name of the tag that the
+  associated application version was ingressed from (e.g. `"v0.1.0"`).
+
+For any of the `GITHUB_` attributes, the value of the environment variable will
+be the empty string (`""`) if the resource is not connected to GitHub or if the
+resource was created outside of GitHub (like using `packer push` or
+`vagrant push`).
 
 
 ### Base Artifact Variable Injection
