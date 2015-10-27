@@ -41,7 +41,7 @@ Atlas. All Atlas-injected environment variables will be prefixed with `ATLAS_`
 
 - `ATLAS_TOKEN` - This is a unique, per-run token that expires at the end of
   run execution (e.g. `"abcd.atlasv1.ghjkl..."`).
-- `ATLAS_RUN_ID - This is a unique identifier for this run (e.g. `"33"`).
+- `ATLAS_RUN_ID` - This is a unique identifier for this run (e.g. `"33"`).
 - `ATLAS_CONFIGURATION_NAME` - This is the name of the configuration used in
   this run. Unless you have configured it differently, this will also be the
   name of the environemnt (e.g `"production"`).
