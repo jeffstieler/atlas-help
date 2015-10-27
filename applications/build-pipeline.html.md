@@ -28,7 +28,6 @@ When this build runs, the following variables will be injected into
 the environment, along with the standard
 [Packer environment variables](/help/packer/builds/build-environment#environment-variables).
 
-- `ATLAS_COMPILE_ID` - This is a unique identifier for this compile (e.g. `"3"`)
 - `ATLAS_APPLICATION_NAME` - This is the name of the application connected to
   the Packer build (e.g. `"myapp"`).
 - `ATLAS_APPLICATION_SLUG` - This is the full name of the application connected
