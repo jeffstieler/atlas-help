@@ -36,6 +36,34 @@ executes in during the `plan` and `apply` phases.
 You can add, edit, and delete environment variables from the "variables" page
 on your [environment](/help/glossary#environment).
 
+Additionally, the following environment variables are automatically injected by
+Atlas. All Atlas-injected environment variables will be prefixed with `ATLAS_`
+
+- `ATLAS_TOKEN` - This is a unique, per-run token that expires at the end of
+  run execution (e.g. `"abcd.atlasv1.ghjkl..."`).
+- `ATLAS_RUN_ID` - This is a unique identifier for this run (e.g. `"33"`).
+- `ATLAS_CONFIGURATION_NAME` - This is the name of the configuration used in
+  this run. Unless you have configured it differently, this will also be the
+  name of the environemnt (e.g `"production"`).
+- `ATLAS_CONFIGURATION_SLUG` - This is the full slug of the configuration used
+  in this run. Unless you have configured it differently, this will also be the
+  name of the environment (e.g. `"company/production"`).
+- `ATLAS_CONFIGURATION_VERSION` - This is the unique, auto-incrementing version
+  for the Terraform configuration (e.g. `"34"`).
+- `ATLAS_CONFIGURATION_VERSION_GITHUB_BRANCH` - This is the name of the branch
+  that the associated Terraform configuration version was ingressed from
+  (e.g. `master`).
+- `ATLAS_CONFIGURATION_VERSION_GITHUB_COMMIT_SHA` - This is the full commit hash
+  of the commit that the associated Terraform configuration version was
+  ingressed from (e.g. `"abcd1234..."`).
+- `ATLAS_CONFIGURATION_VERSION_GITHUB_TAG` - This is the name of the tag
+  that the associated Terraform configuration version was ingressed from
+  (e.g. `"v0.1.0"`).
+
+For any of the `GITHUB_` attributes, the value of the environment variable will
+be the empty string (`""`) if the resource is not connected to GitHub or if the
+resource was created outside of GitHub (like using `terraform push`).
+
 - - -
 
 ## Notes on Security

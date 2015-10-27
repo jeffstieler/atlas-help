@@ -28,8 +28,22 @@ When this build runs, the following variables will be injected into
 the environment, along with the standard
 [Packer environment variables](/help/packer/builds/build-environment#environment-variables).
 
-- `ATLAS_APPLICATION_VERSION`: The version of the application uploaded to Atlas, i.e `5`
-- `ATLAS_APPLICATION_USERNAME`: The username of the application owner
-- `ATLAS_APPLICATION_NAME`: The name of the application
-- `ATLAS_APPLICATION_SLUG`: Both the username and the name separated by a forward slash, i.e `acmeinc/webapp`
-- `ATLAS_APPLICATION_GITHUB_COMMIT_SHA`: The GitHub commit, if this application version was ingressed from GitHub
+- `ATLAS_APPLICATION_NAME` - This is the name of the application connected to
+  the Packer build (e.g. `"myapp"`).
+- `ATLAS_APPLICATION_SLUG` - This is the full name of the application connected
+  to the Packer build (e.g. `"company/myapp"`).
+- `ATLAS_APPLICATION_USERNAME` - This is the username associated with the
+  application connected to the Packer build (e.g. `"sammy"`)
+- `ATLAS_APPLICATION_VERSION` - This is the version of the application connected
+  to the Packer build (e.g. `"2"`).
+- `ATLAS_APPLICATION_GITHUB_BRANCH` - This is the name of the branch that the
+  associated application version was ingressed from (e.g. `master`).
+- `ATLAS_APPLICATION_GITHUB_COMMIT_SHA` - This is the full commit hash
+  of the commit that the associated application version was ingressed from
+  (e.g. `"abcd1234..."`).
+- `ATLAS_APPLICATION_GITHUB_TAG` - This is the name of the tag that the
+  associated application version was ingressed from (e.g. `"v0.1.0"`).
+
+For any of the `GITHUB_` attributes, the value of the environment variable will
+be the empty string (`""`) if the resource is not connected to GitHub or if the
+resource was created outside of GitHub (like using `vagrant push`).
