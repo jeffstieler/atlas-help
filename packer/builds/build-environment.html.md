@@ -122,13 +122,6 @@ resource was created outside of GitHub (like using `packer push` or
 
 ### Base Artifact Variable Injection
 
-<div class="alert-infos">
-  <div class="alert-info">
-    This is an unreleased beta feature. Please <a href="/help/support">contact support</a>
-    if you are interested in helping us test this feature.
-  </div>
-</div>
-
 A base artifact can be selected on the "Settings" page for a build configuration.
 During each build, the latest artifact version will have it's external
 ID (such as an AMI for AWS) injected as an environment variable for the
