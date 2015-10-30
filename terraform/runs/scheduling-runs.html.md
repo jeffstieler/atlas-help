@@ -10,8 +10,8 @@ title: "Schedule Periodic Plans in Atlas"
   </div>
 </div>
 
-Atlas can optionally automatically run a Terraform plan against
-your infrastructure. This option is disabled by default and can be enabled by an
+Atlas can automatically run a Terraform plan against
+your infrastructure on a specified schedule. This option is disabled by default and can be enabled by an
 organization owner on a per-[environment](/help/glossary#environment) basis.
 
 On the specified interval, Atlas will automatically queue a plan that
