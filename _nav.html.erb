@@ -164,14 +164,15 @@
         <ul>
             <li><%= help_link "Authentication", "user-accounts/authentication" %></li>
             <li><%= help_link "Recovery", "user-accounts/recovery" %></li>
+        </ul>
+    </li>
 
-            <li class="expandable <%= "active" if help_active?("user-accounts/organizations") %>" >
-                <div class="embedded-title"><%= help_link "Organizations", "user-accounts/organizations" %></div>
-                <ul>
-                    <li><%= help_link "Create", "user-accounts/organizations/create" %></li>
-                    <li><%= help_link "Migrate", "user-accounts/organizations/migrate" %></li>
-                </ul>
-            </li>
+    <li class="expandable <%= "active" if help_active?("organizations") %>">
+        <h4><%= help_link "Organizations", "organizations" %></h4>
+        <ul>
+            <li><%= help_link "Create", "organizations/create" %></li>
+            <li><%= help_link "Migrate", "organizations/migrate" %></li>
+            <li><%= help_link "Authentication Policy", "organizations/authentication-policy" %></li>
         </ul>
     </li>
 
