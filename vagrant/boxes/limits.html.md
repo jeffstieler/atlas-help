@@ -1,8 +1,12 @@
-# Limits
+---
+title: "Box Rate Limiting"
+---
+
+# Box Rate Limiting
 
 ## What is Rate Limiting?
 
-Rate limiting is a process to protect our quality of service we provide to you. Rate limiting will limit the number of requests a client may send to services over a set time interval. We track requests by IP address origin of the request.  
+Rate limiting is a process to protect our quality of service we provide to you. Rate limiting will limit the number of requests a client may send to services over a set time interval. We track requests by IP address origin of the request.
 
 ## How many requests can I make?
 
