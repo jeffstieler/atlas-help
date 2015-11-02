@@ -56,3 +56,11 @@ used to login and automatically create an authentication token from Vagrant.
 You can read more about `vagrant login` and its options
 in the [Vagrant documentation](https://docs.vagrantup.com/v2/cli/login.html). You
 cannot use Vagrant login with Two Factor authentication.
+
+### Sudo Mode
+
+When accessing certain admin-level pages on Atlas (adjusting your user profile, for example), you may notice that you're prompted for your password, even though you're already logged in. This is by design, and aims to help guard protect you if your screen is unlocked and unattended.
+
+### Session Management
+
+You can see a list of your active sessions on [your security settings page](https://atlas.hashicorp.com/settings/security). From here, you can revoke sessions, in case you have lost access to a machine from which you were accessing Atlas.
