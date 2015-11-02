@@ -20,11 +20,9 @@ We have detected a request rate in excess of our current threshold. To provide a
 
 If you have received a 429 HTTP status code in the response to your request, your request has likely been rate limited. There is some additional information in the headers that will help you determine if this is the case. Each request response will include the headers:  X-RateLimit-Limit, X-RateLimit-Remaining, and X-RateLimit-Reset.
 
-Header                      | Description
-----------------------------|------------------------------------------------------------------
-**X-RateLimit-Limit**       | The current maximum number of requests allowed from your client.
-**X-RateLimit-Remaining**   | How many requests you have remaining in the time window.
-**X-RateLimit-Reset**       | The unix timestamp for when the window resets.
+- **X-RateLimit-Limit**: The current maximum number of requests allowed from your client.
+- **X-RateLimit-Remaining**: How many requests you have remaining in the time window.
+- **X-RateLimit-Reset**: The unix timestamp for when the window resets.
 
 ## My use case requires more requests.  What do I do?
 
