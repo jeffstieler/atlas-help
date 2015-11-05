@@ -17,7 +17,7 @@ unique identifier, however, the following are recommended for consistency.
 - `amazon.image`
 - `digitalocean.image`
 - `docker.image`
-- `googlecompute.image`
+- `google.image`
 - `openstack.image`
 - `parallels.image`
 - `qemu.image`
