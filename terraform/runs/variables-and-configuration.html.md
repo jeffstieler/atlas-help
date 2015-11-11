@@ -44,7 +44,7 @@ Atlas. All Atlas-injected environment variables will be prefixed with `ATLAS_`
 - `ATLAS_RUN_ID` - This is a unique identifier for this run (e.g. `"33"`).
 - `ATLAS_CONFIGURATION_NAME` - This is the name of the configuration used in
   this run. Unless you have configured it differently, this will also be the
-  name of the environemnt (e.g `"production"`).
+  name of the environment (e.g `"production"`).
 - `ATLAS_CONFIGURATION_SLUG` - This is the full slug of the configuration used
   in this run. Unless you have configured it differently, this will also be the
   name of the environment (e.g. `"company/production"`).
