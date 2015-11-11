@@ -128,14 +128,16 @@ datacenters.
 
 ### Managed Node
 
-Managed node is the billing metric for Atlas. A managed node is either
-a host that has a Consul agent on it, or a compute resource that is
-managed by Terraform. If there is a discrepancy between the Consul-managed
+Managed node is the billing metric for Atlas. A managed node is a physical
+or virtual machine that has a Consul agent on it, or a physical or virtual machine
+that is managed by Terraform. If there is a discrepancy between the Consul-managed
 nodes and the Terraform-managed nodes, we take the higher measure.
 For calculating the number of managed nodes each month, we take a weighted average.
 For example, if 20 nodes are running for 10 days that month, and 50
 nodes are running for the other 20 days, the weighted average is 40 nodes.
-The billed amount will be 30 nodes, since the first 10 nodes are free.
+The billed amount will be 30 nodes, since the first 10 nodes are free. Note
+that the number of containers running on the hosts has no affect on the billing
+metric.
 
 For Consul, the [auto-join feature](/help/consul/auto-join) is completely free. Only
 [alerts](/help/consul/alerts) and the [real-time dashboard](/help/consul/monitoring-ui)
