@@ -83,6 +83,11 @@ Atlas. All Atlas-injected environment variables will be prefixed with `ATLAS_`
 - `ATLAS_BUILD_ID` - This is a unique identifier for this build (e.g. `"33"`)
 - `ATLAS_BUILD_NUMBER` - This is a unique identifier for all builds in the same
   scope (e.g. `"12"`)
+- `ATLAS_BUILD_NAME` - This is the name of the build (e.g. `"mybuild"`).
+- `ATLAS_BUILD_SLUG` - This is the full name of the build
+  (e.g. `"company/mybuild"`).
+- `ATLAS_BUILD_USERNAME` - This is the username associated with the build
+  (e.g. `"sammy"`)
 - `ATLAS_BUILD_CONFIGURATION_VERSION` - This is the unique, auto-incrementing
   version for the [Packer build configuration](/help/glossary) (e.g. `"34"`).
 - `ATLAS_BUILD_GITHUB_BRANCH` - This is the name of the branch
