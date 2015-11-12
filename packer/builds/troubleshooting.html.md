@@ -63,7 +63,11 @@ This is a short list of internal errors and what they mean.
 
 - SIC-001: Your data was being ingressed from GitHub but failed
 to properly unpack. This can be caused by bad permissions, improper
-symlinks or very large repository sizes.
+symlinks or very large repository sizes. _**Note:** Most often this error occurs 
+when applications or builds are linked to a GitHub repository and the 
+directory and/or template paths are incorrect. Double check that the paths 
+specified when you linked the GitHub repository match the actual paths 
+to your template file._
 - SEC-001: Your data was being unpacked from a tarball uploaded to Atlas
 and encountered an error. This can be caused by bad permissions, improper
 symlinks or very large tarball sizes.
